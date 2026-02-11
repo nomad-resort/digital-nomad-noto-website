@@ -1353,6 +1353,83 @@ body {
   }
 }
 
+/* ==========================================================================
+   Language Switcher
+   ========================================================================== */
+
+.bl_langSwitcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  font-family: "Arapey", serif;
+}
+
+.bl_langSwitcherToggle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bl_langSwitcherToggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.bl_langSwitcherDropdown {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  min-width: 140px;
+}
+
+.bl_langSwitcherDropdown.is_open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.bl_langSwitcherItem {
+  display: block;
+  padding: 10px 20px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.bl_langSwitcherItem:hover {
+  background: #f5f5f0;
+}
+
+.bl_langSwitcherItem.is_active {
+  color: var(--color-accent);
+  font-weight: 700;
+  pointer-events: none;
+}
+
 @media screen and (min-width: 1320px) {
   .bl_featureTxt {
     padding-block: 16vw;
