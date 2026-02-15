@@ -484,6 +484,10 @@
     (function () {
       var toggle = document.querySelector('.bl_langSwitcherToggle');
       var dropdown = document.querySelector('.bl_langSwitcherDropdown');
+
+      // Open language menu initially
+      dropdown.classList.add('is_open');
+
       toggle.addEventListener('click', function (e) {
         e.stopPropagation();
         dropdown.classList.toggle('is_open');
@@ -491,6 +495,13 @@
       document.addEventListener('click', function () {
         dropdown.classList.remove('is_open');
       });
+
+      // Close language menu on scroll
+      window.addEventListener('scroll', function () {
+        if (dropdown.classList.contains('is_open')) {
+          dropdown.classList.remove('is_open');
+        }
+      }, { passive: true });
     })();
   </script>
 
