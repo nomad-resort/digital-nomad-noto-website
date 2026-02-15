@@ -36,8 +36,8 @@
     (function () {
       if (localStorage.getItem('lang')) return;
       const lang = navigator.language.slice(0, 2);
-      if (lang === 'ja') window.location.replace('/ja/');
-      if (lang === 'zh') window.location.replace('/zh/');
+      if (lang === 'ja' && !window.location.pathname.includes('/ja/')) window.location.replace('/ja/');
+      if (lang === 'zh' && !window.location.pathname.includes('/zh/')) window.location.replace('/zh/');
     })();
   </script>
 </head>
