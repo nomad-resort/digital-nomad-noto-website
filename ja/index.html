@@ -1,814 +1,512 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nomad Resort Noto</title>
 
-    <!-- TODO: change to domain url  -->
-    <link rel="canonical" href="https://nomadoresort_noto.com/ja/" />
-    <link rel="alternate" hreflang="en" href="https://nomadoresort_noto.com/" />
-    <link
-      rel="alternate"
-      hreflang="ja"
-      href="https://nomadoresort_noto.com/ja/"
-    />
-    <link
-      rel="alternate"
-      hreflang="zh"
-      href="https://nomadoresort_noto.com/zh/"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://nomadoresort_noto.com/"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Nomad Noto</title>
+  <link rel="icon" type="image/png" href="../assets/image/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/image/favicon.png" />
 
-    <!-- TODO: add meta tags for SEO and social media -->
+  <!-- TODO: change to domain url  -->
+  <link rel="canonical" href="https://noto.nomadresort.jp/ja/" />
+  <link rel="alternate" hreflang="en" href="https://noto.nomadresort.jp/" />
+  <link rel="alternate" hreflang="ja" href="https://noto.nomadresort.jp/ja/" />
+  <link rel="alternate" hreflang="zh" href="https://noto.nomadresort.jp/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://noto.nomadresort.jp/" />
 
-    <!-- Preconnect to external resources for better performance -->
-    <link rel="preconnect" href="https://www.youtube.com" crossorigin />
-    <link rel="preconnect" href="https://www.google.com" crossorigin />
-    <link rel="preconnect" href="https://www.instagram.com" crossorigin />
-    <link rel="preconnect" href="https://elfsightcdn.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.youtube.com" />
-    <link rel="dns-prefetch" href="https://www.google.com" />
-    <link rel="dns-prefetch" href="https://www.instagram.com" />
-    <link rel="dns-prefetch" href="https://elfsightcdn.com" />
+  <!-- TODO: add meta tags for SEO and social media -->
 
-    <link rel="stylesheet" href="../assets/css/reset.css" />
-    <link rel="stylesheet" href="../assets/css/loading.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
+  <!-- Preconnect to external resources for better performance -->
+  <link rel="preconnect" href="https://www.youtube.com" crossorigin />
+  <link rel="preconnect" href="https://www.google.com" crossorigin />
+  <link rel="preconnect" href="https://www.instagram.com" crossorigin />
+  <link rel="preconnect" href="https://elfsightcdn.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.youtube.com" />
+  <link rel="dns-prefetch" href="https://www.google.com" />
+  <link rel="dns-prefetch" href="https://www.instagram.com" />
+  <link rel="dns-prefetch" href="https://elfsightcdn.com" />
 
-    <script>
-      (function () {
-        if (localStorage.getItem('lang')) return;
-        const lang = navigator.language.slice(0, 2);
-        if (lang === 'ja') window.location.replace('/ja/');
-        if (lang === 'zh') window.location.replace('/zh/');
-      })();
-    </script>
-  </head>
-  <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-      <div class="loading-content">
-        <img
-          src="../assets/image/hero-noto.svg"
-          alt="NOTO"
-          class="loading-logo"
-        />
-        <p class="loading-text">読み込み中...</p>
-      </div>
-      <div class="loading-map">
-        <img src="../assets/image/hero-map.svg" alt="Map of Noto" />
-      </div>
+  <link rel="stylesheet" href="../assets/css/reset.css" />
+  <link rel="stylesheet" href="../assets/css/loading.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
+
+  <script>
+    (function () {
+      if (localStorage.getItem('lang')) return;
+      const lang = navigator.language.slice(0, 2);
+      if (lang === 'ja') window.location.replace('/ja/');
+      if (lang === 'zh') window.location.replace('/zh/');
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <img src="../assets/image/hero-noto.svg" alt="NOTO" class="loading-logo" />
+      <p class="loading-text">読み込み中...</p>
     </div>
+    <div class="loading-map">
+      <img src="../assets/image/hero-map.svg" alt="Map of Noto" />
+    </div>
+  </div>
 
-    <header></header>
-    <main>
-      <section class="ly_hero">
-        <div class="ly_heroBg">
-          <img
-            src="../assets/image/hero-fire.avif"
-            loading="eager"
-            fetchpriority="high"
-            alt="Bonfire at night"
-          />
-        </div>
-        <div class="ly_heroFv">
-          <img
-            class="fv_img1"
-            src="../assets/image/fv/hero1.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img2"
-            src="../assets/image/fv/hero2.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img3"
-            src="../assets/image/fv/hero3.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img4"
-            src="../assets/image/fv/hero4.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img5"
-            src="../assets/image/fv/hero5.webp"
-            loading="lazy"
-            alt=""
-          />
-          <div class="fv_img6">
-            <video
-              src="../assets/image/fv/hero6.mp4"
-              poster="../assets/image/fv/hero6-poster.webp"
-              loading="lazy"
-              autoplay
-              muted
-              loop
-              playsinline
-              onerror="this.style.display='none'"
-            ></video>
-          </div>
-          <img
-            class="fv_img7"
-            src="../assets/image/fv/hero7.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img8"
-            src="../assets/image/fv/hero8.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img9"
-            src="../assets/image/fv/hero9.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img10"
-            src="../assets/image/fv/hero10.webp"
-            loading="lazy"
-            alt=""
-          />
-
-          <img
-            class="fv_img11"
-            src="../assets/image/fv/hero11.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="fv_img12"
-            src="../assets/image/fv/hero12.webp"
-            loading="lazy"
-            alt=""
-          />
-          <div class="fv_img13">
-            <video
-              src="../assets/image/fv/hero13.mp4"
-              poster="../assets/image/fv/hero13-poster.webp"
-              loading="lazy"
-              autoplay
-              muted
-              loop
-              playsinline
-              onerror="this.style.display='none'"
-            ></video>
-          </div>
-          <img
-            class="fv_img3"
-            src="../assets/image/fv/hero3.webp"
-            loading="lazy"
-            alt=""
-          />
-        </div>
-        <div class="ly_heroMap">
-          <img
-            src="../assets/image/hero-map.svg"
-            fetchpriority="high"
-            loading="eager"
-            alt="Map of Noto"
-          />
-        </div>
-        <div class="ly_hero__inner">
-          <div class="ly_hero__title">
-            <img
-              src="../assets/image/hero-noto.svg"
-              loading="eager"
-              fetchpriority="high"
-              alt="NOTO"
-            />
-          </div>
-          <p class="ly_hero__subtitle">The Japan guidebooks can’t show you.</p>
-        </div>
-      </section>
-
-      <section class="ly_feature">
-        <div class="bl_feature">
-          <div class="bl_featureHeader">
-            <h2>なぜ能登はおもしろいのか</h2>
-            <iframe
-              width="1840"
-              height="1035"
-              src="https://www.youtube.com/embed/WChqkHkjV7A"
-              title="【石川県能登町観光PR】SPIRIT OF NOTOCHO"
-              loading="lazy"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="bl_featureContent">
-            <div class="bl_featureImg">
-              <div class="feature_img1">
-                <img
-                  loading="lazy"
-                  src="../assets/image/hero-img1.avif"
-                  alt=""
-                />
-              </div>
-              <div class="feature_img2">
-                <img
-                  loading="lazy"
-                  src="../assets/image/hero-img2.avif"
-                  alt=""
-                />
-              </div>
-              <div class="feature_img3">
-                <img
-                  loading="lazy"
-                  src="../assets/image/hero-img3.avif"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="bl_featureTxt">
-              <h3>里山里海の豊かさ</h3>
-              <p>
-                世界でもまれに見る地形が、<br />能登だけの景観をつくってきた。<br />
-                一日の中にいくつもの特別な風景がある。
-              </p>
-            </div>
-
-            <div class="bl_featureImg bl_featureImgBottom">
-              <div class="feature_img4">
-                <img
-                  loading="lazy"
-                  src="../assets/image/hero-img4.avif"
-                  alt=""
-                />
-              </div>
-              <div class="feature_img5">
-                <img
-                  loading="lazy"
-                  src="../assets/image/hero-img5.avif"
-                  alt=""
-                />
-              </div>
-              <div class="feature_img6">
-                <img
-                  loading="lazy"
-                  src="../assets/image/hero-img6.avif"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="bl_featureFooter">
-              <p>Discover</p>
-              <p>the last <br />untouched Japan.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="ly_culture">
-        <div class="bl_culture">
-          <div class="bl_cultureTop">
-            <div class="bl_cultureTopText">
-              <h2>里山里海の中で人が育てた文化</h2>
-              <p>
-                里山里海と人が重なり合ってできた、共に生きる文化。<br />
-                訪れる人をやさしく迎え入れてくれる。
-              </p>
-            </div>
-            <div class="bl_cultureTopImg">
-              <img
-                loading="lazy"
-                src="../assets/image/culture-img1.avif"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div class="bl_cultureImages">
-            <div class="culture_img1">
-              <img
-                loading="lazy"
-                src="../assets/image/culture-img2.avif"
-                alt=""
-              />
-            </div>
-            <div class="culture_img2">
-              <img
-                loading="lazy"
-                src="../assets/image/culture-img3.avif"
-                alt=""
-              />
-            </div>
-            <div class="culture_img3">
-              <img
-                loading="lazy"
-                src="../assets/image/culture-img4.avif"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div class="bl_cultureImgBig">
-            <img
-              loading="lazy"
-              src="../assets/image/culture-img5.avif"
-              alt=""
-            />
-          </div>
-
-          <div class="bl_cultureBottom">
-            <h2>
-              自然と人が一体となって生きる文化。<br />
-              それが能登。<br />
-              観光地ではなく、暮らしそのものを体験できる場所。
-            </h2>
-
-            <div class="bl_cultureBottomCta">
-              <img
-                loading="lazy"
-                src="../assets/image/culture-img6.avif"
-                alt=""
-              />
-              <div class="bl_cultureBottomCtaText">
-                <h3>完全版「能登ノマド」ガイドを入手しよう</h3>
-                <p>
-                  すべてのスケジュール、地図、ヒントは<br />
-                  すでに私たちのDiscordの中にあります。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="ly_access">
-        <div class="bl_access">
-          <div class="bl_accessTop">
-            <h2 class="hp_title">アクセス</h2>
-            <p>都市部から数時間でアクセスできる、日常から離れた場所</p>
-          </div>
-          <div class="bl_accessMap">
-            <picture>
-              <source
-                media="(min-width: 768px)"
-                srcset="../assets/image/ja-access-map-pc.avif"
-              />
-              <img
-                loading="lazy"
-                src="../assets/image/ja-access-map-sp.avif"
-                alt=""
-              />
-            </picture>
-          </div>
-          <div class="bl_accessList">
-            <div class="bl_accessListItem">
-              <div class="bl_accessListIcon">
-                <img
-                  loading="lazy"
-                  src="../assets/image/access-plane.svg"
-                  alt=""
-                />
-              </div>
-              <div class="bl_accessListContent">
-                <h3>羽田 → 能登里山空港（飛行機）</h3>
-                <ol>
-                  <li>羽田 → 能登里山空港：約1時間</li>
-                  <li>空港 → 七尾市内：車で40〜50分</li>
-                </ol>
-              </div>
-            </div>
-            <div class="bl_accessListItem">
-              <div class="bl_accessListIcon">
-                <img
-                  loading="lazy"
-                  src="../assets/image/access-train.svg"
-                  alt=""
-                />
-              </div>
-              <div class="bl_accessListContent">
-                <h3>東京 → 金沢 → 七尾（新幹線＋電車）</h3>
-                <ol>
-                  <li>東京 → 金沢：北陸新幹線（約2時間30分）</li>
-                  <li>金沢 → 七尾：JR七尾線（約60〜80分）</li>
-                </ol>
-              </div>
-            </div>
-            <div class="bl_accessListItem">
-              <div class="bl_accessListIcon">
-                <img
-                  loading="lazy"
-                  src="../assets/image/access-train.svg"
-                  alt=""
-                />
-              </div>
-              <div class="bl_accessListContent">
-                <h3>大阪 → 敦賀 → 金沢 → 七尾（特急＋北陸新幹線＋電車）</h3>
-                <ol>
-                  <li>大阪 → 敦賀：特急サンダーバード（約1時間20〜30分）</li>
-                  <li>敦賀 → 金沢：北陸新幹線（約1時間）</li>
-                  <li>金沢 → 七尾：JR七尾線（約60〜80分）</li>
-                </ol>
-              </div>
-            </div>
-            <div class="bl_accessListItem">
-              <div class="bl_accessListIcon">
-                <img
-                  loading="lazy"
-                  src="../assets/image/access-car.svg"
-                  alt=""
-                />
-              </div>
-              <div class="bl_accessListContent">
-                <h3>七尾 → 能登エリア各地（車）</h3>
-                <p>七尾 → 能登島・穴水・珠洲など車で20〜40分。</p>
-                <p>移動そのものが景色になる距離です。</p>
-              </div>
-            </div>
-          </div>
-          <div class="bl_accessFrame">
-            <iframe
-              title="Notojima Island Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121090.43022873042!2d136.84926612117727!3d37.10473907909245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff73c9d31615ea5%3A0xf37f967f955ab541!2z55-z5bed55yM5LiD5bC-5biC!5e0!3m2!1sja!2sjp!4v1768410855500!5m2!1sja!2sjp"
-              width="330"
-              height="160"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      <section class="ly_accommodation">
-        <div class="bl_accommodation">
-          <h2 class="hp_title">宿泊施設</h2>
-          <div class="bl_gallerySwiper">
-            <div class="swiper gallerySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/accommodation-img1.webp"
-                    alt="Accommodation 1"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/accommodation-img2.webp"
-                    alt="Accommodation 2"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/accommodation-img3.webp"
-                    alt="Accommodation 3"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/accommodation-img4.webp"
-                    alt="Accommodation 4"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/accommodation-img5.webp"
-                    alt="Accommodation 5"
-                  />
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-buttons">
-                <div class="swiper-button-prev">
-                  <img
-                    loading="lazy"
-                    src="../assets/image/swiper-arrow.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="swiper-button-next">
-                  <img
-                    loading="lazy"
-                    src="../assets/image/swiper-arrow.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="link_btn" href=""
-            ><p>
-              おすすめ素敵な<br />
-              宿一覧はこちらに
-            </p>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#link_arr)">
-                <path
-                  d="M8 2.5c0 .371.367.925.738 1.39a6.6 6.6 0 0 0 1.7 1.523c.49.3 1.084.587 1.562.587m0 0c-.478 0-1.072.287-1.562.587-.654.4-1.224.924-1.7 1.523C8.367 8.575 8 9.13 8 9.5M12 6H0"
-                  stroke="#fff"
-                />
-              </g>
-              <defs>
-                <clipPath id="link_arr">
-                  <path fill="#fff" d="M12 0H0v12h12z" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-        </div>
-      </section>
-
-      <section class="ly_coworking">
-        <div class="bl_accommodation">
-          <h2 class="hp_title">コワーキングスペース</h2>
-          <div class="bl_gallerySwiper">
-            <div class="swiper gallerySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/coworking-img1.webp"
-                    alt="Coworking space 1"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/coworking-img2.webp"
-                    alt="Coworking space 2"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/coworking-img3.webp"
-                    alt="Coworking space 3"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/coworking-img4.webp"
-                    alt="Coworking space 4"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="../assets/image/coworking-img5.webp"
-                    alt="Coworking space 5"
-                  />
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-buttons">
-                <div class="swiper-button-prev">
-                  <img
-                    loading="lazy"
-                    src="../assets/image/swiper-arrow.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="swiper-button-next">
-                  <img
-                    loading="lazy"
-                    src="../assets/image/swiper-arrow.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="link_btn" href=""
-            ><p>
-              能登のコワーキングスペース<br />
-              一覧はこちらに
-            </p>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#link_arr)">
-                <path
-                  d="M8 2.5c0 .371.367.925.738 1.39a6.6 6.6 0 0 0 1.7 1.523c.49.3 1.084.587 1.562.587m0 0c-.478 0-1.072.287-1.562.587-.654.4-1.224.924-1.7 1.523C8.367 8.575 8 9.13 8 9.5M12 6H0"
-                  stroke="#fff"
-                />
-              </g>
-              <defs>
-                <clipPath id="link_arr">
-                  <path fill="#fff" d="M12 0H0v12h12z" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-        </div>
-      </section>
-
-      <section class="ly_voices">
-        <div class="bl_voices">
-          <h2 class="hp_title">利用者の声</h2>
-          <div class="bl_voicesSwiper">
-            <div class="swiper voicesSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-captioned
-                    data-instgrm-permalink="https://www.instagram.com/reel/DR1XInzEpkf/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                  ></blockquote>
-                </div>
-                <div class="swiper-slide">
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-captioned
-                    data-instgrm-permalink="https://www.instagram.com/reel/DMDD6yzxsEB/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                  ></blockquote>
-                </div>
-                <div class="swiper-slide">
-                  <blockquote
-                    class="instagram-media"
-                    data-instgrm-captioned
-                    data-instgrm-permalink="https://www.instagram.com/reel/DLtwdZ7z9BW/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                  ></blockquote>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-buttons">
-                <div class="swiper-button-prev">
-                  <img
-                    loading="lazy"
-                    src="../assets/image/swiper-arrow.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="swiper-button-next">
-                  <img
-                    loading="lazy"
-                    src="../assets/image/swiper-arrow.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bl_voicesList">
-            <div>
-              <blockquote
-                class="instagram-media"
-                data-instgrm-captioned
-                data-instgrm-permalink="https://www.instagram.com/reel/DR1XInzEpkf/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14"
-              ></blockquote>
-            </div>
-            <div>
-              <blockquote
-                class="instagram-media"
-                data-instgrm-captioned
-                data-instgrm-permalink="https://www.instagram.com/reel/DMDD6yzxsEB/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14"
-              ></blockquote>
-            </div>
-            <div>
-              <blockquote
-                class="instagram-media"
-                data-instgrm-captioned
-                data-instgrm-permalink="https://www.instagram.com/reel/DLtwdZ7z9BW/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14"
-              ></blockquote>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="ly_instagram">
-        <div class="bl_instagram">
-          <h2 class="hp_title">Instagramでフォローする</h2>
-          <div class="bl_instagramFeed">
-            <div
-              class="elfsight-app-fedf10a3-ccdd-4930-b19a-20eca7199ff6"
-              data-elfsight-app-lazy
-            ></div>
-          </div>
-          <div class="bl_localSupport">
-            <h3>コミュマネ紹介</h3>
-            <img loading="lazy" src="../assets/image/support.webp" alt="" />
-            <p>
-              世界を旅してきたノマドが、能登であなたの生活をサポートします！<br />
-              困ったときも、ちょっと話したいときも、気軽に声をかけてください。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="ly_join">
-        <img class="bl_joinBg" src="../assets/image/join-team.avif" alt="" />
-        <h2>チームに参加しましょう</h2>
-        <div class="bl_join">
-          <div>
-            <h3>Instagram</h3>
-            <a class="bl_joinProfile" href=""
-              ><img
-                src="../assets/image/icon-instagram.svg"
-                alt="Instagram"
-              />@nomadoresort_noto</a
-            >
-            <a class="el_joinLink" href="">Instagram</a>
-          </div>
-          <div>
-            <h3>Discord</h3>
-            <a class="bl_joinProfile" href=""
-              ><img
-                src="../assets/image/icon-discord.svg"
-                alt="Discord"
-              />dummydummydummy</a
-            >
-            <a class="el_joinLink" href="">Discord</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="ly_footer">
+  <header></header>
+  <main>
+    <section class="ly_hero">
       <div class="ly_heroBg">
-        <img
-          src="../assets/image/hero-fire.avif"
-          loading="eager"
-          alt="Bonfire at night"
-        />
+        <img src="../assets/image/hero-fire.avif" loading="eager" fetchpriority="high" alt="Bonfire at night" />
+      </div>
+      <div class="ly_heroFv">
+        <img class="fv_img1" src="../assets/image/fv/hero1.webp" loading="lazy" alt="" />
+        <img class="fv_img2" src="../assets/image/fv/hero2.webp" loading="lazy" alt="" />
+        <img class="fv_img3" src="../assets/image/fv/hero3.webp" loading="lazy" alt="" />
+        <img class="fv_img4" src="../assets/image/fv/hero4.webp" loading="lazy" alt="" />
+        <img class="fv_img5" src="../assets/image/fv/hero5.webp" loading="lazy" alt="" />
+        <div class="fv_img6">
+          <video src="../assets/image/fv/hero6.mp4" poster="../assets/image/fv/hero6-poster.webp" loading="lazy"
+            autoplay muted loop playsinline onerror="this.style.display='none'"></video>
+        </div>
+        <img class="fv_img7" src="../assets/image/fv/hero7.webp" loading="lazy" alt="" />
+        <img class="fv_img8" src="../assets/image/fv/hero8.webp" loading="lazy" alt="" />
+        <img class="fv_img9" src="../assets/image/fv/hero9.webp" loading="lazy" alt="" />
+        <img class="fv_img10" src="../assets/image/fv/hero10.webp" loading="lazy" alt="" />
+
+        <img class="fv_img11" src="../assets/image/fv/hero11.webp" loading="lazy" alt="" />
+        <img class="fv_img12" src="../assets/image/fv/hero12.webp" loading="lazy" alt="" />
+        <div class="fv_img13">
+          <video src="../assets/image/fv/hero13.mp4" poster="../assets/image/fv/hero13-poster.webp" loading="lazy"
+            autoplay muted loop playsinline onerror="this.style.display='none'"></video>
+        </div>
+        <img class="fv_img3" src="../assets/image/fv/hero3.webp" loading="lazy" alt="" />
+      </div>
+      <div class="ly_heroMap">
+        <img src="../assets/image/hero-map.svg" fetchpriority="high" loading="eager" alt="Map of Noto" />
       </div>
       <div class="ly_hero__inner">
         <div class="ly_hero__title">
-          <img src="../assets/image/hero-noto.svg" loading="eager" alt="NOTO" />
+          <img src="../assets/image/hero-noto.svg" loading="eager" fetchpriority="high" alt="NOTO" />
         </div>
         <p class="ly_hero__subtitle">The Japan guidebooks can’t show you.</p>
       </div>
-    </footer>
+    </section>
 
-    <!-- Language Switcher -->
-    <div class="bl_langSwitcher">
-      <button class="bl_langSwitcherToggle" aria-label="言語を切り替える">
-        JA
-      </button>
-      <div class="bl_langSwitcherDropdown">
-        <a
-          class="bl_langSwitcherItem"
-          href="../"
-          onclick="localStorage.setItem('lang','en')"
-          >English</a
-        >
-        <a
-          class="bl_langSwitcherItem is_active"
-          href="./"
-          onclick="localStorage.setItem('lang','ja')"
-          >日本語</a
-        >
-        <a
-          class="bl_langSwitcherItem"
-          href="../zh/"
-          onclick="localStorage.setItem('lang','zh')"
-          >中文</a
-        >
+    <section class="ly_feature">
+      <div class="bl_feature">
+        <div class="bl_featureHeader">
+          <h2>なぜ能登はおもしろいのか</h2>
+          <iframe width="1840" height="1035" src="https://www.youtube.com/embed/WChqkHkjV7A"
+            title="【石川県能登町観光PR】SPIRIT OF NOTOCHO" loading="lazy" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="bl_featureContent">
+          <div class="bl_featureImg">
+            <div class="feature_img1">
+              <img loading="lazy" src="../assets/image/hero-img1.avif" alt="" />
+            </div>
+            <div class="feature_img2">
+              <img loading="lazy" src="../assets/image/hero-img2.avif" alt="" />
+            </div>
+            <div class="feature_img3">
+              <img loading="lazy" src="../assets/image/hero-img3.avif" alt="" />
+            </div>
+          </div>
+
+          <div class="bl_featureTxt">
+            <h3>里山里海の豊かさ</h3>
+            <p>
+              世界でもまれに見る地形が、<br />能登だけの景観をつくってきた。<br />
+              一日の中にいくつもの特別な風景がある。
+            </p>
+          </div>
+
+          <div class="bl_featureImg bl_featureImgBottom">
+            <div class="feature_img4">
+              <img loading="lazy" src="../assets/image/hero-img4.avif" alt="" />
+            </div>
+            <div class="feature_img5">
+              <img loading="lazy" src="../assets/image/hero-img5.avif" alt="" />
+            </div>
+            <div class="feature_img6">
+              <img loading="lazy" src="../assets/image/hero-img6.avif" alt="" />
+            </div>
+          </div>
+
+          <div class="bl_featureFooter">
+            <p>Discover</p>
+            <p>the last <br />untouched Japan.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <script>
-      (function () {
-        var toggle = document.querySelector('.bl_langSwitcherToggle');
-        var dropdown = document.querySelector('.bl_langSwitcherDropdown');
-        toggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          dropdown.classList.toggle('is_open');
-        });
-        document.addEventListener('click', function () {
-          dropdown.classList.remove('is_open');
-        });
-      })();
-    </script>
+    </section>
 
-    <!-- Scripts -->
-    <script src="../assets/js/loading.js"></script>
-    <script src="../assets/js/swiper-bundle.min.js" defer></script>
-    <script src="../assets/js/swiper.js" defer></script>
-    <script async src="https://www.instagram.com/embed.js"></script>
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-  </body>
+    <section class="ly_culture">
+      <div class="bl_culture">
+        <div class="bl_cultureTop">
+          <div class="bl_cultureTopText">
+            <h2>里山里海の中で人が育てた文化</h2>
+            <p>
+              里山里海と人が重なり合ってできた、共に生きる文化。<br />
+              訪れる人をやさしく迎え入れてくれる。
+            </p>
+          </div>
+          <div class="bl_cultureTopImg">
+            <img loading="lazy" src="../assets/image/culture-img1.avif" alt="" />
+          </div>
+        </div>
+
+        <div class="bl_cultureImages">
+          <div class="culture_img1">
+            <img loading="lazy" src="../assets/image/culture-img2.avif" alt="" />
+          </div>
+          <div class="culture_img2">
+            <img loading="lazy" src="../assets/image/culture-img3.avif" alt="" />
+          </div>
+          <div class="culture_img3">
+            <img loading="lazy" src="../assets/image/culture-img4.avif" alt="" />
+          </div>
+        </div>
+
+        <div class="bl_cultureImgBig">
+          <img loading="lazy" src="../assets/image/culture-img5.avif" alt="" />
+        </div>
+
+        <div class="bl_cultureBottom">
+          <h2>
+            自然と人が一体となって生きる文化。<br />
+            それが能登。<br />
+            観光地ではなく、暮らしそのものを体験できる場所。
+          </h2>
+
+          <div class="bl_cultureBottomCta">
+            <img loading="lazy" src="../assets/image/culture-img6.avif" alt="" />
+            <div class="bl_cultureBottomCtaText">
+              <h3>完全版「能登ノマド」ガイドを入手しよう</h3>
+              <p>
+                すべてのスケジュール、地図、ヒントは<br />
+                すでに私たちのDiscordの中にあります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ly_access">
+      <div class="bl_access">
+        <div class="bl_accessTop">
+          <h2 class="hp_title">アクセス</h2>
+          <p>都市部から数時間でアクセスできる、日常から離れた場所</p>
+        </div>
+        <div class="bl_accessMap">
+          <picture>
+            <source media="(min-width: 768px)" srcset="../assets/image/ja-access-map-pc.avif" />
+            <img loading="lazy" src="../assets/image/ja-access-map-sp.avif" alt="" />
+          </picture>
+        </div>
+        <div class="bl_accessList">
+          <div class="bl_accessListItem">
+            <div class="bl_accessListIcon">
+              <img loading="lazy" src="../assets/image/access-plane.svg" alt="" />
+            </div>
+            <div class="bl_accessListContent">
+              <h3>羽田 → 能登里山空港（飛行機）</h3>
+              <ol>
+                <li>羽田 → 能登里山空港：約1時間</li>
+                <li>空港 → 七尾市内：車で40〜50分</li>
+              </ol>
+            </div>
+          </div>
+          <div class="bl_accessListItem">
+            <div class="bl_accessListIcon">
+              <img loading="lazy" src="../assets/image/access-train.svg" alt="" />
+            </div>
+            <div class="bl_accessListContent">
+              <h3>東京 → 金沢 → 七尾（新幹線＋電車）</h3>
+              <ol>
+                <li>東京 → 金沢：北陸新幹線（約2時間30分）</li>
+                <li>金沢 → 七尾：JR七尾線（約60〜80分）</li>
+              </ol>
+            </div>
+          </div>
+          <div class="bl_accessListItem">
+            <div class="bl_accessListIcon">
+              <img loading="lazy" src="../assets/image/access-train.svg" alt="" />
+            </div>
+            <div class="bl_accessListContent">
+              <h3>大阪 → 敦賀 → 金沢 → 七尾（特急＋北陸新幹線＋電車）</h3>
+              <ol>
+                <li>大阪 → 敦賀：特急サンダーバード（約1時間20〜30分）</li>
+                <li>敦賀 → 金沢：北陸新幹線（約1時間）</li>
+                <li>金沢 → 七尾：JR七尾線（約60〜80分）</li>
+              </ol>
+            </div>
+          </div>
+          <div class="bl_accessListItem">
+            <div class="bl_accessListIcon">
+              <img loading="lazy" src="../assets/image/access-car.svg" alt="" />
+            </div>
+            <div class="bl_accessListContent">
+              <h3>七尾 → 能登エリア各地（車）</h3>
+              <p>七尾 → 能登島・穴水・珠洲など車で20〜40分。</p>
+              <p>移動そのものが景色になる距離です。</p>
+            </div>
+          </div>
+        </div>
+        <div class="bl_accessFrame">
+          <iframe title="Notojima Island Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121090.43022873042!2d136.84926612117727!3d37.10473907909245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff73c9d31615ea5%3A0xf37f967f955ab541!2z55-z5bed55yM5LiD5bC-5biC!5e0!3m2!1sja!2sjp!4v1768410855500!5m2!1sja!2sjp"
+            width="330" height="160" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="ly_accommodation">
+      <div class="bl_accommodation">
+        <h2 class="hp_title">宿泊施設</h2>
+        <div class="bl_gallerySwiper">
+          <div class="swiper gallerySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../assets/image/accommodation-img1.webp" alt="Accommodation 1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/accommodation-img2.webp" alt="Accommodation 2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/accommodation-img3.webp" alt="Accommodation 3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/accommodation-img4.webp" alt="Accommodation 4" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/accommodation-img5.webp" alt="Accommodation 5" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-buttons">
+              <div class="swiper-button-prev">
+                <img loading="lazy" src="../assets/image/swiper-arrow.svg" alt="" />
+              </div>
+              <div class="swiper-button-next">
+                <img loading="lazy" src="../assets/image/swiper-arrow.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="link_btn" href="">
+          <p>
+            おすすめ素敵な<br />
+            宿一覧はこちらに
+          </p>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#link_arr)">
+              <path
+                d="M8 2.5c0 .371.367.925.738 1.39a6.6 6.6 0 0 0 1.7 1.523c.49.3 1.084.587 1.562.587m0 0c-.478 0-1.072.287-1.562.587-.654.4-1.224.924-1.7 1.523C8.367 8.575 8 9.13 8 9.5M12 6H0"
+                stroke="#fff" />
+            </g>
+            <defs>
+              <clipPath id="link_arr">
+                <path fill="#fff" d="M12 0H0v12h12z" />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="ly_coworking">
+      <div class="bl_accommodation">
+        <h2 class="hp_title">コワーキングスペース</h2>
+        <div class="bl_gallerySwiper">
+          <div class="swiper gallerySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../assets/image/coworking-img1.webp" alt="Coworking space 1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/coworking-img2.webp" alt="Coworking space 2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/coworking-img3.webp" alt="Coworking space 3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/coworking-img4.webp" alt="Coworking space 4" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../assets/image/coworking-img5.webp" alt="Coworking space 5" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-buttons">
+              <div class="swiper-button-prev">
+                <img loading="lazy" src="../assets/image/swiper-arrow.svg" alt="" />
+              </div>
+              <div class="swiper-button-next">
+                <img loading="lazy" src="../assets/image/swiper-arrow.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="link_btn" href="">
+          <p>
+            能登のコワーキングスペース<br />
+            一覧はこちらに
+          </p>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#link_arr)">
+              <path
+                d="M8 2.5c0 .371.367.925.738 1.39a6.6 6.6 0 0 0 1.7 1.523c.49.3 1.084.587 1.562.587m0 0c-.478 0-1.072.287-1.562.587-.654.4-1.224.924-1.7 1.523C8.367 8.575 8 9.13 8 9.5M12 6H0"
+                stroke="#fff" />
+            </g>
+            <defs>
+              <clipPath id="link_arr">
+                <path fill="#fff" d="M12 0H0v12h12z" />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="ly_voices">
+      <div class="bl_voices">
+        <h2 class="hp_title">利用者の声</h2>
+        <div class="bl_voicesSwiper">
+          <div class="swiper voicesSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <blockquote class="instagram-media" data-instgrm-captioned
+                  data-instgrm-permalink="https://www.instagram.com/reel/DR1XInzEpkf/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"></blockquote>
+              </div>
+              <div class="swiper-slide">
+                <blockquote class="instagram-media" data-instgrm-captioned
+                  data-instgrm-permalink="https://www.instagram.com/reel/DMDD6yzxsEB/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"></blockquote>
+              </div>
+              <div class="swiper-slide">
+                <blockquote class="instagram-media" data-instgrm-captioned
+                  data-instgrm-permalink="https://www.instagram.com/reel/DLtwdZ7z9BW/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"></blockquote>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-buttons">
+              <div class="swiper-button-prev">
+                <img loading="lazy" src="../assets/image/swiper-arrow.svg" alt="" />
+              </div>
+              <div class="swiper-button-next">
+                <img loading="lazy" src="../assets/image/swiper-arrow.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bl_voicesList">
+          <div>
+            <blockquote class="instagram-media" data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/DR1XInzEpkf/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14"></blockquote>
+          </div>
+          <div>
+            <blockquote class="instagram-media" data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/DMDD6yzxsEB/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14"></blockquote>
+          </div>
+          <div>
+            <blockquote class="instagram-media" data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/DLtwdZ7z9BW/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14"></blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ly_instagram">
+      <div class="bl_instagram">
+        <h2 class="hp_title">Instagramでフォローする</h2>
+        <div class="bl_instagramFeed">
+          <div class="elfsight-app-fedf10a3-ccdd-4930-b19a-20eca7199ff6" data-elfsight-app-lazy></div>
+        </div>
+        <div class="bl_localSupport">
+          <h3>コミュマネ紹介</h3>
+          <img loading="lazy" src="../assets/image/support.webp" alt="" />
+          <p>
+            世界を旅してきたノマドが、能登であなたの生活をサポートします！<br />
+            困ったときも、ちょっと話したいときも、気軽に声をかけてください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ly_join">
+      <img class="bl_joinBg" src="../assets/image/join-team.avif" alt="" />
+      <h2>チームに参加しましょう</h2>
+      <div class="bl_join">
+        <div>
+          <h3>Instagram</h3>
+          <a class="bl_joinProfile" href=""><img src="../assets/image/icon-instagram.svg"
+              alt="Instagram" />@nomadoresort_noto</a>
+          <a class="el_joinLink" href="">Instagram</a>
+        </div>
+        <div>
+          <h3>Discord</h3>
+          <a class="bl_joinProfile" href=""><img src="../assets/image/icon-discord.svg"
+              alt="Discord" />dummydummydummy</a>
+          <a class="el_joinLink" href="">Discord</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ly_footer">
+    <div class="ly_heroBg">
+      <img src="../assets/image/hero-fire.avif" loading="eager" alt="Bonfire at night" />
+    </div>
+    <div class="ly_hero__inner">
+      <div class="ly_hero__title">
+        <img src="../assets/image/hero-noto.svg" loading="eager" alt="NOTO" />
+      </div>
+      <p class="ly_hero__subtitle">The Japan guidebooks can’t show you.</p>
+    </div>
+  </footer>
+
+  <!-- Language Switcher -->
+  <div class="bl_langSwitcher">
+    <button class="bl_langSwitcherToggle" aria-label="言語を切り替える">
+      JA
+    </button>
+    <div class="bl_langSwitcherDropdown">
+      <a class="bl_langSwitcherItem" href="../" onclick="localStorage.setItem('lang','en')">English</a>
+      <a class="bl_langSwitcherItem is_active" href="./" onclick="localStorage.setItem('lang','ja')">日本語</a>
+      <a class="bl_langSwitcherItem" href="../zh/" onclick="localStorage.setItem('lang','zh')">中文</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var toggle = document.querySelector('.bl_langSwitcherToggle');
+      var dropdown = document.querySelector('.bl_langSwitcherDropdown');
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('is_open');
+      });
+      document.addEventListener('click', function () {
+        dropdown.classList.remove('is_open');
+      });
+    })();
+  </script>
+
+  <!-- Scripts -->
+  <script src="../assets/js/loading.js"></script>
+  <script src="../assets/js/swiper-bundle.min.js" defer></script>
+  <script src="../assets/js/swiper.js" defer></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+</body>
+
 </html>
