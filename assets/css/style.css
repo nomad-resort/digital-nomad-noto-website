@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "Arapey";
+  font-family: 'Arapey';
   font-weight: 400;
   font-display: swap;
-  src: url(./../fonts/Arapey-Regular.woff2) format("woff2");
+  src: url(./../fonts/Arapey-Regular.woff2) format('woff2');
 }
 
 :root {
@@ -25,7 +25,7 @@ body {
 }
 
 body {
-  font-family: "Arapey", serif;
+  font-family: 'Arapey', serif;
   line-height: 1.5;
   letter-spacing: 0.08em;
   color: var(--color-text);
@@ -76,7 +76,7 @@ body {
 }
 
 .ly_heroFv::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -154,7 +154,7 @@ body {
 }
 
 .fv_img6::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -229,7 +229,7 @@ body {
 }
 
 .fv_img13::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -461,7 +461,7 @@ body {
 }
 
 .bl_cultureBottomCta::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -791,7 +791,7 @@ body {
    ========================================================================== */
 
 .ly_instagram {
-  padding: 80px 23px;
+  padding: 80px 23px 0;
 }
 
 .bl_instagram {
@@ -858,7 +858,7 @@ body {
 }
 
 .ly_join::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -904,7 +904,7 @@ body {
 }
 
 .el_joinLink::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 8px;
   top: 50%;
@@ -917,6 +917,61 @@ body {
 
 .el_joinLink:hover::after {
   right: 0;
+}
+
+/* ==========================================================================
+   Partners Section
+   ========================================================================== */
+
+.ly_organizer {
+  padding: 0 20px 80px;
+  text-align: center;
+}
+
+.bl_organizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ly_organizer h2 {
+  margin-block: 60px 20px;
+}
+
+.bl_organizerImg img {
+  max-height: 53px;
+  width: auto;
+  object-fit: contain;
+}
+
+.bl_supportedImg {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bl_supportedImg img {
+  max-height: 66px;
+  width: auto;
+  object-fit: contain;
+}
+
+.bl_supportedImg img:first-child {
+  max-height: 77px;
+}
+
+.bl_partnersImg {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.bl_partnersImg img {
+  width: 100%;
+  max-width: 110px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* ==========================================================================
@@ -1158,6 +1213,24 @@ body {
     display: none;
   }
 
+  /* ==========================================================================
+   Partners Section
+   ========================================================================== */
+
+  .ly_organizer {
+    padding-bottom: 120px;
+  }
+
+  .bl_supportedImg {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .bl_partnersImg {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 46px;
+  }
+
   .ly_join {
     padding: 120px 20px;
   }
@@ -1362,7 +1435,7 @@ body {
   bottom: 24px;
   right: 24px;
   z-index: 1000;
-  font-family: "Arapey", serif;
+  font-family: 'Arapey', serif;
 }
 
 .bl_langSwitcherToggle {
@@ -1380,7 +1453,9 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .bl_langSwitcherToggle:hover {
@@ -1399,7 +1474,10 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
   min-width: 140px;
 }
 
