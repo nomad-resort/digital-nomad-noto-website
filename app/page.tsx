@@ -15,6 +15,69 @@ const famActivities = [
   "地域交流イベント",
 ];
 
+const famSchedule = [
+  {
+    date: "16",
+    day: "WED",
+    events: [
+      ["07:00–14:00", "Transfer", "Train or flight", "optional"],
+      ["14:00–19:00", "Registration", "Notojima Hanami", "optional"],
+      ["19:00–22:00", "Welcome BBQ", "Hanami", "included"],
+    ],
+  },
+  {
+    date: "17",
+    day: "THU",
+    events: [
+      ["10:00–17:00", "Nanao old street experience", "Ipponsugi", "included-mark"],
+      ["10:00–17:00", "Co-Working", "Noras Office", "included-mark"],
+      ["17:00–21:00", "Izakaya party", "Kamome Shokudo", "included"],
+      ["19:00–22:00", "Karaoke", "Samba", "optional"],
+    ],
+  },
+  {
+    date: "18",
+    day: "FRI",
+    events: [
+      ["07:00–10:00", "Jogging", "Notojima", "included-mark"],
+      ["12:00–14:00", "Lunch", "Self-pay", "optional"],
+      ["14:00–17:00", "Rice harvesting", "Notojima", "included-mark"],
+      ["19:00–22:00", "Dinner", "Self-pay", "optional"],
+    ],
+  },
+  {
+    date: "19",
+    day: "SAT",
+    events: [
+      ["07:00–13:00", "Island chillout", "Notojima Hanami", "optional"],
+      ["12:00–14:00", "Lunch", "Self-pay", "optional"],
+      ["14:00–22:00", "Matsuri Experience", "Noto", "included"],
+    ],
+  },
+  {
+    date: "20",
+    day: "SUN",
+    events: [["07:00–22:00", "Matsuri Experience", "Noto", "included"]],
+  },
+  {
+    date: "21",
+    day: "MON",
+    events: [
+      ["07:00–13:00", "Island chillout", "Notojima Hanami", "optional"],
+      ["12:00–14:00", "Lunch", "Self-pay", "optional"],
+      ["17:00–22:00", "Cooking Night", "Namiha", "included"],
+    ],
+  },
+  {
+    date: "22",
+    day: "TUE",
+    events: [
+      ["07:00–10:00", "Check out", "Self-arranged accommodation", "optional"],
+      ["10:00–14:00", "Transfer", "Train or flight", "optional"],
+    ],
+  },
+];
+
 const freeCategories = [
   ["Creative", "デザイナー、フォトグラファー、映像クリエイター、ライター、アーティスト"],
   ["Food", "シェフ、料理人、パティシエ、食とガストロノミーに関心がある方"],
@@ -23,6 +86,10 @@ const freeCategories = [
 ];
 
 const faqs = [
+  {
+    q: "FAM Tourの宿泊は参加費に含まれますか？",
+    a: "含まれません。9月16日から22日までの6泊は参加者自身で予約・支払いを行います。滞在エリアや移動しやすい宿については、参加決定後に運営から案内します。",
+  },
   {
     q: "交通費の補助はありますか？",
     a: "ありません。能登までの往復交通費と、滞在中の私的な移動費は参加者の負担です。FAM Tour、Free Accommodation Programのどちらも同様です。",
@@ -33,7 +100,7 @@ const faqs = [
   },
   {
     q: "食事やビーガン対応について教えてください。",
-    a: "Free Accommodation Programの日常の食事は原則自己手配です。交流の食事会などでは、事前申告に基づいて可能な範囲で対応しますが、地域や調理環境により完全対応を保証できない場合があります。FAM Tourは夕食3回を提供します。",
+    a: "Free Accommodation Programの日常の食事は原則自己手配です。交流の食事会などでは、事前申告に基づいて可能な範囲で対応しますが、地域や調理環境により完全対応を保証できない場合があります。FAM Tourは予定表でIncludedと表示された食事・プログラムのみ含まれます。",
   },
   {
     q: "SNSのフォロワー数は選考に影響しますか？",
@@ -77,16 +144,19 @@ export default function Home() {
           <img className="collage-three" src="/noto/hero4.webp" alt="" />
           <img className="collage-four" src="/noto/hero7.webp" alt="" />
           <img className="collage-five" src="/noto/hero10.webp" alt="" />
+          <img className="collage-six" src="/noto/hero3.webp" alt="" />
+          <img className="collage-seven" src="/noto/hero5.webp" alt="" />
+          <img className="collage-eight" src="/noto/hero8.webp" alt="" />
+          <img className="collage-nine" src="/noto/hero9.webp" alt="" />
+          <img className="collage-ten" src="/noto/hero11.webp" alt="" />
+          <img className="collage-eleven" src="/noto/hero12.webp" alt="" />
+          <img className="collage-twelve" src="/noto/hero13-poster.webp" alt="" />
         </div>
         <div className="hero-content shell">
-          <p className="eyebrow light">NOMAD RESORT NOTO 2026</p>
-          <h1 id="hero-title">
-            能登を、<br />観るのではなく、<br />生きる。
-          </h1>
-          <p className="hero-lead">
-            祭りに入り、土地と働き、人と食卓を囲む。<br />
-            ふたつの滞在プログラムで、能登を第二のふるさとへ。
-          </p>
+          <h1 id="hero-title" className="sr-only">Nomad Resort Noto 2026</h1>
+          <img className="hero-noto-word" src="/noto/hero-noto.svg" alt="NOTO" />
+          <p className="hero-site-line">The Japan guidebooks can’t show you.</p>
+          <p className="hero-program-line">FAM TOUR / FREE ACCOMMODATION — 2026</p>
           <div className="hero-actions">
             <a className="button button-gold" href="#fam">
               FAM Tourを見る <span aria-hidden="true">↓</span>
@@ -187,16 +257,59 @@ export default function Home() {
             <div>
               <h3>Included</h3>
               <ul className="check-list">
-                <li>能登島での宿泊 6泊</li>
-                <li>地域アクティビティ</li>
-                <li>夕食 3回</li>
+                <li>予定表でIncludedと表示された地域アクティビティ</li>
+                <li>Welcome BBQ、Izakaya Party、Cooking Night</li>
+                <li>祭り体験、七尾まち歩き、コワーキング、稲刈り</li>
                 <li>コミュニティプログラム</li>
               </ul>
               <p className="small-note">
-                ※朝食・昼食・一部自由時間の飲食、能登までの交通費は自己負担です。
+                ※宿泊6泊は自己手配で、参加パスには含まれません。交通費、朝食・昼食、予定表でSelf-payと表示された内容も自己負担です。
               </p>
             </div>
           </div>
+
+          <section className="fam-schedule" aria-labelledby="schedule-title">
+            <div className="schedule-heading">
+              <div>
+                <p className="eyebrow light">SEPTEMBER 16—22, 2026</p>
+                <h3 id="schedule-title">7 days in Noto</h3>
+              </div>
+              <div className="schedule-legend" aria-label="予定表の凡例">
+                <span className="legend-included">Free / Included</span>
+                <span className="legend-optional">Optional / Self-pay</span>
+              </div>
+            </div>
+
+            <div className="accommodation-alert">
+              <span>ACCOMMODATION</span>
+              <strong>Self-book / 6 nights</strong>
+              <p>Not included in the participation pass</p>
+            </div>
+
+            <div className="schedule-days">
+              {famSchedule.map((item) => (
+                <article className="schedule-day" key={item.date}>
+                  <div className="schedule-date"><strong>{item.date}</strong><span>{item.day}</span></div>
+                  <div className="schedule-events">
+                    {item.events.map(([time, title, place, kind]) => (
+                      <div className={`schedule-event ${kind}`} key={`${item.date}-${time}-${title}`}>
+                        <time>{time}</time>
+                        <strong>{title}</strong>
+                        <span>@ {place}</span>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="schedule-notes">
+              <p>Morning Coffee: free to join; pay for your own coffee.</p>
+              <p>Fish Market Auction: free to join; pay for your own fish.</p>
+              <p>Organic vegetable harvesting: participation fee ¥3,000.</p>
+              <small>Schedule and venues may change depending on local conditions.</small>
+            </div>
+          </section>
 
           <div className="who-block">
             <p className="eyebrow light">WHO WE ARE LOOKING FOR</p>
