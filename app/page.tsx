@@ -1,18 +1,23 @@
+import { LanguageToggle } from "./LanguageToggle";
+
 const freeAccommodationForm =
   "https://docs.google.com/forms/d/1I1u-Rj2LemqzpfA9U4yaZ7aWhX-qxBflv-BbSKhwcDc/viewform";
 const termsUrl =
   "https://docs.google.com/document/d/15L_SeddyQqgLDfAUR0YoSNgm1MCK-0DCpEkQWWS0GFA/edit";
 const instagramUrl = "https://www.instagram.com/nomadresort_noto/";
 const officialUrl = "https://noto.nomadresort.jp/ja/";
+const festivalUrl = "https://okumakabuto.jp/";
 
-const famActivities = [
-  "能登の祭りへの参加",
-  "稲刈り体験",
-  "七尾まち歩き",
-  "コワーキング体験",
-  "島でのチルタイム",
-  "ローカルクッキングナイト",
-  "地域交流イベント",
+type Copy = { ja: string; en: string };
+
+const famActivities: Copy[] = [
+  { ja: "お熊甲祭への参加", en: "Participate in the Okuma Kabuto Festival" },
+  { ja: "稲刈り体験", en: "Rice harvesting" },
+  { ja: "七尾まち歩き", en: "Walk through old Nanao" },
+  { ja: "コワーキング体験", en: "Local coworking" },
+  { ja: "能登島で過ごす自由時間", en: "Slow time on Notojima" },
+  { ja: "ローカルクッキングナイト", en: "Local cooking night" },
+  { ja: "地域の方との交流", en: "Meet the local community" },
 ];
 
 const famSchedule = [
@@ -20,97 +25,120 @@ const famSchedule = [
     date: "16",
     day: "WED",
     events: [
-      ["07:00–14:00", "Transfer", "Train or flight", "optional"],
-      ["14:00–19:00", "Registration", "Notojima Hanami", "optional"],
-      ["19:00–22:00", "Welcome BBQ", "Hanami", "included"],
+      { time: "07:00–14:00", title: { ja: "能登へ移動", en: "Transfer to Noto" }, place: { ja: "鉄道または飛行機", en: "Train or flight" }, kind: "optional" },
+      { time: "14:00–19:00", title: { ja: "受付", en: "Registration" }, place: { ja: "能登島・ハナミ", en: "Notojima Hanami" }, kind: "optional" },
+      { time: "19:00–22:00", title: { ja: "ウェルカムBBQ", en: "Welcome BBQ" }, place: { ja: "ハナミ", en: "Hanami" }, kind: "included" },
     ],
   },
   {
     date: "17",
     day: "THU",
     events: [
-      ["10:00–17:00", "Nanao old street experience", "Ipponsugi", "included-mark"],
-      ["10:00–17:00", "Co-Working", "Noras Office", "included-mark"],
-      ["17:00–21:00", "Izakaya party", "Kamome Shokudo", "included"],
-      ["19:00–22:00", "Karaoke", "Samba", "optional"],
+      { time: "10:00–17:00", title: { ja: "七尾・一本杉通りまち歩き", en: "Nanao old street experience" }, place: { ja: "一本杉通り", en: "Ipponsugi" }, kind: "included-mark" },
+      { time: "10:00–17:00", title: { ja: "コワーキング", en: "Co-Working" }, place: { ja: "Noras Office", en: "Noras Office" }, kind: "included-mark" },
+      { time: "17:00–21:00", title: { ja: "居酒屋交流会", en: "Izakaya party" }, place: { ja: "かもめ食堂", en: "Kamome Shokudo" }, kind: "included" },
+      { time: "19:00–22:00", title: { ja: "カラオケ", en: "Karaoke" }, place: { ja: "サンバ", en: "Samba" }, kind: "optional" },
     ],
   },
   {
     date: "18",
     day: "FRI",
     events: [
-      ["07:00–10:00", "Jogging", "Notojima", "included-mark"],
-      ["12:00–14:00", "Lunch", "Self-pay", "optional"],
-      ["14:00–17:00", "Rice harvesting", "Notojima", "included-mark"],
-      ["19:00–22:00", "Dinner", "Self-pay", "optional"],
+      { time: "07:00–10:00", title: { ja: "ジョギング", en: "Jogging" }, place: { ja: "能登島", en: "Notojima" }, kind: "included-mark" },
+      { time: "12:00–14:00", title: { ja: "昼食", en: "Lunch" }, place: { ja: "各自負担", en: "Self-pay" }, kind: "optional" },
+      { time: "14:00–17:00", title: { ja: "稲刈り", en: "Rice harvesting" }, place: { ja: "能登島", en: "Notojima" }, kind: "included-mark" },
+      { time: "19:00–22:00", title: { ja: "夕食", en: "Dinner" }, place: { ja: "各自負担", en: "Self-pay" }, kind: "optional" },
     ],
   },
   {
     date: "19",
     day: "SAT",
     events: [
-      ["07:00–13:00", "Island chillout", "Notojima Hanami", "optional"],
-      ["12:00–14:00", "Lunch", "Self-pay", "optional"],
-      ["14:00–22:00", "Matsuri Experience", "Noto", "included"],
+      { time: "07:00–13:00", title: { ja: "島で自由時間", en: "Island chillout" }, place: { ja: "能登島・ハナミ", en: "Notojima Hanami" }, kind: "optional" },
+      { time: "12:00–14:00", title: { ja: "昼食", en: "Lunch" }, place: { ja: "各自負担", en: "Self-pay" }, kind: "optional" },
+      { time: "14:00–22:00", title: { ja: "お熊甲祭 事前体験", en: "Okuma Kabuto Festival experience" }, place: { ja: "七尾市中島町", en: "Nakajima, Nanao" }, kind: "included" },
     ],
   },
   {
     date: "20",
     day: "SUN",
-    events: [["07:00–22:00", "Matsuri Experience", "Noto", "included"]],
+    events: [
+      { time: "07:00–22:00", title: { ja: "お熊甲祭", en: "Okuma Kabuto Festival" }, place: { ja: "七尾市中島町", en: "Nakajima, Nanao" }, kind: "included" },
+    ],
   },
   {
     date: "21",
     day: "MON",
     events: [
-      ["07:00–13:00", "Island chillout", "Notojima Hanami", "optional"],
-      ["12:00–14:00", "Lunch", "Self-pay", "optional"],
-      ["17:00–22:00", "Cooking Night", "Namiha", "included"],
+      { time: "07:00–13:00", title: { ja: "島で自由時間", en: "Island chillout" }, place: { ja: "能登島・ハナミ", en: "Notojima Hanami" }, kind: "optional" },
+      { time: "12:00–14:00", title: { ja: "昼食", en: "Lunch" }, place: { ja: "各自負担", en: "Self-pay" }, kind: "optional" },
+      { time: "17:00–22:00", title: { ja: "クッキングナイト", en: "Cooking Night" }, place: { ja: "Namiha", en: "Namiha" }, kind: "included" },
     ],
   },
   {
     date: "22",
     day: "TUE",
     events: [
-      ["07:00–10:00", "Check out", "Self-arranged accommodation", "optional"],
-      ["10:00–14:00", "Transfer", "Train or flight", "optional"],
+      { time: "07:00–10:00", title: { ja: "チェックアウト", en: "Check out" }, place: { ja: "各自手配の宿", en: "Self-arranged accommodation" }, kind: "optional" },
+      { time: "10:00–14:00", title: { ja: "帰路へ", en: "Transfer" }, place: { ja: "鉄道または飛行機", en: "Train or flight" }, kind: "optional" },
     ],
   },
 ];
 
 const freeCategories = [
-  ["Creative", "デザイナー、フォトグラファー、映像クリエイター、ライター、アーティスト"],
-  ["Food", "シェフ、料理人、パティシエ、食とガストロノミーに関心がある方"],
-  ["Business", "起業家、リモートワーカー、スタートアップ関係者、コミュニティビルダー"],
-  ["Local", "一次産業、工芸、伝統文化に関心があり、地域と共創したい方"],
+  {
+    title: { ja: "クリエイティブ", en: "Creative" },
+    text: { ja: "デザイナー、フォトグラファー、映像クリエイター、ライター、アーティスト", en: "Designers, photographers, filmmakers, writers, and artists" },
+  },
+  {
+    title: { ja: "食", en: "Food" },
+    text: { ja: "シェフ、料理人、パティシエ、食とガストロノミーに関心がある方", en: "Chefs, cooks, pastry chefs, and people interested in food and gastronomy" },
+  },
+  {
+    title: { ja: "ビジネス", en: "Business" },
+    text: { ja: "起業家、リモートワーカー、スタートアップ関係者、コミュニティビルダー", en: "Entrepreneurs, remote workers, startup professionals, and community builders" },
+  },
+  {
+    title: { ja: "地域共創", en: "Local Co-creation" },
+    text: { ja: "一次産業、工芸、伝統文化に関心があり、地域と共に取り組みたい方", en: "People interested in primary industries, crafts, and traditional culture who want to work with local communities" },
+  },
 ];
 
 const faqs = [
   {
-    q: "FAM Tourの宿泊は参加費に含まれますか？",
-    a: "含まれません。9月16日から22日までの6泊は参加者自身で予約・支払いを行います。滞在エリアや移動しやすい宿については、参加決定後に運営から案内します。",
+    q: { ja: "FAM Tourの宿泊は参加費に含まれますか？", en: "Is accommodation included in the FAM Tour?" },
+    a: { ja: "含まれません。9月16日から22日までの6泊は参加者自身で予約・支払いを行います。滞在エリアや移動しやすい宿は、参加決定後に運営からご案内します。", en: "No. Participants book and pay for all six nights from September 16 to 22. We will suggest convenient areas and accommodation options after selection." },
   },
   {
-    q: "交通費の補助はありますか？",
-    a: "ありません。能登までの往復交通費と、滞在中の私的な移動費は参加者の負担です。FAM Tour、Free Accommodation Programのどちらも同様です。",
+    q: { ja: "交通費の補助はありますか？", en: "Is travel subsidized?" },
+    a: { ja: "ありません。能登までの往復交通費と、滞在中の私的な移動費は参加者の負担です。FAM Tour、Free Accommodation Programのどちらも同様です。", en: "No. Round-trip travel to Noto and personal transportation during your stay are at your own expense for both programs." },
   },
   {
-    q: "カップルや家族でも参加できますか？",
-    a: "パートナーとの滞在は、施設の空きと定員に応じて相談できます。ただし無料対象は選考された本人のみで、同伴者には宿泊費がかかります。子どもを含む家族は個別にご相談ください。",
+    q: { ja: "カップルや家族でも参加できますか？", en: "Can couples or families participate?" },
+    a: { ja: "パートナーとの滞在は、施設の空きと定員に応じて相談できます。ただし無料対象は選考された本人のみで、同伴者には宿泊費がかかります。お子さまを含む家族は個別にご相談ください。", en: "Staying with a partner may be possible depending on room capacity. Only the selected participant receives free accommodation; companions must pay. Families with children should contact us before applying." },
   },
   {
-    q: "食事やビーガン対応について教えてください。",
-    a: "Free Accommodation Programの日常の食事は原則自己手配です。交流の食事会などでは、事前申告に基づいて可能な範囲で対応しますが、地域や調理環境により完全対応を保証できない場合があります。FAM Tourは予定表でIncludedと表示された食事・プログラムのみ含まれます。",
+    q: { ja: "食事やビーガン対応について教えてください。", en: "What meals and vegan options are available?" },
+    a: { ja: "Free Accommodation Programの日常の食事は原則自己手配です。交流の食事会などでは、事前申告に基づき可能な範囲で対応しますが、地域や調理環境により完全対応を保証できない場合があります。FAM Tourは工程表でIncludedと表示された食事・プログラムのみ含まれます。", en: "Daily meals in the Free Accommodation Program are self-arranged. For hosted meals, we will accommodate dietary needs where possible if notified in advance, but cannot guarantee full vegan support in every local kitchen. The FAM Tour includes only items marked Included in the itinerary." },
   },
   {
-    q: "SNSのフォロワー数は選考に影響しますか？",
-    a: "フォロワー数だけでは選びません。地域への敬意、専門性、滞在中に実行したいこと、そして滞在後も能登との関係を続ける意思を重視します。",
+    q: { ja: "選考で重視することは何ですか？", en: "What matters in the selection process?" },
+    a: { ja: "地域への敬意、専門性、滞在中に実行したいこと、そして滞在後も能登との関係を育てる意思を重視します。", en: "We value respect for local life, relevant skills, a clear idea of what you want to do during your stay, and a willingness to continue your relationship with Noto afterward." },
   },
   {
-    q: "キャンセルはできますか？",
-    a: "日程変更やキャンセルが必要になった場合は、分かった時点ですぐにご連絡ください。Free Accommodation Programでは、チェックイン13日前以降に運営が負担済みの返金不可実費をお願いする場合があります。詳細は応募前に規約をご確認ください。",
+    q: { ja: "キャンセルはできますか？", en: "What is the cancellation policy?" },
+    a: { ja: "日程変更やキャンセルが必要になった場合は、分かった時点ですぐにご連絡ください。Free Accommodation Programでは、チェックイン13日前以降に運営が負担済みの返金不可実費をお願いする場合があります。詳細は応募前に規約をご確認ください。", en: "Contact us as soon as you know your plans have changed. For the Free Accommodation Program, cancellations within 13 days of check-in may require reimbursement of non-refundable costs already paid by the organizer. Please review the full terms before applying." },
   },
 ];
+
+function Bi({ ja, en }: Copy) {
+  return (
+    <>
+      <span className="lang-ja">{ja}</span>
+      <span className="lang-en">{en}</span>
+    </>
+  );
+}
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -119,38 +147,40 @@ function Arrow() {
 export default function Home() {
   return (
     <main>
+      <LanguageToggle />
+
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Nomad Resort Noto トップへ">
+        <a className="wordmark" href="#top" aria-label="Nomad Resort Noto home">
           <span>NOMAD RESORT</span>
           <strong>NOTO</strong>
         </a>
-        <nav aria-label="メインナビゲーション">
+        <nav aria-label="Main navigation">
           <a href="#programs">Programs</a>
           <a href="#why-noto">Why Noto</a>
           <a href="#faq">FAQ</a>
         </nav>
         <a className="header-cta" href="#programs">
-          募集を見る <span aria-hidden="true">↓</span>
+          <Bi ja="募集を見る" en="Explore" /> <span aria-hidden="true">↓</span>
         </a>
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <img className="hero-bg" src="/noto/hero-fire.avif" alt="夜の能登で囲む焚き火" />
+        <img className="hero-bg" src="/noto/hero-fire.avif" alt="" />
         <div className="hero-shade" />
         <img className="hero-map" src="/noto/hero-map.svg" alt="" />
         <div className="hero-collage" aria-hidden="true">
-          <img className="collage-one" src="/noto/hero1.webp" alt="" />
-          <img className="collage-two" src="/noto/hero2.webp" alt="" />
-          <img className="collage-three" src="/noto/hero4.webp" alt="" />
-          <img className="collage-four" src="/noto/hero7.webp" alt="" />
-          <img className="collage-five" src="/noto/hero10.webp" alt="" />
-          <img className="collage-six" src="/noto/hero3.webp" alt="" />
-          <img className="collage-seven" src="/noto/hero5.webp" alt="" />
-          <img className="collage-eight" src="/noto/hero8.webp" alt="" />
-          <img className="collage-nine" src="/noto/hero9.webp" alt="" />
-          <img className="collage-ten" src="/noto/hero11.webp" alt="" />
-          <img className="collage-eleven" src="/noto/hero12.webp" alt="" />
-          <img className="collage-twelve" src="/noto/hero13-poster.webp" alt="" />
+          <img className="collage-one" src="/noto/hero-hq-1.avif" alt="" />
+          <img className="collage-two" src="/noto/hero-hq-2.avif" alt="" />
+          <img className="collage-three" src="/noto/hero-hq-3.avif" alt="" />
+          <img className="collage-four" src="/noto/okumakabuto-04.jpg" alt="" />
+          <img className="collage-five" src="/noto/hero-hq-4.avif" alt="" />
+          <img className="collage-six" src="/noto/hero-hq-5.avif" alt="" />
+          <img className="collage-seven" src="/noto/hero-hq-6.avif" alt="" />
+          <img className="collage-eight" src="/noto/culture2.avif" alt="" />
+          <img className="collage-nine" src="/noto/culture3.avif" alt="" />
+          <img className="collage-ten" src="/noto/culture4.avif" alt="" />
+          <img className="collage-eleven" src="/noto/accommodation1.webp" alt="" />
+          <img className="collage-twelve" src="/noto/okumakabuto-03.jpg" alt="" />
         </div>
         <div className="hero-content shell">
           <h1 id="hero-title" className="sr-only">Nomad Resort Noto 2026</h1>
@@ -159,10 +189,10 @@ export default function Home() {
           <p className="hero-program-line">FAM TOUR / FREE ACCOMMODATION — 2026</p>
           <div className="hero-actions">
             <a className="button button-gold" href="#fam">
-              FAM Tourを見る <span aria-hidden="true">↓</span>
+              <Bi ja="FAM Tourを見る" en="Explore the FAM Tour" /> <span aria-hidden="true">↓</span>
             </a>
             <a className="button button-ghost" href="#free-accommodation">
-              Free Accommodationを見る <span aria-hidden="true">↓</span>
+              <Bi ja="フリーアコモを見る" en="Explore Free Accommodation" /> <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
@@ -172,23 +202,18 @@ export default function Home() {
       <section className="manifesto shell" id="why-noto">
         <div>
           <p className="eyebrow">THE LAST UNTOUCHED JAPAN</p>
-          <h2>ガイドブックでは、<br />たどり着けない能登へ。</h2>
+          <h2><Bi ja="ガイドブックだけでは出会えない、能登へ。" en="Discover the Noto no guidebook can show you." /></h2>
         </div>
         <div className="manifesto-copy">
-          <p>
-            海と里山、食と工芸、祭りと日々の仕事。能登の魅力は、景色だけではありません。
-            人の暮らしの中に入り、同じ時間を過ごすことで、はじめて見えてくるものがあります。
-          </p>
-          <p>
-            私たちが探しているのは、旅行者ではなく、地域の未来を一緒につくる仲間です。
-          </p>
+          <p><Bi ja="海と里山、食と工芸、祭りと日々の仕事。能登の魅力は、景色だけではありません。人の暮らしの中に入り、同じ時間を過ごすことで、はじめて見えてくるものがあります。" en="Sea and satoyama. Food and craft. Festivals and everyday work. Noto is more than scenery. Its real character appears when you step into local life and share time with the people who live here." /></p>
+          <p><Bi ja="私たちが出会いたいのは、地域を尊重し、能登の未来を一緒につくる仲間です。" en="We want to meet people who respect the community and want to help shape Noto’s future together." /></p>
         </div>
       </section>
 
       <section className="programs" id="programs" aria-labelledby="programs-title">
         <div className="section-head shell">
           <p className="eyebrow">TWO WAYS TO LIVE IN NOTO</p>
-          <h2 id="programs-title">あなたの能登との関わり方を選ぶ。</h2>
+          <h2 id="programs-title"><Bi ja="あなたらしい能登との関わり方を。" en="Choose your way to connect with Noto." /></h2>
         </div>
         <div className="program-grid shell">
           <a className="program-card fam-card" href="#fam">
@@ -196,7 +221,7 @@ export default function Home() {
             <div>
               <p className="card-kicker">6 NIGHTS / 5 PARTICIPANTS</p>
               <h3>FAM Tour</h3>
-              <p>地域の一員として祭りに参加し、自分の視点で能登を世界へ届ける7日間。</p>
+              <p><Bi ja="お熊甲祭と地域の暮らしに触れ、自分の視点で能登の魅力を届ける7日間。" en="Seven days inside the Okuma Kabuto Festival and the everyday life of Noto, shared through your own perspective." /></p>
             </div>
             <div className="card-meta">
               <time dateTime="2026-09-16">2026.09.16</time>
@@ -210,13 +235,10 @@ export default function Home() {
             <div>
               <p className="card-kicker">AUG–DEC / 10 PARTICIPANTS</p>
               <h3>Free Accommodation</h3>
-              <p>古民家を拠点に仕事や創作を続けながら、地域と新しい価値をつくる長期滞在。</p>
+              <p><Bi ja="古民家を拠点に仕事や創作を続けながら、地域と新しい価値をつくる長期滞在。" en="A longer stay in a traditional home where work, creativity, and local collaboration come together." /></p>
             </div>
             <div className="card-meta">
-              <span>2026.08</span>
-              <span>—</span>
-              <span>12</span>
-              <Arrow />
+              <span>2026.08</span><span>—</span><span>12</span><Arrow />
             </div>
           </a>
         </div>
@@ -224,47 +246,41 @@ export default function Home() {
 
       <section className="fam-section" id="fam" aria-labelledby="fam-title">
         <div className="fam-visual">
-          <img src="/noto/culture5.avif" alt="能登の祭りと地域の人々" />
+          <img src="/noto/okumakabuto-04.jpg" alt="Okuma Kabuto Festival in Nanao, Noto" />
+          <a className="fam-photo-credit" href={festivalUrl} target="_blank" rel="noreferrer">PHOTO / OKUMA KABUTO FESTIVAL OFFICIAL SITE ↗</a>
           <div className="fam-date-stamp">
-            <span>SEP.</span>
-            <strong>16—22</strong>
-            <small>2026 / 6 NIGHTS</small>
+            <span>SEP.</span><strong>16—22</strong><small>2026 / 6 NIGHTS</small>
           </div>
         </div>
         <div className="fam-content shell">
           <div className="program-heading">
             <p className="eyebrow light">01 / FAM TOUR</p>
-            <h2 id="fam-title">祭りを、観るのではなく、<br />生きる。</h2>
-            <p className="program-intro">
-              数百年受け継がれてきた祭りの熱気、人とのつながり、食文化、自然、暮らし。
-              観光では体験できない能登の日常を、地域の人と共に過ごし、あなた自身の視点で発信してください。
-            </p>
+            <h2 id="fam-title"><Bi ja="祭りとともに、能登を暮らす7日間。" en="Seven days living with Noto and its festival." /></h2>
+            <p className="program-intro"><Bi ja="数百年受け継がれてきたお熊甲祭の熱気、人とのつながり、食文化、自然、暮らし。地域の方と同じ時間を過ごし、能登の日常に触れながら、その魅力をあなた自身の視点で届けてください。" en="Experience the energy of the centuries-old Okuma Kabuto Festival, along with Noto’s people, food, nature, and everyday life. Spend time with the community, then share what you discover through your own perspective." /></p>
           </div>
 
           <div className="fact-row">
             <div><span>DATES</span><strong>2026.09.16–22</strong></div>
-            <div><span>PLACE</span><strong>能登島・七尾</strong></div>
-            <div><span>PEOPLE</span><strong>5名限定</strong></div>
+            <div><span>PLACE</span><strong><Bi ja="能登島・七尾" en="Notojima & Nanao" /></strong></div>
+            <div><span>PEOPLE</span><strong><Bi ja="5名限定" en="Limited to 5" /></strong></div>
           </div>
 
           <div className="fam-details detail-grid">
             <div>
               <h3>Program</h3>
               <ul className="line-list">
-                {famActivities.map((item) => <li key={item}>{item}</li>)}
+                {famActivities.map((item) => <li key={item.ja}><Bi {...item} /></li>)}
               </ul>
             </div>
             <div>
               <h3>Included</h3>
               <ul className="check-list">
-                <li>予定表でIncludedと表示された地域アクティビティ</li>
-                <li>Welcome BBQ、Izakaya Party、Cooking Night</li>
-                <li>祭り体験、七尾まち歩き、コワーキング、稲刈り</li>
-                <li>コミュニティプログラム</li>
+                <li><Bi ja="工程表でIncludedと表示された地域アクティビティ" en="Local activities marked Included in the itinerary" /></li>
+                <li><Bi ja="ウェルカムBBQ、居酒屋交流会、クッキングナイト" en="Welcome BBQ, izakaya gathering, and cooking night" /></li>
+                <li><Bi ja="お熊甲祭、七尾まち歩き、コワーキング、稲刈り" en="Okuma Kabuto Festival, Nanao walk, coworking, and rice harvesting" /></li>
+                <li><Bi ja="コミュニティプログラム" en="Community program" /></li>
               </ul>
-              <p className="small-note">
-                ※宿泊6泊は自己手配で、参加パスには含まれません。交通費、朝食・昼食、予定表でSelf-payと表示された内容も自己負担です。
-              </p>
+              <p className="small-note"><Bi ja="※宿泊6泊は自己手配で、参加パスには含まれません。交通費、朝食・昼食、工程表でSelf-payと表示された内容も自己負担です。" en="Six nights of accommodation are self-booked and not included in the participation pass. Transportation, breakfast, lunch, and all Self-pay items are also at your own expense." /></p>
             </div>
           </div>
 
@@ -272,18 +288,18 @@ export default function Home() {
             <div className="schedule-heading">
               <div>
                 <p className="eyebrow light">SEPTEMBER 16—22, 2026</p>
-                <h3 id="schedule-title">7 days in Noto</h3>
+                <h3 id="schedule-title"><Bi ja="工程表（仮）" en="Tentative itinerary" /></h3>
               </div>
-              <div className="schedule-legend" aria-label="予定表の凡例">
-                <span className="legend-included">Free / Included</span>
-                <span className="legend-optional">Optional / Self-pay</span>
+              <div className="schedule-legend" aria-label="Itinerary legend">
+                <span className="legend-included"><Bi ja="無料／含まれるもの" en="Free / Included" /></span>
+                <span className="legend-optional"><Bi ja="任意／自己負担" en="Optional / Self-pay" /></span>
               </div>
             </div>
 
             <div className="accommodation-alert">
               <span>ACCOMMODATION</span>
-              <strong>Self-book / 6 nights</strong>
-              <p>Not included in the participation pass</p>
+              <strong><Bi ja="各自手配／6泊" en="Self-book / 6 nights" /></strong>
+              <p><Bi ja="参加パスには含まれません" en="Not included in the participation pass" /></p>
             </div>
 
             <div className="schedule-days">
@@ -291,11 +307,11 @@ export default function Home() {
                 <article className="schedule-day" key={item.date}>
                   <div className="schedule-date"><strong>{item.date}</strong><span>{item.day}</span></div>
                   <div className="schedule-events">
-                    {item.events.map(([time, title, place, kind]) => (
-                      <div className={`schedule-event ${kind}`} key={`${item.date}-${time}-${title}`}>
-                        <time>{time}</time>
-                        <strong>{title}</strong>
-                        <span>@ {place}</span>
+                    {item.events.map((event) => (
+                      <div className={`schedule-event ${event.kind}`} key={`${item.date}-${event.time}-${event.title.en}`}>
+                        <time>{event.time}</time>
+                        <strong><Bi {...event.title} /></strong>
+                        <span>@ <Bi {...event.place} /></span>
                       </div>
                     ))}
                   </div>
@@ -304,99 +320,96 @@ export default function Home() {
             </div>
 
             <div className="schedule-notes">
-              <p>Morning Coffee: free to join; pay for your own coffee.</p>
-              <p>Fish Market Auction: free to join; pay for your own fish.</p>
-              <p>Organic vegetable harvesting: participation fee ¥3,000.</p>
-              <small>Schedule and venues may change depending on local conditions.</small>
+              <p><Bi ja="モーニングコーヒー：参加無料。飲み物代は各自負担です。" en="Morning Coffee: free to join; pay for your own coffee." /></p>
+              <p><Bi ja="魚市場の競り見学：参加無料。魚の購入費は各自負担です。" en="Fish Market Auction: free to join; pay for your own fish." /></p>
+              <p><Bi ja="有機野菜の収穫：参加費3,000円。" en="Organic vegetable harvesting: participation fee ¥3,000." /></p>
+              <small><Bi ja="※地域の状況により、日程・会場・内容は変更になる場合があります。" en="Schedule, venues, and activities may change depending on local conditions." /></small>
             </div>
           </section>
 
           <div className="who-block">
             <p className="eyebrow light">WHO WE ARE LOOKING FOR</p>
-            <p className="who-lead">フォロワー数ではありません。<br />「また能登へ帰ってきたい」と思える人です。</p>
-            <p>インフルエンサー、映像クリエイター、フォトグラファー、デザイナー、ライター、起業家、地域文化を発信したい方。</p>
+            <p className="who-lead"><Bi ja="能登の未来を、一緒につくりたい方へ。" en="For people who want to help shape Noto’s future." /></p>
+            <p><Bi ja="地域への敬意を持ち、自分の専門性を生かして、能登の文化や暮らしを丁寧に伝えたい方を歓迎します。映像、写真、デザイン、文章、事業づくりなど、表現の方法は問いません。" en="We welcome people who respect local life and want to use their skills to share Noto’s culture with care—through film, photography, design, writing, entrepreneurship, or another form of expression." /></p>
           </div>
 
           <a className="button button-gold" href={instagramUrl} target="_blank" rel="noreferrer">
-            FAM Tourの最新募集情報 <Arrow />
+            <Bi ja="FAM Tourの最新募集情報" en="Latest FAM Tour updates" /> <Arrow />
           </a>
         </div>
       </section>
 
       <section className="free-section" id="free-accommodation" aria-labelledby="free-title">
         <div className="free-photo-grid shell">
-          <img className="free-photo-main" src="/noto/accommodation1.webp" alt="能登で滞在する古民家の室内" />
-          <img className="free-photo-small" src="/noto/coworking1.webp" alt="能登のコワーキング環境" />
+          <img className="free-photo-main" src="/noto/accommodation1.webp" alt="Traditional house for a stay in Noto" />
+          <img className="free-photo-small" src="/noto/coworking1.webp" alt="Coworking in Noto" />
           <p className="photo-caption">LIVE / WORK / CREATE / CONNECT</p>
         </div>
 
         <div className="free-content shell">
           <div className="program-heading dark-text">
             <p className="eyebrow">02 / FREE ACCOMMODATION</p>
-            <h2 id="free-title">暮らすように旅をする。<br />能登の未来を、一緒につくる。</h2>
-            <p className="program-intro">
-              古民家を拠点に、数週間から数か月。ただ宿泊するだけではなく、地域の人と出会い、食卓を囲み、一次産業や伝統文化に触れ、自分の仕事や創作を続けながら生活する共創プログラムです。
-            </p>
+            <h2 id="free-title"><Bi ja="暮らすように旅をし、能登の未来を一緒につくる。" en="Travel as if you lived here. Help shape Noto’s future." /></h2>
+            <p className="program-intro"><Bi ja="古民家を拠点に、数週間から数か月。地域の方と出会い、食卓を囲み、一次産業や伝統文化に触れ、自分の仕事や創作を続けながら暮らす共創プログラムです。" en="Stay in a traditional house for several weeks or months. Meet local people, share meals, discover primary industries and traditional culture, and continue your own work or creative practice as part of this co-creation program." /></p>
           </div>
 
           <div className="fact-row light-row">
             <div><span>PERIOD</span><strong>2026.08–12</strong></div>
-            <div><span>STAY</span><strong>数週間〜数か月</strong></div>
-            <div><span>PEOPLE</span><strong>10名募集</strong></div>
+            <div><span>STAY</span><strong><Bi ja="数週間〜数か月" en="Weeks to months" /></strong></div>
+            <div><span>PEOPLE</span><strong><Bi ja="10名募集" en="10 participants" /></strong></div>
           </div>
 
           <div className="included-panel">
             <div>
               <p className="eyebrow">WHAT WE PROVIDE</p>
-              <h3>能登で働き、暮らし、<br />つながるための入口。</h3>
+              <h3><Bi ja="能登で働き、暮らし、つながるための入口。" en="A doorway to work, live, and connect in Noto." /></h3>
             </div>
             <ul className="number-list">
-              <li><span>01</span>運営指定古民家での宿泊</li>
-              <li><span>02</span>コワーキング環境</li>
-              <li><span>03</span>地域コミュニティへの紹介</li>
-              <li><span>04</span>地域イベントへの参加機会</li>
-              <li><span>05</span>地元事業者との交流</li>
-              <li><span>06</span>プロジェクトへの参画機会</li>
+              <li><span>01</span><Bi ja="運営指定古民家での宿泊" en="Accommodation in an organizer-approved traditional house" /></li>
+              <li><span>02</span><Bi ja="コワーキング環境" en="Coworking facilities" /></li>
+              <li><span>03</span><Bi ja="地域コミュニティへの紹介" en="Introductions to the local community" /></li>
+              <li><span>04</span><Bi ja="地域イベントへの参加機会" en="Opportunities to join local events" /></li>
+              <li><span>05</span><Bi ja="地元事業者との交流" en="Connections with local businesses" /></li>
+              <li><span>06</span><Bi ja="プロジェクトへの参画機会" en="Opportunities to join local projects" /></li>
             </ul>
           </div>
 
           <div className="category-grid">
-            {freeCategories.map(([title, text]) => (
-              <article key={title}>
-                <span>{title.slice(0, 1)}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
+            {freeCategories.map((item) => (
+              <article key={item.title.en}>
+                <h3><Bi {...item.title} /></h3>
+                <p><Bi {...item.text} /></p>
               </article>
             ))}
           </div>
 
           <div className="conditions">
             <div>
-              <h3>Free means</h3>
-              <p>無料対象は、選考された本人1名の、運営が承認した期間中の宿泊です。</p>
+              <h3><Bi ja="無料対象" en="What is free" /></h3>
+              <p><Bi ja="選考された本人1名の、運営が承認した期間中の宿泊が対象です。" en="Accommodation is free for the selected participant only, during the period approved by the organizer." /></p>
             </div>
             <div>
-              <h3>Not included</h3>
-              <p>交通費、食費、日用品、保険、ビザ関連費用、一部の有料体験、同伴者の宿泊費は含まれません。</p>
+              <h3><Bi ja="含まれないもの" en="Not included" /></h3>
+              <p><Bi ja="交通費、食費、日用品、保険、ビザ関連費用、一部の有料体験、同伴者の宿泊費は含まれません。" en="Transportation, food, daily necessities, insurance, visa-related costs, some paid activities, and companion accommodation are not included." /></p>
             </div>
             <div>
-              <h3>Companions</h3>
-              <p>パートナーとの滞在は相談可能です。施設の定員確認と、同伴者宿泊費が必要です。</p>
+              <h3><Bi ja="同伴者" en="Companions" /></h3>
+              <p><Bi ja="パートナーとの滞在は相談可能です。施設の定員確認と、同伴者の宿泊費が必要です。" en="Staying with a partner may be possible, subject to room capacity and a separate accommodation fee." /></p>
             </div>
           </div>
 
           <div className="application-box">
             <div>
               <p className="eyebrow">APPLICATION</p>
-              <h3>旅行者ではなく、<br />地域の未来をつくる仲間へ。</h3>
-              <p>応募時点で25歳以上の方が対象です。応募前に詳細規約をご確認ください。</p>
+              <h3><Bi ja="能登の未来をつくる仲間へ。" en="Join us in shaping Noto’s future." /></h3>
+              <p><Bi ja="応募時点で25歳以上の方が対象です。応募前に詳細規約をご確認ください。" en="Applicants must be 25 or older at the time of application. Please review the detailed terms before applying." /></p>
             </div>
             <div className="application-actions">
               <a className="button button-dark" href={freeAccommodationForm} target="_blank" rel="noreferrer">
-                応募フォームへ <Arrow />
+                <Bi ja="応募フォームへ" en="Apply now" /> <Arrow />
               </a>
               <a className="text-link" href={termsUrl} target="_blank" rel="noreferrer">
-                詳細規約を読む <Arrow />
+                <Bi ja="詳細規約を読む" en="Read the full terms" /> <Arrow />
               </a>
             </div>
           </div>
@@ -405,17 +418,13 @@ export default function Home() {
 
       <section className="noto-story">
         <div className="story-grid">
-          <img src="/noto/culture1.avif" alt="里山里海に根付く能登の暮らし" />
+          <img src="/noto/culture1.avif" alt="Life between sea and satoyama in Noto" />
           <div className="story-copy">
             <p className="eyebrow light">WHY NOTO, WHY NOW</p>
-            <blockquote>自然と人が一体となって生きる文化。<br />それが能登。</blockquote>
-            <p>
-              海があります。里山があります。工芸があります。そして、人がいます。
-              ここで生まれた出会いが再会につながり、新しい仕事や作品、プロジェクトへ育っていく。
-              そんな循環を、私たちは能登からつくります。
-            </p>
+            <blockquote><Bi ja="自然と人が一体となって生きる文化。それが能登。" en="A culture where people and nature live as one. That is Noto." /></blockquote>
+            <p><Bi ja="海と里山がすぐ隣りにあり、その間に人の営みが息づいています。受け継がれてきた祭りや工芸、食文化は、今も日々の暮らしの中にあります。ここで生まれた出会いが、再訪や新しい仕事、作品、プロジェクトへ育っていく。そんな循環を、私たちは能登からつくります。" en="The sea and satoyama sit side by side, with daily life woven between them. Festivals, craft, and food traditions passed down through generations still belong to everyday life here. We want the connections made in Noto to grow into return visits, new work, creative projects, and lasting relationships." /></p>
             <a className="text-link light-link" href={officialUrl} target="_blank" rel="noreferrer">
-              Nomad Resort Notoをもっと知る <Arrow />
+              <Bi ja="Nomad Resort Notoをもっと知る" en="Discover more about Nomad Resort Noto" /> <Arrow />
             </a>
           </div>
         </div>
@@ -424,30 +433,34 @@ export default function Home() {
       <section className="faq shell" id="faq" aria-labelledby="faq-title">
         <div className="faq-head">
           <p className="eyebrow">BEFORE YOU APPLY</p>
-          <h2 id="faq-title">よくある質問</h2>
+          <h2 id="faq-title"><Bi ja="よくある質問" en="Frequently asked questions" /></h2>
         </div>
         <div className="faq-list">
           {faqs.map((item, index) => (
-            <details key={item.q}>
-              <summary><span>{String(index + 1).padStart(2, "0")}</span>{item.q}<b aria-hidden="true">＋</b></summary>
-              <p>{item.a}</p>
+            <details key={item.q.en}>
+              <summary>
+                <span className="faq-number">{String(index + 1).padStart(2, "0")}</span>
+                <span className="faq-question"><Bi {...item.q} /></span>
+                <b aria-hidden="true">＋</b>
+              </summary>
+              <p><Bi {...item.a} /></p>
             </details>
           ))}
         </div>
       </section>
 
       <section className="final-cta">
-        <img src="/noto/join-team.avif" alt="能登でつながる人々" />
+        <img src="/noto/join-team.avif" alt="People connecting in Noto" />
         <div className="final-overlay" />
         <div className="final-content shell">
           <p className="eyebrow light">YOUR SECOND HOMETOWN AWAITS</p>
-          <h2>次に能登で会うのは、<br />あなたかもしれない。</h2>
+          <h2><Bi ja="次に能登で会うのは、あなたかもしれない。" en="Maybe we’ll meet you in Noto next." /></h2>
           <div className="hero-actions">
             <a className="button button-gold" href={freeAccommodationForm} target="_blank" rel="noreferrer">
-              Free Accommodationに応募 <Arrow />
+              <Bi ja="フリーアコモに応募" en="Apply for Free Accommodation" /> <Arrow />
             </a>
             <a className="button button-ghost" href={instagramUrl} target="_blank" rel="noreferrer">
-              Instagramをフォロー <Arrow />
+              <Bi ja="Instagramをフォロー" en="Follow us on Instagram" /> <Arrow />
             </a>
           </div>
         </div>
@@ -467,7 +480,7 @@ export default function Home() {
       </footer>
 
       <a className="mobile-apply" href={freeAccommodationForm} target="_blank" rel="noreferrer">
-        FREE ACCOMMODATIONに応募 <Arrow />
+        <Bi ja="フリーアコモに応募" en="Apply for Free Accommodation" /> <Arrow />
       </a>
     </main>
   );
