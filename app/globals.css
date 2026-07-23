@@ -44,7 +44,12 @@ body {
 [data-lang="en"] .story-copy > p,
 [data-lang="en"] .faq-list summary,
 [data-lang="en"] .faq-list details p,
-[data-lang="en"] .who-block p { font-family: Georgia, "Times New Roman", serif; }
+[data-lang="en"] .who-block p,
+[data-lang="en"] .festival-lead,
+[data-lang="en"] .festival-detail,
+[data-lang="en"] .journey-heading > p,
+[data-lang="en"] .journey-text,
+[data-lang="en"] .nomad-pillars p { font-family: Georgia, "Times New Roman", serif; }
 a { color: inherit; text-decoration: none; }
 img { display: block; width: 100%; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -172,8 +177,45 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .fact-row { display:grid; grid-template-columns:repeat(3,1fr); margin:80px 0; border-block:1px solid rgba(255,255,255,.22); }
 .fact-row > div { padding:25px 28px; display:flex; flex-direction:column; border-right:1px solid rgba(255,255,255,.22); }
 .fact-row > div:last-child { border:0; }
-.fact-row span { font-family:Arial,sans-serif; font-size:8px; letter-spacing:.2em; color:var(--gold); }
+.fact-row > div > span { font-family:Arial,sans-serif; font-size:8px; letter-spacing:.2em; color:var(--gold); }
 .fact-row strong { font-size:24px; font-weight:400; }
+
+.festival-explainer { margin:120px 0; display:grid; grid-template-columns:.92fr 1.08fr; border-block:1px solid rgba(255,255,255,.2); }
+.festival-images { position:relative; min-height:680px; padding:60px 0; }
+.festival-images img { object-fit:cover; }
+.festival-image-main { width:72%; height:520px; }
+.festival-image-wide { position:absolute; width:74%; height:290px; right:0; bottom:40px; border:12px solid var(--ink); }
+.festival-copy { padding:80px 20px 80px 80px; align-self:center; }
+.festival-copy h3,
+.journey-heading h3,
+.nomad-fit-heading h3 { margin:0; font-size:clamp(46px,5.3vw,78px); font-weight:400; line-height:1.18; text-wrap:balance; overflow-wrap:anywhere; }
+[data-lang="en"] .festival-copy h3,
+[data-lang="en"] .journey-heading h3,
+[data-lang="en"] .nomad-fit-heading h3 { font-size:clamp(40px,4.5vw,66px); }
+.festival-lead, .festival-detail { font-family:"Yu Mincho",serif; font-size:13px; line-height:2.15; }
+.festival-lead { margin:34px 0; }
+.festival-detail { margin:32px 0 0; color:rgba(255,255,255,.74); }
+.festival-facts { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid rgba(255,255,255,.22); }
+.festival-facts > div { min-height:120px; padding:20px 16px 16px 0; display:flex; flex-direction:column; justify-content:center; border-bottom:1px solid rgba(255,255,255,.22); }
+.festival-facts > div:nth-child(odd) { border-right:1px solid rgba(255,255,255,.22); }
+.festival-facts > div:nth-child(even) { padding-left:22px; }
+.festival-facts strong { font-size:32px; font-weight:400; color:var(--gold); line-height:1.15; }
+.festival-facts > div > span { margin-top:8px; font-family:Arial,sans-serif; font-size:8px; letter-spacing:.12em; color:rgba(255,255,255,.62); }
+
+.journey-section { margin:140px 0 40px; }
+.journey-heading { display:grid; grid-template-columns:1.25fr .75fr; gap:80px; align-items:end; margin-bottom:50px; }
+.journey-heading > p { margin:0; font-family:"Yu Mincho",serif; font-size:13px; line-height:2.1; color:rgba(255,255,255,.72); }
+.journey-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.18); }
+.journey-day { min-height:310px; padding:28px; display:flex; flex-direction:column; background:#232323; }
+.journey-day.featured { grid-column:span 2; background-image:linear-gradient(110deg,rgba(10,10,10,.93),rgba(10,10,10,.28)),url('/noto/okumakabuto-03.jpg'); background-size:cover; background-position:center; }
+.journey-date { display:flex; align-items:baseline; gap:9px; color:var(--gold); }
+.journey-date span, .journey-label { font-family:Arial,sans-serif; font-size:8px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+.journey-date strong { font-size:46px; font-weight:400; line-height:1; }
+.journey-label { margin:28px 0 10px; color:var(--gold); }
+.journey-day h4 { margin:0 0 18px; font-size:25px; font-weight:400; line-height:1.45; text-wrap:balance; }
+.journey-text { margin:auto 0 0; font-family:"Yu Mincho",serif; font-size:11px; line-height:1.9; color:rgba(255,255,255,.68); }
+.journey-day.featured .journey-text { max-width:440px; color:rgba(255,255,255,.84); }
+
 .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:100px; }
 .detail-grid h3, .included-panel h3, .application-box h3 { margin:0 0 26px; color:var(--gold); font-size:35px; font-weight:400; }
 .line-list, .check-list, .number-list { margin:0; padding:0; list-style:none; }
@@ -184,11 +226,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .schedule-heading { display:grid; grid-template-columns:1fr auto; gap:32px; align-items:end; margin-bottom:34px; }
 .schedule-heading h3 { margin:0; font-size:clamp(48px,6vw,82px); font-weight:400; line-height:1; }
 .schedule-legend { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:.08em; }
-.schedule-legend span { padding:9px 14px; border-radius:999px; }
+.schedule-legend > span { padding:9px 14px; border-radius:999px; }
 .legend-included { background:linear-gradient(110deg,#8150ff,#348ea7,#00c56e); }
 .legend-optional { background:#8e8e8e; }
 .accommodation-alert { display:grid; grid-template-columns:160px 1fr auto; align-items:center; gap:24px; margin-bottom:12px; padding:20px 24px; background:rgba(255,255,255,.08); border-left:4px solid var(--gold); }
-.accommodation-alert span { color:var(--gold); font-family:Arial,sans-serif; font-size:8px; font-weight:700; letter-spacing:.18em; }
+.accommodation-alert > span { color:var(--gold); font-family:Arial,sans-serif; font-size:8px; font-weight:700; letter-spacing:.18em; }
 .accommodation-alert strong { font-size:22px; font-weight:400; }
 .accommodation-alert p { margin:0; color:rgba(255,255,255,.58); font-family:Arial,sans-serif; font-size:9px; }
 .schedule-days { border-top:1px solid rgba(255,255,255,.24); }
@@ -208,6 +250,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .schedule-notes { margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
 .schedule-notes p { margin:0; padding:15px 17px; border:1px solid rgba(255,255,255,.18); color:rgba(255,255,255,.76); font-family:Arial,sans-serif; font-size:9px; line-height:1.6; }
 .schedule-notes small { grid-column:1/-1; color:rgba(255,255,255,.48); font-family:Arial,sans-serif; font-size:8px; }
+
+.nomad-tour-fit { margin-top:130px; }
+.nomad-fit-heading { max-width:850px; margin-bottom:55px; }
+.nomad-pillars { display:grid; grid-template-columns:repeat(3,1fr); border-block:1px solid rgba(255,255,255,.22); }
+.nomad-pillars article { min-height:270px; padding:34px 34px 34px 0; border-right:1px solid rgba(255,255,255,.22); }
+.nomad-pillars article + article { padding-left:34px; }
+.nomad-pillars article:last-child { border-right:0; }
+.nomad-pillars article > span { color:var(--gold); font-family:Arial,sans-serif; font-size:9px; letter-spacing:.18em; }
+.nomad-pillars h4 { margin:58px 0 18px; font-size:29px; font-weight:400; line-height:1.35; text-wrap:balance; }
+.nomad-pillars p { margin:0; font-family:"Yu Mincho",serif; font-size:11px; line-height:2; color:rgba(255,255,255,.68); }
+
 .who-block { margin:100px 0 50px; padding:60px; border:1px solid rgba(209,178,139,.5); }
 .who-block p { margin:0; max-width:850px; font-family:"Yu Mincho",serif; }
 .who-block .who-lead { margin:24px 0; font-size:clamp(32px,4vw,52px); line-height:1.5; text-wrap:balance; }
@@ -221,11 +274,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .dark-text { color:var(--ink); }
 .light-row { border-color:var(--line); }
 .light-row > div { border-color:var(--line); }
-.light-row span { color:#8a6d49; }
+.light-row > div > span { color:#8a6d49; }
 .included-panel { display:grid; grid-template-columns:1fr 1.25fr; gap:80px; padding:70px; background:white; box-shadow:0 24px 80px rgba(52,44,34,.08); }
 .included-panel h3 { color:var(--ink); font-size:44px; line-height:1.4; }
 .number-list li { display:grid; grid-template-columns:44px 1fr; gap:20px; padding:16px 0; border-bottom:1px solid var(--line); font-family:"Yu Mincho",serif; }
-.number-list span { color:#99774e; font-family:Arial,sans-serif; font-size:10px; }
+.number-list > li > span:first-child { color:#99774e; font-family:Arial,sans-serif; font-size:10px; }
 .category-grid { display:grid; grid-template-columns:repeat(4,1fr); margin:100px 0; border:1px solid var(--line); }
 .category-grid article { min-height:300px; padding:30px; border-right:1px solid var(--line); }
 .category-grid article:last-child { border:0; }
@@ -256,7 +309,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .faq-list details:last-child { border-bottom:1px solid var(--line); }
 .faq-list summary { cursor:pointer; list-style:none; padding:30px 0; display:grid; grid-template-columns:45px 1fr auto; gap:18px; align-items:center; font-family:"Yu Mincho",serif; font-size:17px; }
 .faq-list summary::-webkit-details-marker { display:none; }
-.faq-list summary span { font-family:Arial,sans-serif; font-size:9px; color:#8a6d49; }
+.faq-list summary > .faq-number { font-family:Arial,sans-serif; font-size:9px; color:#8a6d49; }
 .faq-list summary b { font-weight:400; font-size:25px; transition:transform .2s; }
 .faq-list details[open] summary b { transform:rotate(45deg); }
 .faq-list details p { margin:0; padding:0 45px 30px 63px; font-family:"Yu Mincho",serif; font-size:13px; line-height:2; }
@@ -313,6 +366,20 @@ footer { background:var(--ink); color:white; padding:80px 0 24px; }
   .fact-row { grid-template-columns:1fr; margin:55px 0; }
   .fact-row > div { border-right:0; border-bottom:1px solid rgba(255,255,255,.22); }
   .light-row > div { border-color:var(--line); }
+  .festival-explainer { margin:80px 0; grid-template-columns:1fr; }
+  .festival-images { min-height:500px; padding:35px 0; }
+  .festival-image-main { width:84%; height:390px; }
+  .festival-image-wide { width:76%; height:220px; bottom:20px; border-width:8px; }
+  .festival-copy { padding:55px 0; }
+  .festival-copy h3, .journey-heading h3, .nomad-fit-heading h3 { font-size:46px; }
+  [data-lang="en"] .festival-copy h3,
+  [data-lang="en"] .journey-heading h3,
+  [data-lang="en"] .nomad-fit-heading h3 { font-size:39px; }
+  .festival-facts strong { font-size:28px; }
+  .journey-section { margin-top:90px; }
+  .journey-heading { grid-template-columns:1fr; gap:28px; margin-bottom:36px; }
+  .journey-grid { grid-template-columns:1fr; }
+  .journey-day, .journey-day.featured { min-height:290px; grid-column:auto; }
   .detail-grid { grid-template-columns:1fr; gap:60px; }
   .fam-schedule { margin-top:80px; }
   .schedule-heading { grid-template-columns:1fr; }
@@ -325,6 +392,12 @@ footer { background:var(--ink); color:white; padding:80px 0 24px; }
   .schedule-event { min-width:100%; grid-template-columns:78px 1fr; padding:15px; border-radius:18px; }
   .schedule-notes { grid-template-columns:1fr; }
   .schedule-notes small { grid-column:auto; }
+  .nomad-tour-fit { margin-top:90px; }
+  .nomad-pillars { grid-template-columns:1fr; }
+  .nomad-pillars article,
+  .nomad-pillars article + article { min-height:auto; padding:30px 0; border-right:0; border-bottom:1px solid rgba(255,255,255,.22); }
+  .nomad-pillars article:last-child { border-bottom:0; }
+  .nomad-pillars h4 { margin:32px 0 14px; }
   .who-block { margin:70px 0 40px; padding:35px 24px; }
   .who-block .who-lead { font-size:32px; }
   .free-section { padding:100px 0; }

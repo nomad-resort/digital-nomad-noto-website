@@ -20,6 +20,70 @@ const famActivities: Copy[] = [
   { ja: "地域の方との交流", en: "Meet the local community" },
 ];
 
+const journeyDays = [
+  {
+    date: "16",
+    label: { ja: "到着・つながる", en: "Arrive & connect" },
+    title: { ja: "能登島で、旅の仲間と出会う。", en: "Meet your people on Notojima." },
+    text: { ja: "能登へ到着し、チェックイン。夜はウェルカムBBQで、参加者と地域の方が同じ食卓を囲みます。", en: "Arrive in Noto, settle in, and share a welcome BBQ with fellow participants and local hosts." },
+  },
+  {
+    date: "17",
+    label: { ja: "まち・仕事", en: "Town & work" },
+    title: { ja: "七尾のまちを歩き、いつもの仕事をする。", en: "Walk old Nanao, then get back to work." },
+    text: { ja: "一本杉通りの商いと文化に触れ、ローカルなコワーキングへ。夜は七尾の食と人に出会います。", en: "Explore the shops and culture of Ipponsugi, work from a local coworking space, and meet Nanao over dinner." },
+  },
+  {
+    date: "18",
+    label: { ja: "里山・収穫", en: "Satoyama & harvest" },
+    title: { ja: "土に触れ、能登の食の始まりを知る。", en: "Touch the soil and discover where Noto’s food begins." },
+    text: { ja: "島の朝を走り、午後は稲刈りへ。景色としてではなく、手を動かして里山と関わる一日です。", en: "Run through the island morning, then join the rice harvest and experience satoyama through your own hands." },
+  },
+  {
+    date: "19",
+    label: { ja: "祭りの前日", en: "Festival eve" },
+    title: { ja: "祭りを迎える地域の時間に入る。", en: "Step into the community as it prepares." },
+    text: { ja: "ゆっくりと島で過ごした後、中島町へ。祭りを支える人々と出会い、翌日に向けた地域の空気を感じます。", en: "Spend a slow morning on the island, then head to Nakajima and meet the people preparing for the day ahead." },
+  },
+  {
+    date: "20",
+    label: { ja: "お熊甲祭", en: "Okuma Kabuto Festival" },
+    title: { ja: "深紅の枠旗と、地域の熱の中へ。", en: "Enter a world of crimson banners and living tradition." },
+    text: { ja: "猿田彦、神輿、鉦と太鼓、天を突く枠旗。受け継がれてきた祭りを、地域のすぐそばで体験します。", en: "Sarutahiko, mikoshi, bells, drums, and towering crimson banners—experience a tradition carried forward by the community." },
+    featured: true,
+  },
+  {
+    date: "21",
+    label: { ja: "余白・食卓", en: "Pause & table" },
+    title: { ja: "島で振り返り、土地の味を囲む。", en: "Reflect on the island and gather around local food." },
+    text: { ja: "自由な時間で仕事や制作を進め、夜はクッキングナイトへ。体験したことを言葉にする一日です。", en: "Use the open hours for work or creation, then gather for cooking night and put the week into words." },
+  },
+  {
+    date: "22",
+    label: { ja: "次の関係へ", en: "Carry it forward" },
+    title: { ja: "旅を終え、能登との関係を始める。", en: "Leave the trip. Begin a relationship with Noto." },
+    text: { ja: "チェックアウトして帰路へ。ここで生まれた出会いを、作品、仕事、再訪へとつないでいきます。", en: "Check out and travel onward, carrying new relationships into future work, creative projects, and return visits." },
+  },
+];
+
+const nomadTourPillars = [
+  {
+    number: "01",
+    title: { ja: "地域の中へ入る", en: "Access beyond tourism" },
+    text: { ja: "観光スポットを巡るだけでなく、地域の方の紹介を通じて、祭り、仕事、食卓の内側へ。", en: "Go beyond sightseeing through local introductions that open doors to the festival, everyday work, and shared tables." },
+  },
+  {
+    number: "02",
+    title: { ja: "仕事を続けられる余白", en: "A workable rhythm" },
+    text: { ja: "コワーキングと自由時間を工程に組み込み、リモートの仕事や自分の制作を止めずに参加できます。", en: "Coworking and open hours are built into the week so remote work and creative practice can continue." },
+  },
+  {
+    number: "03",
+    title: { ja: "5名だから生まれる関係", en: "A five-person cohort" },
+    text: { ja: "大人数のツアーではなく5名限定。参加者同士も、地域の方とも、顔の見える関係を育てます。", en: "Limited to five participants, creating the space for genuine relationships within the group and with local people." },
+  },
+];
+
 const famSchedule = [
   {
     date: "16",
@@ -56,7 +120,7 @@ const famSchedule = [
     events: [
       { time: "07:00–13:00", title: { ja: "島で自由時間", en: "Island chillout" }, place: { ja: "能登島・ハナミ", en: "Notojima Hanami" }, kind: "optional" },
       { time: "12:00–14:00", title: { ja: "昼食", en: "Lunch" }, place: { ja: "各自負担", en: "Self-pay" }, kind: "optional" },
-      { time: "14:00–22:00", title: { ja: "お熊甲祭 事前体験", en: "Okuma Kabuto Festival experience" }, place: { ja: "七尾市中島町", en: "Nakajima, Nanao" }, kind: "included" },
+      { time: "14:00–22:00", title: { ja: "祭りの準備・地域交流", en: "Festival preparation & local exchange" }, place: { ja: "七尾市中島町", en: "Nakajima, Nanao" }, kind: "included" },
     ],
   },
   {
@@ -265,6 +329,63 @@ export default function Home() {
             <div><span>PEOPLE</span><strong><Bi ja="5名限定" en="Limited to 5" /></strong></div>
           </div>
 
+          <section className="festival-explainer" aria-labelledby="festival-title">
+            <div className="festival-images">
+              <img className="festival-image-main" src="/noto/okumakabuto-01.jpg" alt="Sarutahiko leading the Okuma Kabuto Festival" />
+              <img className="festival-image-wide" src="/noto/okumakabuto-02.jpg" alt="Crimson wakubata banners at the Okuma Kabuto Festival" />
+            </div>
+            <div className="festival-copy">
+              <p className="eyebrow light">WHAT IS OKUMA KABUTO?</p>
+              <h3 id="festival-title"><Bi ja="お熊甲祭とは？" en="What is the Okuma Kabuto Festival?" /></h3>
+              <p className="festival-lead">
+                <Bi
+                  ja="七尾市中島町で、毎年9月20日に行われる枠旗祭り。19の末社から神輿が集まり、猿田彦の舞、鉦と太鼓、空へ伸びる深紅の枠旗が町を満たします。"
+                  en="Held every September 20 in Nakajima, Nanao, this wakubata banner festival brings together mikoshi from 19 branch shrines, led by Sarutahiko, bells, drums, and towering crimson banners."
+                />
+              </p>
+              <div className="festival-facts">
+                <div><strong>9.20</strong><span><Bi ja="毎年同日に開催" en="Held every year" /></span></div>
+                <div><strong>19</strong><span><Bi ja="末社から神輿が集結" en="Branch shrines gather" /></span></div>
+                <div><strong>20m</strong><span><Bi ja="深紅の大枠旗" en="Crimson banners" /></span></div>
+                <div><strong><Bi ja="国指定" en="National" /></strong><span><Bi ja="重要無形民俗文化財" en="Important folk cultural property" /></span></div>
+              </div>
+              <p className="festival-detail">
+                <Bi
+                  ja="見どころは、枠旗を地上すれすれまで傾ける大技「島田くずし」。このツアーでは、祭り当日だけでなく、前日から地域に入り、祭りを迎える人々の時間に触れます。"
+                  en="A highlight is Shimada Kuzushi, a dramatic feat in which the banners are lowered almost to the ground. The tour enters the community from the day before, revealing not only the festival itself but the people and preparation behind it."
+                />
+              </p>
+              <a className="text-link light-link" href={festivalUrl} target="_blank" rel="noreferrer">
+                <Bi ja="お熊甲祭公式サイトを見る" en="Visit the official festival site" /> <Arrow />
+              </a>
+            </div>
+          </section>
+
+          <section className="journey-section" aria-labelledby="journey-title">
+            <div className="journey-heading">
+              <div>
+                <p className="eyebrow light">SEVEN DAYS / ONE LIVING CULTURE</p>
+                <h3 id="journey-title"><Bi ja="能登の魅力をギュッと詰め込んだ7日間。" en="Seven days, filled with the essence of Noto." /></h3>
+              </div>
+              <p>
+                <Bi
+                  ja="祭りだけでも、ワーケーションだけでもない。まち、仕事、里山、食、地域の人との時間が、一つの旅としてつながります。"
+                  en="More than a festival trip or a workation: town life, focused work, satoyama, food, and time with local people come together as one journey."
+                />
+              </p>
+            </div>
+            <div className="journey-grid">
+              {journeyDays.map((day) => (
+                <article className={day.featured ? "journey-day featured" : "journey-day"} key={day.date}>
+                  <div className="journey-date"><span>SEP</span><strong>{day.date}</strong></div>
+                  <p className="journey-label"><Bi {...day.label} /></p>
+                  <h4><Bi {...day.title} /></h4>
+                  <p className="journey-text"><Bi {...day.text} /></p>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <div className="fam-details detail-grid">
             <div>
               <h3>Program</h3>
@@ -324,6 +445,22 @@ export default function Home() {
               <p><Bi ja="魚市場の競り見学：参加無料。魚の購入費は各自負担です。" en="Fish Market Auction: free to join; pay for your own fish." /></p>
               <p><Bi ja="有機野菜の収穫：参加費3,000円。" en="Organic vegetable harvesting: participation fee ¥3,000." /></p>
               <small><Bi ja="※地域の状況により、日程・会場・内容は変更になる場合があります。" en="Schedule, venues, and activities may change depending on local conditions." /></small>
+            </div>
+          </section>
+
+          <section className="nomad-tour-fit" aria-labelledby="nomad-fit-title">
+            <div className="nomad-fit-heading">
+              <p className="eyebrow light">BUILT FOR REMOTE PROFESSIONALS</p>
+              <h3 id="nomad-fit-title"><Bi ja="働きながら、地域と深く出会う旅。" en="A journey designed for meaningful remote travel." /></h3>
+            </div>
+            <div className="nomad-pillars">
+              {nomadTourPillars.map((pillar) => (
+                <article key={pillar.number}>
+                  <span>{pillar.number}</span>
+                  <h4><Bi {...pillar.title} /></h4>
+                  <p><Bi {...pillar.text} /></p>
+                </article>
+              ))}
             </div>
           </section>
 
