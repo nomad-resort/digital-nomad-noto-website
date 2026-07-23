@@ -7,6 +7,8 @@ const termsUrl =
 const instagramUrl = "https://www.instagram.com/nomadresort_noto/";
 const officialUrl = "https://noto.nomadresort.jp/ja/";
 const festivalUrl = "https://okumakabuto.jp/";
+const hanamiUrl = "https://www.hanaminotojima.com/";
+const notojimaTourismUrl = "https://www.notojima.org/whatplace";
 
 type Copy = { ja: string; en: string };
 
@@ -220,6 +222,8 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#programs">Programs</a>
+          <a href="#notojima">Notojima</a>
+          <a href="#stay">Stay</a>
           <a href="#why-noto">Why Noto</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -274,6 +278,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="notojima-intro" id="notojima" aria-labelledby="notojima-title">
+        <div className="notojima-photo">
+          <img src="/noto/notojima-bridge.jpg" alt="Notojima Bridge crossing the calm waters of Nanao Bay" />
+          <p>NOTOJIMA / NANAO BAY / ISHIKAWA</p>
+          <a href="https://www.hot-ishikawa.jp/spot/detail_6107.html" target="_blank" rel="noreferrer">
+            PHOTO / ISHIKAWA TOURISM FEDERATION ↗
+          </a>
+        </div>
+        <div className="notojima-copy">
+          <p className="eyebrow">AN ISLAND IN THE CALM SEA</p>
+          <h2 id="notojima-title"><Bi ja="能登島とは？" en="What is Notojima?" /></h2>
+          <p className="notojima-lead">
+            <Bi
+              ja="七尾湾の穏やかな海に浮かぶ、周囲約72kmの島。海、里山、集落が近い距離でつながり、半農半漁の暮らしが今も息づいています。"
+              en="An island of roughly 72 kilometres around, floating in the calm waters of Nanao Bay. Sea, satoyama, and small settlements sit close together, carrying forward a way of life shaped by both farming and fishing."
+            />
+          </p>
+          <div className="notojima-facts">
+            <div><strong>72km</strong><span><Bi ja="島の周囲" en="Around the island" /></span></div>
+            <div><strong>20</strong><span><Bi ja="島にある町" en="Island communities" /></span></div>
+            <div><strong>1982</strong><span><Bi ja="能登島大橋が開通" en="Notojima Bridge opened" /></span></div>
+          </div>
+          <p className="notojima-detail">
+            <Bi
+              ja="橋で本土とつながった今も、島の時間はゆっくりと流れています。漁港の朝、田畑の季節、静かな入り江、地域の食卓。観光施設を巡るだけでは見えない日常こそ、この旅で出会ってほしい能登島です。"
+              en="Although a bridge now connects it to the mainland, the island still moves at its own pace: early mornings at the fishing harbour, seasonal fields, quiet coves, and local tables. This everyday life—not only its visitor attractions—is the Notojima we want you to discover."
+            />
+          </p>
+          <a className="text-link" href={notojimaTourismUrl} target="_blank" rel="noreferrer">
+            <Bi ja="能登島についてもっと知る" en="Discover more about Notojima" /> <Arrow />
+          </a>
+        </div>
+      </section>
+
       <section className="programs" id="programs" aria-labelledby="programs-title">
         <div className="section-head shell">
           <p className="eyebrow">TWO WAYS TO LIVE IN NOTO</p>
@@ -306,6 +344,89 @@ export default function Home() {
             </div>
           </a>
         </div>
+      </section>
+
+      <section className="stay-section" id="stay" aria-labelledby="stay-title">
+        <div className="stay-heading shell">
+          <p className="eyebrow">WHERE YOU WILL STAY</p>
+          <h2 id="stay-title"><Bi ja="能登での、もう一つの居場所。" en="A place to belong while you are in Noto." /></h2>
+          <p>
+            <Bi
+              ja="ホテルに泊まるのではなく、島や地域の暮らしに近い場所を拠点にします。プログラムによって宿泊の扱いが異なるため、下記をご確認ください。"
+              en="Rather than staying apart from local life, each program uses a base close to the island and its community. Accommodation arrangements differ by program, so please review the details below."
+            />
+          </p>
+        </div>
+
+        <article className="stay-card stay-card-hanami shell">
+          <div className="stay-gallery">
+            <img className="stay-main-image" src="/noto/hanami-living.png" alt="Sea-facing living room at Notojima Guesthouse HaNaMi" />
+            <img className="stay-small-image" src="/noto/hanami-kitchen.png" alt="Shared kitchen at Notojima Guesthouse HaNaMi" />
+            <a className="stay-photo-credit" href={hanamiUrl} target="_blank" rel="noreferrer">PHOTO / HANAMI OFFICIAL SITE ↗</a>
+          </div>
+          <div className="stay-copy">
+            <div className="stay-label-row">
+              <span>FAM TOUR</span>
+              <strong><Bi ja="推奨滞在先・各自手配" en="Recommended stay / Self-booked" /></strong>
+            </div>
+            <p className="eyebrow">NOTOJIMA GUESTHOUSE HANAMI</p>
+            <h3><Bi ja="能登島ゲストハウス 葉波" en="Notojima Guesthouse HaNaMi" /></h3>
+            <p className="stay-lead">
+              <Bi
+                ja="向田漁港のそばにある、海に面したゲストハウス。畳の和室に布団を敷く宿泊スタイルで、海を望むリビングや共用キッチンを使いながら、島で暮らすように過ごせます。"
+                en="A guesthouse by Koda fishing harbour, facing the sea. Guests sleep on futons in Japanese-style tatami rooms and can use the sea-view living room and shared kitchen for a stay that feels close to island life."
+              />
+            </p>
+            <ul className="stay-features">
+              <li><Bi ja="和室・布団の客室" en="Tatami rooms with futon bedding" /></li>
+              <li><Bi ja="海に面した共用リビング" en="Shared sea-facing living room" /></li>
+              <li><Bi ja="共用キッチン・Wi-Fi・ランドリー" en="Shared kitchen, Wi-Fi, and laundry" /></li>
+              <li><Bi ja="七尾市能登島向田町" en="Koda, Notojima, Nanao" /></li>
+            </ul>
+            <p className="stay-note">
+              <Bi
+                ja="※FAM Tourの参加パスに宿泊費は含まれません。空室状況・料金・予約条件は、HANAMI公式サイトで必ずご確認ください。"
+                en="Accommodation is not included in the FAM Tour participation pass. Please confirm availability, rates, and booking conditions directly on the HaNaMi website."
+              />
+            </p>
+            <a className="button button-dark" href={hanamiUrl} target="_blank" rel="noreferrer">
+              <Bi ja="HANAMI公式サイトへ" en="Visit the HaNaMi website" /> <Arrow />
+            </a>
+          </div>
+        </article>
+
+        <article className="stay-card stay-card-example shell">
+          <div className="stay-copy">
+            <div className="stay-label-row">
+              <span>FREE ACCOMMODATION</span>
+              <strong><Bi ja="滞在例" en="Stay example" /></strong>
+            </div>
+            <p className="eyebrow">TRADITIONAL HOUSE STAY</p>
+            <h3><Bi ja="地域の古民家を、暮らしの拠点に。" en="Make a local traditional house your base." /></h3>
+            <p className="stay-lead">
+              <Bi
+                ja="フリーアコモデーションでは、運営が指定する古民家などに滞在する想定です。地域の日常に近い環境で、仕事や制作を続けながら、能登での生活を体験します。"
+                en="Free Accommodation participants are expected to stay in an organizer-designated traditional house or similar property, continuing their work or creative practice in a setting close to everyday life in Noto."
+              />
+            </p>
+            <ul className="stay-features">
+              <li><Bi ja="仕事や制作を続けられる滞在環境" en="A base for remote work and creative practice" /></li>
+              <li><Bi ja="地域コミュニティに近い暮らし" en="Daily life close to the local community" /></li>
+              <li><Bi ja="運営による滞在・地域案内" en="Stay and community orientation from the team" /></li>
+            </ul>
+            <p className="stay-note">
+              <Bi
+                ja="※掲載している写真・設備・間取りは滞在イメージの一例です。実際の施設、部屋、共用設備、滞在条件は、選考後に個別にご案内します。"
+                en="The photographs, facilities, and layout shown here are examples only. The actual property, room, shared facilities, and stay conditions will be confirmed individually after selection."
+              />
+            </p>
+          </div>
+          <div className="stay-gallery example-gallery">
+            <img className="stay-main-image" src="/noto/accommodation1.webp" alt="Example of a traditional house stay in Noto" />
+            <img className="stay-small-image" src="/noto/accommodation2.webp" alt="Example shared space in a traditional house in Noto" />
+            <span className="example-badge"><Bi ja="滞在イメージ" en="STAY EXAMPLE" /></span>
+          </div>
+        </article>
       </section>
 
       <section className="fam-section" id="fam" aria-labelledby="fam-title">
