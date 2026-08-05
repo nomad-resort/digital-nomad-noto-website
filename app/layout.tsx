@@ -3,22 +3,31 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nomad-resort-noto-2026.roccan.chatgpt.site"),
-  title: "Nomad Resort Noto 2026｜FAM Tour & Free Accommodation",
+  title: "Nomad Resort Noto 2026｜お熊甲祭 FAM Tour",
   description:
-    "お熊甲祭と能登の暮らしに触れるFAM Tour、地域と未来をつくるFree Accommodation Program。日本語・英語でご案内します。",
+    "お熊甲祭の熱と、能登島の暮らしの中へ。2026年9月16日〜22日の5名限定FAM Tourと、10名のFree Accommodation。",
   icons: { icon: "/favicon.png", shortcut: "/favicon.png" },
   openGraph: {
-    title: "Nomad Resort Noto 2026",
-    description: "FAM Tour & Free Accommodation — live, work, and create with Noto.",
+    title: "Nomad Resort Noto 2026｜お熊甲祭 FAM Tour",
+    description:
+      "お熊甲祭の熱と、能登島の暮らしの中へ。5名限定FAM Tourと10名のFree Accommodation。",
     type: "website",
     locale: "ja_JP",
     alternateLocale: ["en_US"],
-    images: [{ url: "/og.png", width: 1672, height: 941, alt: "Nomad Resort Noto 2026" }],
+    images: [
+      {
+        url: "/og.png",
+        width: 1731,
+        height: 909,
+        alt: "Nomad Resort Noto 2026 — お熊甲祭の熱と、能登の暮らしの中へ。",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nomad Resort Noto 2026",
-    description: "FAM Tour & Free Accommodation — live, work, and create with Noto.",
+    title: "Nomad Resort Noto 2026｜お熊甲祭 FAM Tour",
+    description:
+      "お熊甲祭の熱と、能登島の暮らしの中へ。5名限定FAM Tourと10名のFree Accommodation。",
     images: ["/og.png"],
   },
 };
