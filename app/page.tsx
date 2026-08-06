@@ -10,6 +10,7 @@ const officialUrl = "https://noto.nomadresort.jp/ja/";
 const festivalUrl = "https://okumakabuto.jp/";
 const hanamiUrl = "https://www.hanaminotojima.com/";
 const notojimaPhotoUrl = "https://www.notojima.org/time/1317.html";
+const contactEmail = "matt@nomadresort.jp";
 
 type Copy = { ja: string; en: string };
 
@@ -94,7 +95,7 @@ const itinerary: Array<{
 const faqs: Array<{ q: Copy; a: Copy }> = [
   {
     q: { ja: "FAM Tourの宿泊はどうなりますか？", en: "How is FAM Tour accommodation arranged?" },
-    a: { ja: "9月16日から22日までの6泊を、運営側が能登島ゲストハウス葉波（HANAMI）にまとめて手配します。", en: "The organizing team will arrange all six nights, September 16–22, at Notojima Guesthouse HANAMI." },
+    a: { ja: "9月16日から22日までの6泊を、運営側が能登島ゲストハウス葉波（HANAMI）にまとめて手配し、宿泊費も負担します。参加者による個別予約・宿泊費の支払いは不要です。", en: "The organizing team will arrange and cover all six nights, September 16–22, at Notojima Guesthouse HANAMI. Participants do not need to book or pay for the stay themselves." },
   },
   {
     q: { ja: "交通費の補助はありますか？", en: "Is travel subsidized?" },
@@ -111,6 +112,10 @@ const faqs: Array<{ q: Copy; a: Copy }> = [
   {
     q: { ja: "選考で重視することは何ですか？", en: "What matters in selection?" },
     a: { ja: "地域への敬意、専門性、能登で実現したいこと、そして滞在後も関係を育てる意思を重視します。", en: "We value respect for local life, relevant skills, a clear purpose in Noto, and a willingness to stay connected afterward." },
+  },
+  {
+    q: { ja: "キャンセル時に費用はかかりますか？", en: "What is the cancellation policy?" },
+    a: { ja: "参加確定前の辞退と、原則として開始15日前までのキャンセルには費用を請求しません。開始14日前以降、無断不参加、開始後の途中離脱では、宿泊・食事・体験・移動・清掃等のうち、運営が支払い済みで返金・転用できない実費のみを、内訳を提示したうえで請求する場合があります。", en: "There is no charge before participation is confirmed and, in principle, no charge for cancellation 15 or more days before the start date. From 14 days before, for no-shows, or for early departure, we may charge only documented, non-refundable direct costs already paid for accommodation, meals, activities, transport, cleaning, or related arrangements." },
   },
 ];
 
@@ -175,6 +180,7 @@ export default function Home() {
             <span>SEP. 16–22</span>
             <span>NOTOJIMA / NANAO</span>
             <span><Bi ja="5名限定" en="5 PEOPLE" /></span>
+            <span><Bi ja="応募締切 8月15日" en="APPLY BY AUG. 15" /></span>
           </div>
           <div className="hero-actions">
             <a className="button button-gold" href={applicationForm} target="_blank" rel="noreferrer">
@@ -275,7 +281,7 @@ export default function Home() {
               />
             </p>
             <div className="stay-badge">
-              <strong><Bi ja="6泊／運営手配" en="6 nights / arranged by the organizer" /></strong>
+              <strong><Bi ja="6泊／運営手配・宿泊費負担" en="6 nights / arranged and covered by the organizer" /></strong>
               <span>SEP. 16–22, 2026</span>
             </div>
             <a className="text-link" href={hanamiUrl} target="_blank" rel="noreferrer">
@@ -382,6 +388,23 @@ export default function Home() {
           <p className="eyebrow light">APPLICATION DETAILS</p>
           <h2 id="requirements-title"><Bi ja="募集要項" en="Application details" /></h2>
         </div>
+        <div className="application-timeline shell" aria-label="Application timeline">
+          <div>
+            <span>01</span>
+            <strong><Bi ja="応募期間" en="Applications" /></strong>
+            <p><Bi ja="2026年8月6日〜15日 23:59（日本時間）" en="August 6–15, 2026, until 11:59 PM JST" /></p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong><Bi ja="オンライン面談" en="Online interviews" /></strong>
+            <p><Bi ja="8月8日〜17日／応募受領後に順次案内" en="August 8–17 / invitations sent on a rolling basis" /></p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong><Bi ja="選考結果" en="Decisions" /></strong>
+            <p><Bi ja="面談後2日以内に順次通知／最終8月19日" en="Within two days of interview / final notices by August 19" /></p>
+          </div>
+        </div>
         <div className="requirements-grid shell">
           <article className="requirement-card fam-requirement">
             <p className="card-number">01 / FAM TOUR</p>
@@ -389,9 +412,11 @@ export default function Home() {
             <dl>
               <div><dt><Bi ja="日程" en="Dates" /></dt><dd>2026.09.16–22</dd></div>
               <div><dt><Bi ja="募集" en="Places" /></dt><dd><Bi ja="5名" en="5 participants" /></dd></div>
+              <div><dt><Bi ja="対象" en="Eligibility" /></dt><dd><Bi ja="応募時点で25歳以上" en="Age 25 or older when applying" /></dd></div>
               <div><dt><Bi ja="拠点" en="Base" /></dt><dd><Bi ja="能登島・七尾・中島町" en="Notojima, Nanao, Nakajima" /></dd></div>
-              <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="HANAMI 6泊／運営手配" en="6 nights at HANAMI / organizer-arranged" /></dd></div>
+              <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="HANAMI 6泊／運営手配・宿泊費負担" en="6 nights at HANAMI / arranged and covered by the organizer" /></dd></div>
               <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊6泊、指定アクティビティ、夕食・交流3回、コミュニティプログラム" en="Six nights, listed activities, three hosted dinners/gatherings, and community program" /></dd></div>
+              <div><dt><Bi ja="発信" en="Outputs" /></dt><dd><Bi ja="発信内容・納品物・公開期限は参加確定前に個別合意" en="Content, deliverables, and publication timing agreed individually before confirmation" /></dd></div>
               <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="往復交通、朝食・昼食、任意の飲食・体験、保険・個人費用" en="Travel, breakfast, lunch, optional food/activities, insurance, and personal costs" /></dd></div>
             </dl>
           </article>
@@ -403,11 +428,24 @@ export default function Home() {
               <div><dt><Bi ja="期間" en="Period" /></dt><dd>2026.08–12</dd></div>
               <div><dt><Bi ja="募集" en="Places" /></dt><dd><Bi ja="10名" en="10 participants" /></dd></div>
               <div><dt><Bi ja="対象" en="Eligibility" /></dt><dd><Bi ja="応募時点で25歳以上" en="Age 25 or older when applying" /></dd></div>
-              <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="運営指定の古民家1室" en="One room in an organizer-designated traditional house" /></dd></div>
+              <div><dt><Bi ja="滞在期間" en="Length" /></dt><dd><Bi ja="連続14泊以上30泊以下" en="14–30 consecutive nights" /></dd></div>
+              <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="七尾市内の古民家・専用和室1室・日本式布団" en="A private tatami room with futon in a traditional house in Nanao" /></dd></div>
+              <div><dt><Bi ja="共用設備" en="Shared" /></dt><dd><Bi ja="バスまたはシャワー、トイレ、キッチン" en="Bath or shower, toilet, and kitchen" /></dd></div>
               <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊、コワーキング、地域紹介、交流・参画機会" en="Accommodation, coworking, local introductions, and opportunities to connect" /></dd></div>
               <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="交通、食費、生活費、保険・ビザ、有料体験、同伴者宿泊" en="Travel, food, living costs, insurance/visa, paid activities, and companion stay" /></dd></div>
             </dl>
           </article>
+        </div>
+        <div className="application-notes shell">
+          <div>
+            <p className="eyebrow light">CANCELLATION NOTE</p>
+            <p><Bi ja="参加確定前の辞退と、原則として開始15日前までのキャンセルは請求なし。開始14日前以降・無断不参加・途中離脱では、返金・転用できない実費のみを内訳付きで請求する場合があります。詳細は応募規約をご確認ください。" en="No charge before confirmation and, in principle, no charge 15 or more days before the start. From 14 days before, for no-shows, or for early departure, only documented non-refundable direct costs may be charged. Please read the full terms before applying." /></p>
+          </div>
+          <div>
+            <p className="eyebrow light">CONTACT</p>
+            <a href={`mailto:${contactEmail}`}>{contactEmail} <Arrow /></a>
+            <p><Bi ja="同伴者・家族の受入れと追加宿泊費は事前相談・個別見積りです。" en="Companions and families require advance approval; additional stay fees are quoted individually." /></p>
+          </div>
         </div>
         <div className="requirements-actions shell">
           <a className="button button-gold shared-apply-button" href={applicationForm} target="_blank" rel="noreferrer">
