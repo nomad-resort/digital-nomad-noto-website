@@ -13,49 +13,81 @@ const notojimaPhotoUrl = "https://www.notojima.org/time/1317.html";
 
 type Copy = { ja: string; en: string };
 
-const itinerary: Array<{ date: string; day: string; title: Copy; text: Copy; featured?: boolean }> = [
+const itinerary: Array<{
+  date: string;
+  day: string;
+  title: Copy;
+  timeline: Array<{ time: Copy; event: Copy }>;
+  featured?: boolean;
+}> = [
   {
     date: "16",
     day: "WED",
-    title: { ja: "能登島へ到着", en: "Arrive on Notojima" },
-    text: { ja: "HANAMIで受付。夜はウェルカムBBQで、参加者と地域の方が同じ食卓を囲みます。", en: "Check in at HANAMI, then share a welcome BBQ with fellow participants and local hosts." },
+    title: { ja: "到着と出会い", en: "Arrival & welcome" },
+    timeline: [
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "能登島へ到着・HANAMIチェックイン", en: "Arrive on Notojima and check in at HANAMI" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "地域の方とのウェルカムBBQ", en: "Welcome BBQ with local hosts" } },
+    ],
   },
   {
     date: "17",
     day: "THU",
     title: { ja: "まちと仕事", en: "Town and work" },
-    text: { ja: "七尾・一本杉通りを歩き、ローカルなコワーキングへ。夜は七尾の食と人に出会います。", en: "Walk Nanao’s Ipponsugi Street, work locally, and meet the people and food of the city." },
+    timeline: [
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "七尾・一本杉通りを歩く", en: "Walk Nanao’s Ipponsugi Street" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "コワーキングセッション", en: "Coworking session" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "七尾の食と人に出会う", en: "Local dinner and connections" } },
+    ],
   },
   {
     date: "18",
     day: "FRI",
     title: { ja: "里山と収穫", en: "Satoyama and harvest" },
-    text: { ja: "島の朝を過ごし、午後は稲刈りへ。手を動かして能登の食の始まりに触れます。", en: "Spend the morning on the island, then join the rice harvest and discover where Noto’s food begins." },
+    timeline: [
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "ゆっくりと島の朝を過ごす", en: "A slow island morning" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "稲刈り体験", en: "Rice harvesting" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "自由時間", en: "Free evening" } },
+    ],
   },
   {
     date: "19",
     day: "SAT",
     title: { ja: "祭りを迎える時間", en: "The eve of the festival" },
-    text: { ja: "能登島での自由時間の後、中島町へ。祭りを支える人々と、前日の空気に触れます。", en: "After a slow island morning, enter Nakajima and meet the people preparing for the festival." },
+    timeline: [
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "能登島でチルアウト", en: "Island chillout" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "中島町へ移動", en: "Travel to Nakajima" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "祭りを迎える地域の方と出会う", en: "Meet the community preparing the festival" } },
+    ],
   },
   {
     date: "20",
     day: "SUN",
     title: { ja: "お熊甲祭", en: "Okuma Kabuto Festival" },
-    text: { ja: "猿田彦、神輿、鉦と太鼓、天を突く深紅の枠旗。受け継がれてきた祭りの熱の中へ。", en: "Sarutahiko, mikoshi, bells, drums, and towering crimson banners—step into a living tradition." },
+    timeline: [
+      { time: { ja: "朝", en: "Morning" }, event: { ja: "祭礼と行列の始まり", en: "Processions begin" } },
+      { time: { ja: "終日", en: "Daytime" }, event: { ja: "中島町でお熊甲祭に参加", en: "Festival experience in Nakajima" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "能登島へ戻る", en: "Return to Notojima" } },
+    ],
     featured: true,
   },
   {
     date: "21",
     day: "MON",
-    title: { ja: "余白と食卓", en: "Space and table" },
-    text: { ja: "仕事や制作を進め、夜はローカルクッキングナイトへ。7日間を言葉にする一日です。", en: "Work, create, and gather for a local cooking night to reflect on the week." },
+    title: { ja: "余白と食卓", en: "Rest, work & table" },
+    timeline: [
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "ゆっくりと島で過ごす", en: "Slow island time" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "仕事・制作の時間", en: "Work and creative time" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "ローカルクッキングナイト", en: "Local cooking night" } },
+    ],
   },
   {
     date: "22",
     day: "TUE",
-    title: { ja: "次の関係へ", en: "Carry it forward" },
-    text: { ja: "能登島を出発。ここで生まれた出会いを、作品、仕事、再訪へつないでいきます。", en: "Leave Notojima and carry new relationships into creative work, collaboration, and return visits." },
+    title: { ja: "出発、そして次の関係へ", en: "Departure & next connections" },
+    timeline: [
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "チェックアウト", en: "Check out" } },
+      { time: { ja: "日中", en: "Daytime" }, event: { ja: "移動・解散", en: "Transfer and departure" } },
+    ],
   },
 ];
 
@@ -118,8 +150,8 @@ export default function Home() {
           <a href="#free"><Bi ja="フリーアコモ" en="Free stay" /></a>
         </nav>
         <div className="header-tools">
-          <a className="header-cta" href="#requirements">
-            <Bi ja="募集要項" en="Apply" /> <span aria-hidden="true">↓</span>
+          <a className="header-cta" href={applicationForm} target="_blank" rel="noreferrer">
+            <Bi ja="応募する" en="Apply now" /> <Arrow />
           </a>
           <LanguageToggle />
         </div>
@@ -145,10 +177,13 @@ export default function Home() {
             <span><Bi ja="5名限定" en="5 PEOPLE" /></span>
           </div>
           <div className="hero-actions">
-            <a className="button button-gold" href="#requirements">
-              <Bi ja="2つのプログラムを見る" en="Explore both programs" /> <span aria-hidden="true">↓</span>
+            <a className="button button-gold" href={applicationForm} target="_blank" rel="noreferrer">
+              <Bi ja="Nomad Resort Noto 2026に応募" en="Apply to Nomad Resort Noto 2026" /> <Arrow />
             </a>
           </div>
+          <p className="hero-cta-note">
+            <Bi ja="共通フォームでFAM Tour、フリーアコモ、または両方を選べます。" en="One form for the FAM Tour, Free Accommodation, or both." />
+          </p>
         </div>
         <p className="hero-side-note">OKUMA KABUTO FESTIVAL / NAKAJIMA, NOTO</p>
       </section>
@@ -226,8 +261,8 @@ export default function Home() {
 
         <article className="hanami-card shell">
           <div className="hanami-gallery">
+            <img src="/noto/hanami-living.png" alt="HANAMI sea-view lounge / 能登島ゲストハウス葉波の海が見えるラウンジ" />
             <img src="/noto/hanami-room.jpg" alt="HANAMI sea-view tatami guest room / 能登島ゲストハウス葉波の海が見える畳の客室" />
-            <img src="/noto/hanami-kitchen.png" alt="能登島ゲストハウス葉波の共用キッチン" />
             <span className="hanami-photo-credit">PHOTO: NOTOJIMA GUESTHOUSE HANAMI</span>
           </div>
           <div className="hanami-copy">
@@ -260,7 +295,17 @@ export default function Home() {
           {itinerary.map((item) => (
             <article className={item.featured ? "itinerary-card featured" : "itinerary-card"} key={item.date}>
               <div className="date-block"><span>SEP</span><strong>{item.date}</strong><small>{item.day}</small></div>
-              <div><h3><Bi {...item.title} /></h3><p><Bi {...item.text} /></p></div>
+              <div>
+                <h3><Bi {...item.title} /></h3>
+                <ul className="day-timeline">
+                  {item.timeline.map((entry) => (
+                    <li key={`${entry.time.en}-${entry.event.en}`}>
+                      <span className="timeline-time"><Bi {...entry.time} /></span>
+                      <span><Bi {...entry.event} /></span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
@@ -366,13 +411,13 @@ export default function Home() {
         </div>
         <div className="requirements-actions shell">
           <a className="button button-gold shared-apply-button" href={applicationForm} target="_blank" rel="noreferrer">
-            <Bi ja="いずれかのプログラムに応募" en="Apply for either program" /> <Arrow />
+            <Bi ja="今すぐ応募 — 1つまたは両方を選択" en="Apply now — choose one or both programs" /> <Arrow />
           </a>
           <div className="requirements-meta">
             <a className="text-link light-link" href={termsUrl} target="_blank" rel="noreferrer">
               <Bi ja="応募前に詳細規約を読む" en="Read the full terms before applying" /> <Arrow />
             </a>
-            <p><Bi ja="共通フォーム内で希望するプログラムを選択できます。" en="Choose your preferred program inside the shared application form." /></p>
+            <p><Bi ja="共通フォームの最初に、FAM Tour、フリーアコモ、または両方を選択します。" en="Choose the FAM Tour, Free Accommodation, or both at the start of the shared form." /></p>
           </div>
         </div>
       </section>
