@@ -6,7 +6,7 @@ const applicationForm =
 const termsUrl =
   "https://docs.google.com/document/d/15L_SeddyQqgLDfAUR0YoSNgm1MCK-0DCpEkQWWS0GFA/edit";
 const instagramUrl = "https://www.instagram.com/nomadresort_noto/";
-const officialUrl = "https://noto.nomadresort.jp/ja/";
+const officialUrl = "https://noto.nomadresort.jp/";
 const festivalUrl = "https://okumakabuto.jp/";
 const hanamiUrl = "https://www.hanaminotojima.com/";
 const notojimaPhotoUrl = "https://www.notojima.org/time/1317.html";
@@ -144,11 +144,12 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Nomad Resort Noto home">
+        <a className="wordmark" href={officialUrl} aria-label="Back to Digital Nomad Noto">
           <span>NOMAD RESORT</span>
           <strong>NOTO</strong>
         </a>
         <nav aria-label="Main navigation">
+          <a href={officialUrl}><Bi ja="能登とは？" en="About Noto" /></a>
           <a href="#festival"><Bi ja="お熊甲祭" en="Festival" /></a>
           <a href="#notojima"><Bi ja="能登島" en="Notojima" /></a>
           <a href="#itinerary"><Bi ja="日程" en="Itinerary" /></a>
@@ -190,6 +191,9 @@ export default function Home() {
           <p className="hero-cta-note">
             <Bi ja="共通フォームでFAM Tour、フリーアコモ、または両方を選べます。" en="One form for the FAM Tour, Free Accommodation, or both." />
           </p>
+          <a className="hero-about-link" href={officialUrl}>
+            <Bi ja="能登とは？ 能登の文化と地域について知る" en="New to Noto? Explore the culture and region" /> <Arrow />
+          </a>
         </div>
         <p className="hero-side-note">OKUMA KABUTO FESTIVAL / NAKAJIMA, NOTO</p>
       </section>
@@ -465,7 +469,7 @@ export default function Home() {
           <a className="wordmark" href="#top"><span>NOMAD RESORT</span><strong>NOTO</strong></a>
           <p>The Japan guidebooks can’t show you.</p>
           <div className="footer-links">
-            <a href={officialUrl} target="_blank" rel="noreferrer">Official <Arrow /></a>
+            <a href={officialUrl}><Bi ja="能登とは？" en="About Noto" /> <Arrow /></a>
             <a href={instagramUrl} target="_blank" rel="noreferrer">Instagram <Arrow /></a>
           </div>
         </div>

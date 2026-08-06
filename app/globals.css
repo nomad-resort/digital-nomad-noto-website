@@ -146,6 +146,8 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .hero-facts span:last-child { border-right: 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .hero-cta-note { margin: 12px 0 0; color: rgba(255,255,255,.72); font: 700 8px/1.6 Arial, sans-serif; letter-spacing: .09em; }
+.hero-about-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: rgba(255,255,255,.9); border-bottom: 1px solid rgba(255,255,255,.5); font: 700 10px/1.5 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.hero-about-link:hover { color: #fff; border-color: #fff; }
 .button { min-height: 48px; padding: 14px 20px; display: inline-flex; align-items: center; justify-content: center; gap: 16px; border: 1px solid transparent; font: 700 9px/1.4 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; transition: background .2s ease, color .2s ease, border-color .2s ease; }
 .button-gold { background: var(--gold); color: var(--ink); }
 .button-gold:hover { background: white; }

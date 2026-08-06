@@ -36,6 +36,9 @@ test("server-renders the bilingual Noto application landing page", async () => {
   assert.match(html, /応募する/);
   assert.match(html, /SEP\. 16–22, 2026/);
   assert.match(html, /Free Accommodation/);
+  assert.match(html, /New to Noto\? Explore the culture and region/);
+  assert.match(html, /能登とは？ 能登の文化と地域について知る/);
+  assert.match(html, /href="https:\/\/noto\.nomadresort\.jp\/"/);
   assert.match(html, /docs\.google\.com\/forms\/d\/1I1u-Rj2LemqzpfA9U4yaZ7aWhX-qxBflv-BbSKhwcDc\/viewform/);
   assert.doesNotMatch(html, /codex-preview/);
 });
