@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nomad-resort-noto-2026.roccan.chatgpt.site"),
+  metadataBase: new URL("https://noto.nomadresort.jp"),
   title: "Nomad Resort Noto 2026 | Okuma Kabuto FAM Tour",
   description:
     "Enter the Okuma Kabuto Festival and live the rhythm of Notojima. A five-person FAM Tour and a ten-person Free Accommodation Program in 2026.",
