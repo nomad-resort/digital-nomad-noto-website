@@ -54,10 +54,8 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .lead-copy { font-size: 18px !important; color: var(--ink) !important; }
 
 .language-toggle {
-  position: fixed;
-  z-index: 100;
-  right: 18px;
-  bottom: 18px;
+  position: static;
+  z-index: auto;
   display: flex;
   padding: 4px;
   border: 1px solid rgba(255,255,255,.35);
@@ -101,7 +99,8 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .site-header nav a { position: relative; }
 .site-header nav a::after { content:""; position:absolute; left:0; right:100%; bottom:-8px; height:1px; background:var(--gold); transition:right .25s ease; }
 .site-header nav a:hover::after { right: 0; }
-.header-cta { justify-self: end; padding: 11px 16px; border: 1px solid rgba(255,255,255,.65); font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.header-tools { justify-self: end; display: flex; align-items: center; gap: 12px; }
+.header-cta { padding: 11px 16px; border: 1px solid rgba(255,255,255,.65); font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
 
 .hero {
   position: relative;
@@ -174,7 +173,8 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .hanami-card { margin-top: 70px; display: grid; grid-template-columns: 1.08fr .92fr; background: var(--paper); box-shadow: 0 24px 80px rgba(50,43,36,.08); }
 .hanami-gallery { position: relative; min-height: 560px; }
 .hanami-gallery img:first-child { height: 100%; object-fit: cover; }
-.hanami-gallery img:last-child { position: absolute; right: 22px; bottom: 22px; width: 42%; height: 220px; object-fit: cover; border: 9px solid white; box-shadow: 0 14px 34px rgba(0,0,0,.16); }
+.hanami-gallery img:nth-child(2) { position: absolute; right: 22px; bottom: 22px; width: 42%; height: 220px; object-fit: cover; border: 9px solid white; box-shadow: 0 14px 34px rgba(0,0,0,.16); }
+.hanami-photo-credit { position: absolute; left: 18px; bottom: 16px; padding: 7px 9px; background: rgba(25,24,23,.74); color: white; font: 700 7px/1 Arial,sans-serif; letter-spacing: .12em; }
 .hanami-copy { padding: 64px; align-self: center; }
 .hanami-copy h3 { margin: 0 0 26px; font-size: clamp(42px,4.7vw,66px); font-weight: 400; line-height: 1.16; }
 .hanami-copy > p:not(.eyebrow) { font-family: "Yu Mincho", serif; font-size: 13px; line-height: 2.1; }
@@ -271,6 +271,7 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   :root { --shell: min(100% - 32px, 720px); }
   .site-header { height: 70px; padding: 0 16px; grid-template-columns: 1fr auto; }
   .site-header nav { display: none; }
+  .header-tools { gap: 8px; }
   .header-cta { padding: 9px 11px; }
   .hero-content { padding: 130px 0 55px; }
   .hero h1 { font-size: clamp(52px, 15vw, 88px); }
@@ -294,13 +295,13 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .footer-inner { grid-template-columns: 1fr; gap: 34px; text-align: center; }
   .footer-inner .wordmark { margin-inline: auto; }
   .footer-links { justify-content: center; }
-  .language-toggle { bottom: 12px; right: 10px; }
 }
 
 @media (max-width: 620px) {
   :root { --shell: calc(100vw - 28px); }
   body { letter-spacing: .025em; }
   .wordmark strong { font-size: 23px; }
+  .header-cta { display: none; }
   .hero { min-height: 820px; }
   .hero-bg { object-position: 62% center; }
   .hero-shade { background: linear-gradient(0deg,rgba(11,9,8,.9),rgba(11,9,8,.22) 85%); }
@@ -323,7 +324,7 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .island-image span { left: 14px; right: 14px; bottom: 13px; flex-direction: column; gap: 8px; }
   .island-image span a { width: max-content; max-width: 100%; }
   .hanami-gallery { min-height: 410px; }
-  .hanami-gallery img:last-child { width: 47%; height: 150px; border-width: 6px; }
+  .hanami-gallery img:nth-child(2) { width: 47%; height: 150px; border-width: 6px; }
   .hanami-copy { padding: 34px 25px; }
   .stay-badge { flex-direction: column; gap: 8px; }
   .itinerary-card { min-height: 0; padding: 24px 20px; grid-template-columns: 64px 1fr; gap: 18px; }

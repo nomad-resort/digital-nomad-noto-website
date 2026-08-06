@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { LanguageToggle } from "./LanguageToggle";
 
 const applicationForm =
@@ -82,10 +83,18 @@ const faqs: Array<{ q: Copy; a: Copy }> = [
 ];
 
 function Bi({ ja, en }: Copy) {
+  const withBreaks = (text: string) =>
+    text.split(/\\n|\n/).map((line, index) => (
+      <Fragment key={`${line}-${index}`}>
+        {index > 0 && <br />}
+        {line}
+      </Fragment>
+    ));
+
   return (
     <>
-      <span className="lang-ja">{ja}</span>
-      <span className="lang-en">{en}</span>
+      <span className="lang-ja">{withBreaks(ja)}</span>
+      <span className="lang-en">{withBreaks(en)}</span>
     </>
   );
 }
@@ -97,8 +106,6 @@ function Arrow() {
 export default function Home() {
   return (
     <main>
-      <LanguageToggle />
-
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Nomad Resort Noto home">
           <span>NOMAD RESORT</span>
@@ -110,9 +117,12 @@ export default function Home() {
           <a href="#itinerary"><Bi ja="日程" en="Itinerary" /></a>
           <a href="#free"><Bi ja="フリーアコモ" en="Free stay" /></a>
         </nav>
-        <a className="header-cta" href="#requirements">
-          <Bi ja="募集要項" en="Apply" /> <span aria-hidden="true">↓</span>
-        </a>
+        <div className="header-tools">
+          <a className="header-cta" href="#requirements">
+            <Bi ja="募集要項" en="Apply" /> <span aria-hidden="true">↓</span>
+          </a>
+          <LanguageToggle />
+        </div>
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
@@ -216,8 +226,9 @@ export default function Home() {
 
         <article className="hanami-card shell">
           <div className="hanami-gallery">
-            <img src="/noto/hanami-living.png" alt="能登島ゲストハウス葉波の海に面したリビング" />
+            <img src="/noto/hanami-room.jpg" alt="HANAMI sea-view tatami guest room / 能登島ゲストハウス葉波の海が見える畳の客室" />
             <img src="/noto/hanami-kitchen.png" alt="能登島ゲストハウス葉波の共用キッチン" />
+            <span className="hanami-photo-credit">PHOTO: NOTOJIMA GUESTHOUSE HANAMI</span>
           </div>
           <div className="hanami-copy">
             <p className="eyebrow">WHERE WE STAY</p>
@@ -276,6 +287,7 @@ export default function Home() {
       </section>
 
       <section className="free-section" id="free" aria-labelledby="free-title">
+        {/* Temporary reference photos. Replace when the final house and coworking photos are supplied. */}
         <div className="free-visual shell">
           <img src="/noto/accommodation1.webp" alt="能登の古民家滞在イメージ" />
           <img src="/noto/coworking1.webp" alt="能登のコワーキング環境" />
