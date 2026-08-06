@@ -8,6 +8,7 @@ const instagramUrl = "https://www.instagram.com/nomadresort_noto/";
 const officialUrl = "https://noto.nomadresort.jp/ja/";
 const festivalUrl = "https://okumakabuto.jp/";
 const hanamiUrl = "https://www.hanaminotojima.com/";
+const notojimaPhotoUrl = "https://www.notojima.org/time/1317.html";
 
 type Copy = { ja: string; en: string };
 
@@ -135,10 +136,7 @@ export default function Home() {
           </div>
           <div className="hero-actions">
             <a className="button button-gold" href="#requirements">
-              <Bi ja="募集要項を見る" en="View application details" /> <span aria-hidden="true">↓</span>
-            </a>
-            <a className="button button-ghost" href="#free">
-              <Bi ja="フリーアコモを見る" en="Explore free accommodation" /> <span aria-hidden="true">↓</span>
+              <Bi ja="2つのプログラムを見る" en="Explore both programs" /> <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
@@ -209,8 +207,11 @@ export default function Home() {
           </div>
         </div>
         <div className="island-image shell">
-          <img src="/noto/notojima-bridge.jpg" alt="七尾湾に架かる能登島大橋" />
-          <span>NOTOJIMA / NANAO BAY / ISHIKAWA</span>
+          <img src="/noto/notojima-suso.jpg" alt="A quiet coastal village in Susomachi, Notojima / 能登島須曽町の静かな海辺の集落" />
+          <span>
+            NOTOJIMA / SUSOMACHI / NANAO BAY
+            <a href={notojimaPhotoUrl} target="_blank" rel="noreferrer">PHOTO: NOTOJIMA TOURISM ASSOCIATION ↗</a>
+          </span>
         </div>
 
         <article className="hanami-card shell">
@@ -336,9 +337,6 @@ export default function Home() {
               <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊6泊、指定アクティビティ、夕食・交流3回、コミュニティプログラム" en="Six nights, listed activities, three hosted dinners/gatherings, and community program" /></dd></div>
               <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="往復交通、朝食・昼食、任意の飲食・体験、保険・個人費用" en="Travel, breakfast, lunch, optional food/activities, insurance, and personal costs" /></dd></div>
             </dl>
-            <a className="button button-gold full-button" href={applicationForm} target="_blank" rel="noreferrer">
-              <Bi ja="FAM Tourに応募" en="Apply for the FAM Tour" /> <Arrow />
-            </a>
           </article>
 
           <article className="requirement-card free-requirement">
@@ -352,16 +350,18 @@ export default function Home() {
               <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊、コワーキング、地域紹介、交流・参画機会" en="Accommodation, coworking, local introductions, and opportunities to connect" /></dd></div>
               <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="交通、食費、生活費、保険・ビザ、有料体験、同伴者宿泊" en="Travel, food, living costs, insurance/visa, paid activities, and companion stay" /></dd></div>
             </dl>
-            <a className="button button-dark full-button" href={applicationForm} target="_blank" rel="noreferrer">
-              <Bi ja="フリーアコモに応募" en="Apply for Free Accommodation" /> <Arrow />
-            </a>
           </article>
         </div>
         <div className="requirements-actions shell">
-          <a className="text-link light-link" href={termsUrl} target="_blank" rel="noreferrer">
-            <Bi ja="応募前に詳細規約を読む" en="Read the full terms before applying" /> <Arrow />
+          <a className="button button-gold shared-apply-button" href={applicationForm} target="_blank" rel="noreferrer">
+            <Bi ja="いずれかのプログラムに応募" en="Apply for either program" /> <Arrow />
           </a>
-          <p><Bi ja="応募フォームで希望するプログラムを選択してください。" en="Select your preferred program in the application form." /></p>
+          <div className="requirements-meta">
+            <a className="text-link light-link" href={termsUrl} target="_blank" rel="noreferrer">
+              <Bi ja="応募前に詳細規約を読む" en="Read the full terms before applying" /> <Arrow />
+            </a>
+            <p><Bi ja="共通フォーム内で希望するプログラムを選択できます。" en="Choose your preferred program inside the shared application form." /></p>
+          </div>
         </div>
       </section>
 

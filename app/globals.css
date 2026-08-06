@@ -25,7 +25,7 @@ body {
   color: var(--ink);
   font-family: "Arapey", "Yu Mincho", "Hiragino Mincho ProN", serif;
   line-height: 1.8;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.02em;
   overflow-x: hidden;
 }
 
@@ -34,10 +34,11 @@ img { display: block; width: 100%; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .shell { width: var(--shell); margin-inline: auto; }
-.lang-en { display: none; }
-[data-lang="en"] .lang-ja { display: none; }
-[data-lang="en"] .lang-en { display: inline; }
-[data-lang="en"] body { letter-spacing: 0.02em; }
+.lang-ja { display: none; }
+.lang-en { display: inline; }
+[data-lang="ja"] .lang-en { display: none; }
+[data-lang="ja"] .lang-ja { display: inline; }
+[data-lang="ja"] body { letter-spacing: 0.045em; }
 h1 .lang-ja, h1 .lang-en,
 h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 
@@ -66,8 +67,9 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
   backdrop-filter: blur(14px);
 }
 .language-toggle button {
-  width: 38px;
+  min-width: 38px;
   height: 30px;
+  padding: 0 10px;
   border: 0;
   border-radius: 999px;
   background: transparent;
@@ -167,7 +169,8 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .island-image { position: relative; margin-top: 72px; height: min(64vw, 680px); overflow: hidden; }
 .island-image img { height: 100%; object-fit: cover; }
 .island-image::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.38),transparent 45%); }
-.island-image span { position: absolute; z-index: 1; left: 24px; bottom: 20px; color: white; font: 700 8px/1 Arial,sans-serif; letter-spacing: .18em; }
+.island-image span { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 20px; display: flex; justify-content: space-between; gap: 24px; color: white; font: 700 8px/1.4 Arial,sans-serif; letter-spacing: .18em; }
+.island-image span a { padding-bottom: 3px; border-bottom: 1px solid rgba(255,255,255,.7); }
 .hanami-card { margin-top: 70px; display: grid; grid-template-columns: 1.08fr .92fr; background: var(--paper); box-shadow: 0 24px 80px rgba(50,43,36,.08); }
 .hanami-gallery { position: relative; min-height: 560px; }
 .hanami-gallery img:first-child { height: 100%; object-fit: cover; }
@@ -252,7 +255,9 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .requirement-card dt { font: 700 9px/1.6 Arial,sans-serif; letter-spacing: .08em; }
 .requirement-card dd { margin: 0; font-family: "Yu Mincho", serif; font-size: 11px; line-height: 1.9; }
 [data-lang="en"] .requirement-card dd { font-family: Georgia, serif; }
-.requirements-actions { padding-top: 42px; display: flex; justify-content: space-between; gap: 32px; align-items: center; }
+.requirements-actions { padding-top: 42px; display: grid; grid-template-columns: minmax(280px, .8fr) 1.2fr; gap: 48px; align-items: center; }
+.shared-apply-button { width: 100%; min-height: 62px; }
+.requirements-meta { display: flex; justify-content: space-between; gap: 32px; align-items: center; }
 .requirements-actions .text-link { margin-top: 0; color: var(--gold); }
 .requirements-actions p { margin: 0; color: rgba(255,255,255,.54); font: 400 9px/1.8 Arial,sans-serif; }
 
@@ -285,6 +290,7 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .free-categories > div:nth-last-child(-n+2) { border-bottom: 0; }
   .faq-heading { position: static; }
   .requirements-grid { grid-template-columns: 1fr; }
+  .requirements-actions { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 34px; text-align: center; }
   .footer-inner .wordmark { margin-inline: auto; }
   .footer-links { justify-content: center; }
@@ -314,6 +320,8 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .festival-facts > div { min-height: 90px; padding: 13px; border-bottom: 1px solid rgba(255,255,255,.17); }
   .festival-facts strong { font-size: 24px; }
   .island-image { height: 72vw; }
+  .island-image span { left: 14px; right: 14px; bottom: 13px; flex-direction: column; gap: 8px; }
+  .island-image span a { width: max-content; max-width: 100%; }
   .hanami-gallery { min-height: 410px; }
   .hanami-gallery img:last-child { width: 47%; height: 150px; border-width: 6px; }
   .hanami-copy { padding: 34px 25px; }
@@ -334,7 +342,7 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .faq-list details p { padding-left: 44px; }
   .requirement-card { padding: 34px 24px; }
   .requirement-card dl > div { grid-template-columns: 72px 1fr; gap: 12px; }
-  .requirements-actions { flex-direction: column; align-items: flex-start; }
+  .requirements-meta { flex-direction: column; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
