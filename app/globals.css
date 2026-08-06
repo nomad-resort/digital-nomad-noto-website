@@ -136,7 +136,11 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .hero-bg { object-fit: cover; object-position: center 42%; filter: saturate(.87) contrast(1.05); }
 .hero-shade { background: linear-gradient(90deg, rgba(11,9,8,.82) 0%, rgba(11,9,8,.5) 46%, rgba(11,9,8,.16) 78%), linear-gradient(0deg, rgba(10,9,8,.65), transparent 50%); }
 .hero-content { position: relative; z-index: 2; padding: 170px 0 72px; }
-.hero h1 { max-width: 910px; margin: 0; font-size: clamp(58px, 8.8vw, 126px); font-weight: 400; line-height: 1.04; letter-spacing: .015em; text-wrap: balance; }
+.hero h1 { max-width: 1100px; margin: 0; font-size: clamp(54px, 6.4vw, 92px); font-weight: 400; line-height: 1.12; letter-spacing: .015em; }
+.hero h1 .hero-title-ja { white-space: nowrap; }
+.hero-title-ja-mobile { display: none; }
+[data-lang="ja"] .hero-title-ja-desktop { display: block; }
+[data-lang="ja"] .hero-title-ja-mobile { display: none; }
 [data-lang="en"] .hero h1 { max-width: 1030px; font-size: clamp(54px, 7.7vw, 108px); }
 .hero-lead { max-width: 680px; margin: 32px 0 0; font-family: "Yu Mincho", serif; font-size: 16px; line-height: 2; }
 [data-lang="en"] .hero-lead { font-family: Georgia, serif; }
@@ -313,7 +317,7 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .header-tools { gap: 8px; }
   .header-cta { padding: 9px 11px; }
   .hero-content { padding: 130px 0 55px; }
-  .hero h1 { font-size: clamp(52px, 15vw, 88px); }
+  .hero h1 { font-size: clamp(46px, 8.8vw, 70px); }
   .hero-side-note { display: none; }
   .festival-section, .notojima-section, .itinerary-section, .fam-value-section, .free-section, .requirements-section { padding-block: 100px; }
   .festival-grid, .notojima-intro, .hanami-card, .value-layout, .free-grid, .faq-section { grid-template-columns: 1fr; gap: 55px; }
@@ -348,7 +352,9 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .hero { min-height: 820px; }
   .hero-bg { object-position: 62% center; }
   .hero-shade { background: linear-gradient(0deg,rgba(11,9,8,.9),rgba(11,9,8,.22) 85%); }
-  .hero h1 { font-size: clamp(48px, 16vw, 72px); }
+  .hero h1 { font-size: clamp(38px, 11vw, 48px); line-height: 1.16; }
+  [data-lang="ja"] .hero-title-ja-desktop { display: none; }
+  [data-lang="ja"] .hero-title-ja-mobile { display: block; }
   [data-lang="en"] .hero h1 { font-size: clamp(44px, 14vw, 66px); }
   .hero-lead { font-size: 13px; }
   .hero-facts { width: 100%; }

@@ -38,6 +38,8 @@ test("server-renders the bilingual Noto application landing page", async () => {
   assert.match(html, /Free Accommodation/);
   assert.match(html, /New to Noto\? Explore the culture and region/);
   assert.match(html, /能登とは？ 能登の文化と地域について知る/);
+  assert.match(html, /hero-title-ja-desktop/);
+  assert.match(html, /hero-title-ja-mobile/);
   assert.match(html, /href="https:\/\/noto\.nomadresort\.jp\/"/);
   assert.match(html, /docs\.google\.com\/forms\/d\/1I1u-Rj2LemqzpfA9U4yaZ7aWhX-qxBflv-BbSKhwcDc\/viewform/);
   assert.doesNotMatch(html, /codex-preview/);

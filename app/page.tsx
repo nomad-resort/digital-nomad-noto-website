@@ -169,7 +169,9 @@ export default function Home() {
         <div className="hero-content shell">
           <p className="eyebrow light">NOMAD RESORT NOTO 2026 / FAM TOUR</p>
           <h1 id="hero-title">
-            <Bi ja="お熊甲祭の熱と、\n能登の暮らしの中へ。" en="Enter the festival.\nLive the rhythm of Noto." />
+            <span className="lang-ja hero-title-ja hero-title-ja-desktop">お熊甲祭の熱と、<br />能登の暮らしの中へ。</span>
+            <span className="lang-ja hero-title-ja hero-title-ja-mobile">お熊甲祭の熱と、<br />能登の暮らしの<br />中へ。</span>
+            <span className="lang-en">Enter the festival.<br />Live the rhythm of Noto.</span>
           </h1>
           <p className="hero-lead">
             <Bi
