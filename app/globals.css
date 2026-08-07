@@ -162,6 +162,21 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .full-button { width: 100%; margin-top: 34px; }
 .hero-side-note { position:absolute; z-index:2; right:23px; bottom:28px; margin:0; writing-mode:vertical-rl; font:700 8px/1 Arial,sans-serif; letter-spacing:.2em; }
 
+.selection-section { padding: 88px 0 78px; background: var(--ink); color: white; }
+.selection-heading { display: grid; grid-template-columns: 1fr auto; gap: 70px; align-items: end; }
+.selection-heading h2 { max-width: 760px; margin: 12px 0 0; font-size: clamp(42px, 5vw, 68px); font-weight: 400; line-height: 1.16; }
+.selection-intro { max-width: 700px; margin: 20px 0 0; color: rgba(255,255,255,.68); font-family: "Yu Mincho", serif; font-size: 12px; line-height: 1.9; }
+[data-lang="en"] .selection-intro { font-family: Georgia, serif; }
+.selection-deadline { min-width: 250px; padding-left: 30px; border-left: 1px solid rgba(255,255,255,.22); }
+.selection-deadline span { display: block; color: var(--gold); font: 700 8px/1.5 Arial,sans-serif; letter-spacing: .14em; }
+.selection-deadline strong { display: block; margin-top: 10px; font: 400 42px/1 Georgia,serif; }
+.selection-deadline small { display: block; margin-top: 8px; font: 700 10px/1 Arial,sans-serif; letter-spacing: .16em; }
+.selection-section .application-timeline { margin-top: 42px; }
+.selection-action { margin-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.selection-action p { max-width: 720px; margin: 0; color: rgba(255,255,255,.62); font-family: "Yu Mincho", serif; font-size: 10px; line-height: 1.8; }
+[data-lang="en"] .selection-action p { font-family: Georgia, serif; }
+.selection-action .button { flex: 0 0 auto; }
+
 .festival-section { padding: 150px 0; background: var(--paper); background-image: url('/noto/washi-pattern.avif'); }
 .festival-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 90px; align-items: center; }
 .festival-copy h2,
@@ -319,6 +334,10 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .hero-content { padding: 130px 0 55px; }
   .hero h1 { font-size: clamp(46px, 8.8vw, 70px); }
   .hero-side-note { display: none; }
+  .selection-heading { grid-template-columns: 1fr; gap: 34px; }
+  .selection-deadline { padding: 24px 0 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.22); }
+  .selection-action { align-items: stretch; flex-direction: column; }
+  .selection-action .button { width: 100%; }
   .festival-section, .notojima-section, .itinerary-section, .fam-value-section, .free-section, .requirements-section { padding-block: 100px; }
   .festival-grid, .notojima-intro, .hanami-card, .value-layout, .free-grid, .faq-section { grid-template-columns: 1fr; gap: 55px; }
   .festival-media { min-height: 650px; }
@@ -362,6 +381,8 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .hero-facts span:first-child { padding-left: 8px; }
   .hero-actions { flex-direction: column; }
   .button { width: 100%; }
+  .selection-section { padding-block: 70px; }
+  .selection-heading h2 { font-size: 39px; }
   .festival-copy h2, .notojima-intro h2, .section-heading h2, .value-layout h2, .free-grid h2, .faq-heading h2, .requirements-section .section-heading h2 { font-size: 43px; }
   .festival-media { min-height: 560px; }
   .festival-main-image { width: 88%; height: 420px; }

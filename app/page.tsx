@@ -200,6 +200,44 @@ export default function Home() {
         <p className="hero-side-note">OKUMA KABUTO FESTIVAL / NAKAJIMA, NOTO</p>
       </section>
 
+      <section className="selection-section" aria-labelledby="selection-title">
+        <div className="selection-heading shell">
+          <div>
+            <p className="eyebrow light">APPLICATION / SELECTION</p>
+            <h2 id="selection-title"><Bi ja="応募から参加決定まで" en="From application to selection" /></h2>
+            <p className="selection-intro"><Bi ja="応募は10日間。応募受領後、対象の方へオンライン面談を順次ご案内します。" en="Applications are open for ten days. Selected applicants will be invited to an online interview on a rolling basis." /></p>
+          </div>
+          <div className="selection-deadline" aria-label="Application deadline">
+            <span><Bi ja="応募締切（日本時間）" en="APPLICATION DEADLINE / JST" /></span>
+            <strong>AUG. 15</strong>
+            <small>23:59</small>
+          </div>
+        </div>
+        <div className="application-timeline shell" aria-label="Application and selection timeline">
+          <div>
+            <span>01</span>
+            <strong><Bi ja="応募" en="Apply" /></strong>
+            <p><Bi ja="8月6日〜15日 23:59（日本時間）" en="August 6–15 / until 11:59 PM JST" /></p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong><Bi ja="オンライン面談" en="Online interview" /></strong>
+            <p><Bi ja="8月8日〜17日／応募受領後に順次ご案内" en="August 8–17 / invitations sent on a rolling basis" /></p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong><Bi ja="結果通知" en="Decision" /></strong>
+            <p><Bi ja="面談後2日以内に順次通知／最終8月19日" en="Within two days of interview / all notices by August 19" /></p>
+          </div>
+        </div>
+        <div className="selection-action shell">
+          <p><Bi ja="共通フォームの最初で、FAM Tour、フリーアコモ、または両方を選択できます。" en="Choose the FAM Tour, Free Accommodation, or both at the start of the shared form." /></p>
+          <a className="button button-gold" href={applicationForm} target="_blank" rel="noreferrer">
+            <Bi ja="応募フォームへ" en="Go to application form" /> <Arrow />
+          </a>
+        </div>
+      </section>
+
       <section className="festival-section" id="festival" aria-labelledby="festival-title">
         <div className="festival-grid shell">
           <div className="festival-copy">
@@ -393,23 +431,6 @@ export default function Home() {
         <div className="section-heading shell">
           <p className="eyebrow light">APPLICATION DETAILS</p>
           <h2 id="requirements-title"><Bi ja="募集要項" en="Application details" /></h2>
-        </div>
-        <div className="application-timeline shell" aria-label="Application timeline">
-          <div>
-            <span>01</span>
-            <strong><Bi ja="応募期間" en="Applications" /></strong>
-            <p><Bi ja="2026年8月6日〜15日 23:59（日本時間）" en="August 6–15, 2026, until 11:59 PM JST" /></p>
-          </div>
-          <div>
-            <span>02</span>
-            <strong><Bi ja="オンライン面談" en="Online interviews" /></strong>
-            <p><Bi ja="8月8日〜17日／応募受領後に順次案内" en="August 8–17 / invitations sent on a rolling basis" /></p>
-          </div>
-          <div>
-            <span>03</span>
-            <strong><Bi ja="選考結果" en="Decisions" /></strong>
-            <p><Bi ja="面談後2日以内に順次通知／最終8月19日" en="Within two days of interview / final notices by August 19" /></p>
-          </div>
         </div>
         <div className="requirements-grid shell">
           <article className="requirement-card fam-requirement">
