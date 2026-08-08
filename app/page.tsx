@@ -22,42 +22,13 @@ const itinerary: Array<{
   featured?: boolean;
 }> = [
   {
-    date: "16",
-    day: "WED",
-    title: { ja: "到着と出会い", en: "Arrival & welcome" },
-    timeline: [
-      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "能登島へ到着・HANAMIチェックイン", en: "Arrive on Notojima and check in at HANAMI" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "地域の方とのウェルカムBBQ", en: "Welcome BBQ with local hosts" } },
-    ],
-  },
-  {
-    date: "17",
-    day: "THU",
-    title: { ja: "まちと仕事", en: "Town and work" },
-    timeline: [
-      { time: { ja: "午前", en: "Morning" }, event: { ja: "七尾・一本杉通りを歩く", en: "Walk Nanao’s Ipponsugi Street" } },
-      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "コワーキングセッション", en: "Coworking session" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "七尾の食と人に出会う", en: "Local dinner and connections" } },
-    ],
-  },
-  {
-    date: "18",
-    day: "FRI",
-    title: { ja: "里山と収穫", en: "Satoyama and harvest" },
-    timeline: [
-      { time: { ja: "午前", en: "Morning" }, event: { ja: "ゆっくりと島の朝を過ごす", en: "A slow island morning" } },
-      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "稲刈り体験", en: "Rice harvesting" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "自由時間", en: "Free evening" } },
-    ],
-  },
-  {
     date: "19",
     day: "SAT",
-    title: { ja: "祭りを迎える時間", en: "The eve of the festival" },
+    title: { ja: "金沢集合、能登へ", en: "Meet in Kanazawa, travel to Noto" },
     timeline: [
-      { time: { ja: "午前", en: "Morning" }, event: { ja: "能登島でチルアウト", en: "Island chillout" } },
-      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "中島町へ移動", en: "Travel to Nakajima" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "祭りを迎える地域の方と出会う", en: "Meet the community preparing the festival" } },
+      { time: { ja: "昼頃", en: "Around noon" }, event: { ja: "金沢駅周辺で車のピックアップ", en: "Pick up near Kanazawa Station" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "能登へ移動・HANAMIチェックイン", en: "Transfer to Noto and check in at HANAMI" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "オリエンテーション・参加者交流", en: "Orientation and participant introductions" } },
     ],
   },
   {
@@ -65,7 +36,7 @@ const itinerary: Array<{
     day: "SUN",
     title: { ja: "お熊甲祭", en: "Okuma Kabuto Festival" },
     timeline: [
-      { time: { ja: "朝", en: "Morning" }, event: { ja: "祭礼と行列の始まり", en: "Processions begin" } },
+      { time: { ja: "朝", en: "Morning" }, event: { ja: "中島町へ移動・祭礼と行列の始まり", en: "Travel to Nakajima as the processions begin" } },
       { time: { ja: "終日", en: "Daytime" }, event: { ja: "中島町でお熊甲祭に参加", en: "Festival experience in Nakajima" } },
       { time: { ja: "夜", en: "Evening" }, event: { ja: "能登島へ戻る", en: "Return to Notojima" } },
     ],
@@ -74,20 +45,39 @@ const itinerary: Array<{
   {
     date: "21",
     day: "MON",
-    title: { ja: "余白と食卓", en: "Rest, work & table" },
+    title: { ja: "休息と能登島時間", en: "Rest & Notojima chill" },
     timeline: [
-      { time: { ja: "午前", en: "Morning" }, event: { ja: "ゆっくりと島で過ごす", en: "Slow island time" } },
-      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "仕事・制作の時間", en: "Work and creative time" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "ローカルクッキングナイト", en: "Local cooking night" } },
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "休息日・ゆっくりと島の朝を過ごす", en: "Rest day and a slow island morning" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "能登島でチルアウト・仕事や制作の時間", en: "Island chillout, work, or creative time" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "自由時間", en: "Free evening" } },
     ],
   },
   {
     date: "22",
     day: "TUE",
-    title: { ja: "出発、そして次の関係へ", en: "Departure & next connections" },
+    title: { ja: "海のアクティビティとBBQ", en: "Ocean activity & BBQ" },
     timeline: [
-      { time: { ja: "午前", en: "Morning" }, event: { ja: "チェックアウト", en: "Check out" } },
-      { time: { ja: "日中", en: "Daytime" }, event: { ja: "移動・解散", en: "Transfer and departure" } },
+      { time: { ja: "日中", en: "Daytime" }, event: { ja: "能登の海を楽しむアクティブツアー", en: "Active tour on the waters of Noto" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "地域の方とのBBQ", en: "BBQ with local hosts" } },
+    ],
+  },
+  {
+    date: "23",
+    day: "WED",
+    title: { ja: "七尾のまちと夜", en: "Nanao by day & night" },
+    timeline: [
+      { time: { ja: "日中", en: "Daytime" }, event: { ja: "七尾市内・一本杉通りを巡る", en: "Explore central Nanao and Ipponsugi Street" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "七尾の居酒屋へ", en: "Dinner at a local izakaya" } },
+      { time: { ja: "二次会", en: "Later" }, event: { ja: "地元のスナックを体験", en: "Experience a local Japanese snack bar" } },
+    ],
+  },
+  {
+    date: "24",
+    day: "THU",
+    title: { ja: "振り返りと出発", en: "Closing & departure" },
+    timeline: [
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "振り返り・チェックアウト", en: "Closing reflection and check-out" } },
+      { time: { ja: "日中", en: "Daytime" }, event: { ja: "金沢へ移動・解散", en: "Transfer to Kanazawa and departure" } },
     ],
   },
 ];
@@ -95,11 +85,11 @@ const itinerary: Array<{
 const faqs: Array<{ q: Copy; a: Copy }> = [
   {
     q: { ja: "FAM Tourの宿泊はどうなりますか？", en: "How is FAM Tour accommodation arranged?" },
-    a: { ja: "9月16日から22日までの6泊を、運営側が能登島ゲストハウス葉波（HANAMI）にまとめて手配し、宿泊費も負担します。参加者による個別予約・宿泊費の支払いは不要です。", en: "The organizing team will arrange and cover all six nights, September 16–22, at Notojima Guesthouse HANAMI. Participants do not need to book or pay for the stay themselves." },
+    a: { ja: "9月19日から24日までの5泊を、運営側が能登島ゲストハウス葉波（HANAMI）にまとめて手配し、宿泊費も負担します。参加者による個別予約・宿泊費の支払いは不要です。", en: "The organizing team will arrange and cover all five nights, September 19–24, at Notojima Guesthouse HANAMI. Participants do not need to book or pay for the stay themselves." },
   },
   {
     q: { ja: "交通費の補助はありますか？", en: "Is travel subsidized?" },
-    a: { ja: "能登までの往復交通費と、滞在中の私的な移動費は参加者負担です。", en: "Round-trip travel to Noto and personal transportation during the stay are at the participant’s expense." },
+    a: { ja: "指定する金沢の集合・解散場所までの往復交通費と、滞在中の私的な移動費は参加者負担です。9月19日の金沢から能登への移動と、24日の能登から金沢への団体送迎は運営が手配・負担します。", en: "Travel to and from the designated meeting point in Kanazawa, plus personal transportation during the stay, is at the participant’s expense. The organizer will arrange and cover group transfers from Kanazawa to Noto on September 19 and from Noto to Kanazawa on September 24." },
   },
   {
     q: { ja: "カップルや家族で参加できますか？", en: "Can couples or families participate?" },
@@ -175,15 +165,15 @@ export default function Home() {
           </h1>
           <p className="hero-lead">
             <Bi
-              ja="祭りを支える人々の時間に触れ、能登島を拠点に暮らす7日間。"
-              en="Seven days inside a living festival, based on the island of Notojima."
+              ja="祭りを支える人々の時間に触れ、能登島を拠点に暮らす6日間。"
+              en="Six days inside a living festival, based on the island of Notojima."
             />
           </p>
           <div className="hero-facts" aria-label="Program facts">
-            <span>SEP. 16–22</span>
+            <span>SEP. 19–24</span>
             <span>NOTOJIMA / NANAO</span>
             <span><Bi ja="5名限定" en="5 PEOPLE" /></span>
-            <span><Bi ja="応募締切 8月15日" en="APPLY BY AUG. 15" /></span>
+            <span><Bi ja="応募締切 8月24日 12:00" en="APPLY BY AUG. 24 / 12:00 JST" /></span>
           </div>
           <div className="hero-actions">
             <a className="button button-gold" href={applicationForm} target="_blank" rel="noreferrer">
@@ -205,29 +195,29 @@ export default function Home() {
           <div>
             <p className="eyebrow light">APPLICATION / SELECTION</p>
             <h2 id="selection-title"><Bi ja="応募から参加決定まで" en="From application to selection" /></h2>
-            <p className="selection-intro"><Bi ja="応募は10日間。応募受領後、対象の方へオンライン面談を順次ご案内します。" en="Applications are open for ten days. Selected applicants will be invited to an online interview on a rolling basis." /></p>
+            <p className="selection-intro"><Bi ja="応募は8月24日12:00（日本時間）まで。応募受領後、対象の方へオンライン面談を順次ご案内します。" en="Applications close August 24 at 12:00 noon JST. Selected applicants will be invited to an online interview on a rolling basis." /></p>
           </div>
           <div className="selection-deadline" aria-label="Application deadline">
             <span><Bi ja="応募締切（日本時間）" en="APPLICATION DEADLINE / JST" /></span>
-            <strong>AUG. 15</strong>
-            <small>23:59</small>
+            <strong>AUG. 24</strong>
+            <small>12:00 NOON</small>
           </div>
         </div>
         <div className="application-timeline shell" aria-label="Application and selection timeline">
           <div>
             <span>01</span>
             <strong><Bi ja="応募" en="Apply" /></strong>
-            <p><Bi ja="8月6日〜15日 23:59（日本時間）" en="August 6–15 / until 11:59 PM JST" /></p>
+            <p><Bi ja="8月6日〜24日 12:00（日本時間）" en="August 6–24 / until 12:00 noon JST" /></p>
           </div>
           <div>
             <span>02</span>
             <strong><Bi ja="オンライン面談" en="Online interview" /></strong>
-            <p><Bi ja="8月8日〜17日／応募受領後に順次ご案内" en="August 8–17 / invitations sent on a rolling basis" /></p>
+            <p><Bi ja="8月8日〜26日／応募受領後に順次ご案内" en="August 8–26 / invitations sent on a rolling basis" /></p>
           </div>
           <div>
             <span>03</span>
             <strong><Bi ja="結果通知" en="Decision" /></strong>
-            <p><Bi ja="面談後2日以内に順次通知／最終8月19日" en="Within two days of interview / all notices by August 19" /></p>
+            <p><Bi ja="面談後2日以内に順次通知／最終8月28日" en="Within two days of interview / all notices by August 28" /></p>
           </div>
         </div>
         <div className="selection-action shell">
@@ -259,8 +249,8 @@ export default function Home() {
             </p>
             <p>
               <Bi
-                ja="このツアーでは祭り当日だけでなく、前日から中島町に入り、祭りを迎える地域の時間に触れます。"
-                en="The tour enters Nakajima from the day before, revealing not only the festival but the people and preparation behind it."
+                ja="このツアーでは祭り当日だけでなく、前日に金沢から能登へ入り、祭りを迎える地域の時間に触れます。"
+                en="The tour enters Noto from Kanazawa the day before, revealing not only the festival but the people and preparation behind it."
               />
             </p>
             <a className="text-link" href={festivalUrl} target="_blank" rel="noreferrer">
@@ -283,8 +273,8 @@ export default function Home() {
       <section className="notojima-section" id="notojima" aria-labelledby="notojima-title">
         <div className="notojima-intro shell">
           <div>
-            <p className="eyebrow">SEVEN DAYS BASED ON THE ISLAND</p>
-            <h2 id="notojima-title"><Bi ja="7日間の拠点は、能登島。" en="Your base for seven days: Notojima." /></h2>
+            <p className="eyebrow">SIX DAYS BASED ON THE ISLAND</p>
+            <h2 id="notojima-title"><Bi ja="6日間の拠点は、能登島。" en="Your base for six days: Notojima." /></h2>
           </div>
           <div className="notojima-copy">
             <p>
@@ -295,8 +285,8 @@ export default function Home() {
             </p>
             <p>
               <Bi
-                ja="早朝の島を歩く時間、海を見ながら仕事や制作をする時間、稲刈りや地域の食卓に触れる時間。アクティビティの合間にある島の日常も、このツアーの大切なプログラムです。"
-                en="Morning walks, quiet hours for work and creation, the rice harvest, and shared local tables: the island’s everyday rhythm between activities is an essential part of the journey."
+                ja="早朝の島を歩く時間、海を見ながら仕事や制作をする時間、能登の海や地域の食卓に触れる時間。アクティビティの合間にある島の日常も、このツアーの大切なプログラムです。"
+                en="Morning walks, quiet hours for work and creation, ocean activities, and shared local tables: the island’s everyday rhythm between activities is an essential part of the journey."
               />
             </p>
           </div>
@@ -325,8 +315,8 @@ export default function Home() {
               />
             </p>
             <div className="stay-badge">
-              <strong><Bi ja="6泊／運営手配・宿泊費負担" en="6 nights / arranged and covered by the organizer" /></strong>
-              <span>SEP. 16–22, 2026</span>
+              <strong><Bi ja="5泊／運営手配・宿泊費負担" en="5 nights / arranged and covered by the organizer" /></strong>
+              <span>SEP. 19–24, 2026</span>
             </div>
             <a className="text-link" href={hanamiUrl} target="_blank" rel="noreferrer">
               <Bi ja="HANAMI公式サイト" en="HANAMI official website" /> <Arrow />
@@ -337,9 +327,9 @@ export default function Home() {
 
       <section className="itinerary-section" id="itinerary" aria-labelledby="itinerary-title">
         <div className="section-heading shell">
-          <p className="eyebrow light">SEPTEMBER 16–22, 2026</p>
-          <h2 id="itinerary-title"><Bi ja="能登の魅力を詰め込んだ7日間。" en="Seven days filled with the essence of Noto." /></h2>
-          <p><Bi ja="祭りだけでも、ワーケーションだけでもない。島、まち、仕事、里山、食、人との時間が一つの旅としてつながります。" en="More than a festival trip or a workation: island life, town, work, satoyama, food, and people form one connected journey." /></p>
+          <p className="eyebrow light">SEPTEMBER 19–24, 2026</p>
+          <h2 id="itinerary-title"><Bi ja="能登の魅力を詰め込んだ6日間。" en="Six days filled with the essence of Noto." /></h2>
+          <p><Bi ja="祭りだけでも、ワーケーションだけでもない。島、まち、仕事、海、食、人との時間が一つの旅としてつながります。" en="More than a festival trip or a workation: island life, town, work, the sea, food, and people form one connected journey." /></p>
         </div>
         <div className="itinerary-grid shell">
           {itinerary.map((item) => (
@@ -370,7 +360,7 @@ export default function Home() {
           </div>
           <ul className="value-list">
             <li><span>01</span><Bi ja="祭りを支える人々との接点" en="Connections with the people behind the festival" /></li>
-            <li><span>02</span><Bi ja="島、まち、里山、食を一続きで知る7日間" en="Seven days connecting island, town, satoyama, and food" /></li>
+            <li><span>02</span><Bi ja="島、まち、海、食を一続きで知る6日間" en="Six days connecting island, town, sea, and food" /></li>
             <li><span>03</span><Bi ja="5名だから生まれる、顔の見える関係" en="A five-person cohort built for genuine relationships" /></li>
             <li><span>04</span><Bi ja="仕事や制作を続けられる余白" en="Space to keep working and creating" /></li>
           </ul>
@@ -435,16 +425,16 @@ export default function Home() {
         <div className="requirements-grid shell">
           <article className="requirement-card fam-requirement">
             <p className="card-number">01 / FAM TOUR</p>
-            <h3><Bi ja="お熊甲祭と能登を巡る7日間" en="Seven days with Noto and its festival" /></h3>
+            <h3><Bi ja="お熊甲祭と能登を巡る6日間" en="Six days with Noto and its festival" /></h3>
             <dl>
-              <div><dt><Bi ja="日程" en="Dates" /></dt><dd>2026.09.16–22</dd></div>
+              <div><dt><Bi ja="日程" en="Dates" /></dt><dd>2026.09.19–24</dd></div>
               <div><dt><Bi ja="募集" en="Places" /></dt><dd><Bi ja="5名" en="5 participants" /></dd></div>
               <div><dt><Bi ja="対象" en="Eligibility" /></dt><dd><Bi ja="応募時点で25歳以上" en="Age 25 or older when applying" /></dd></div>
               <div><dt><Bi ja="拠点" en="Base" /></dt><dd><Bi ja="能登島・七尾・中島町" en="Notojima, Nanao, Nakajima" /></dd></div>
-              <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="HANAMI 6泊／運営手配・宿泊費負担" en="6 nights at HANAMI / arranged and covered by the organizer" /></dd></div>
-              <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊6泊、指定アクティビティ、夕食・交流3回、コミュニティプログラム" en="Six nights, listed activities, three hosted dinners/gatherings, and community program" /></dd></div>
+              <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="HANAMI 5泊／運営手配・宿泊費負担" en="5 nights at HANAMI / arranged and covered by the organizer" /></dd></div>
+              <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊5泊、金沢〜能登の団体送迎、指定アクティビティ、夕食・交流3回、コミュニティプログラム" en="Five nights, group transfers between Kanazawa and Noto, listed activities, three hosted dinners/gatherings, and community program" /></dd></div>
               <div><dt><Bi ja="発信" en="Outputs" /></dt><dd><Bi ja="発信内容・納品物・公開期限は参加確定前に個別合意" en="Content, deliverables, and publication timing agreed individually before confirmation" /></dd></div>
-              <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="往復交通、朝食・昼食、任意の飲食・体験、保険・個人費用" en="Travel, breakfast, lunch, optional food/activities, insurance, and personal costs" /></dd></div>
+              <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="金沢の集合・解散場所までの往復交通、朝食・昼食、任意の飲食・体験、保険・個人費用" en="Travel to and from the Kanazawa meeting point, breakfast, lunch, optional food/activities, insurance, and personal costs" /></dd></div>
             </dl>
           </article>
 
