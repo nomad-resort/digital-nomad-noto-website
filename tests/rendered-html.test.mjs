@@ -52,6 +52,8 @@ test("server-renders the bilingual Noto application landing page", async () => {
   assert.match(html, /hero-title-ja-desktop/);
   assert.match(html, /hero-title-ja-mobile/);
   assert.match(html, /From application to selection/);
+  assert.match(html, /<span>APPLICATION DEADLINE \/ JST<\/span>/);
+  assert.doesNotMatch(html, /応募締切（日本時間）/);
   assert.match(html, /August 6–24 \/ until 12:00 noon JST/);
   assert.match(html, /all notices by August 28/);
   assert.match(html, /APPLY BY AUG\. 24 \/ 12:00 JST/);

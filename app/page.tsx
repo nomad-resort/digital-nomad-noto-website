@@ -231,7 +231,7 @@ export default function Home() {
             <p className="selection-intro"><Bi ja="応募は8月24日12:00（日本時間）まで。このLPの応募ボタンから共通フォームへ進みます。応募受領後、対象の方へオンライン面談を順次ご案内します。" en="Applications close August 24 at 12:00 noon JST. Apply through the shared form linked from this campaign page. Selected applicants will be invited to an online interview on a rolling basis." /></p>
           </div>
           <div className="selection-deadline" aria-label="Application deadline">
-            <span><Bi ja="応募締切（日本時間）" en="APPLICATION DEADLINE / JST" /></span>
+            <span>APPLICATION DEADLINE / JST</span>
             <strong>AUG. 24</strong>
             <small>12:00 NOON</small>
           </div>
