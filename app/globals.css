@@ -254,6 +254,21 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .who-strip > p:last-child { font-family: "Yu Mincho", serif; font-size: 16px; line-height: 2; }
 [data-lang="en"] .who-strip > p:last-child { font-family: Georgia, serif; }
 
+.collaboration-section { padding: 150px 0; background: #282522; color: white; }
+.collaboration-heading { display: grid; grid-template-columns: .85fr 1.15fr; column-gap: 90px; align-items: end; }
+.collaboration-heading .eyebrow { grid-column: 1/-1; }
+.collaboration-heading h2 { margin: 0; font-size: clamp(48px, 5.8vw, 82px); font-weight: 400; line-height: 1.18; text-wrap: balance; }
+.collaboration-heading > p:last-child { margin: 0; font-family: "Yu Mincho", serif; font-size: 14px; line-height: 2.1; color: rgba(255,255,255,.68); }
+[data-lang="en"] .collaboration-heading > p:last-child { font-family: Georgia, serif; }
+.collaboration-grid { margin-top: 70px; display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,.2); border-left: 1px solid rgba(255,255,255,.2); }
+.collaboration-grid article { min-height: 260px; padding: 28px; border-right: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
+.collaboration-grid article > span { color: var(--gold); font: 700 8px/1 Arial,sans-serif; letter-spacing: .14em; }
+.collaboration-grid h3 { margin: 45px 0 18px; font-size: 28px; font-weight: 400; line-height: 1.3; }
+.collaboration-grid p { margin: 0; font-family: "Yu Mincho", serif; font-size: 11px; line-height: 2; color: rgba(255,255,255,.64); }
+[data-lang="en"] .collaboration-grid p { font-family: Georgia, serif; }
+.collaboration-note { margin-top: 34px; padding-left: 28px; border-left: 2px solid var(--gold); font-family: "Yu Mincho", serif; font-size: 13px; line-height: 2; color: rgba(255,255,255,.76); }
+[data-lang="en"] .collaboration-note { font-family: Georgia, serif; }
+
 .free-section { padding: 150px 0; background: #d8cbb8; }
 .free-visual { position: relative; min-height: 620px; }
 .free-visual img:first-child { width: 78%; height: 560px; object-fit: cover; }
@@ -274,6 +289,20 @@ h2 .lang-ja, h2 .lang-en { white-space: pre-line; }
 .free-categories strong { font: 700 9px/1 Arial,sans-serif; letter-spacing: .14em; }
 .free-categories span { margin-top: auto; font-family: "Yu Mincho", serif; font-size: 12px; line-height: 1.9; }
 [data-lang="en"] .free-categories span { font-family: Georgia, serif; }
+
+.commitment-section { padding: 145px 0; background: #e8dfd0; }
+.commitment-heading { max-width: 940px; }
+.commitment-heading h2 { margin: 0; font-size: clamp(48px,5.8vw,82px); font-weight: 400; line-height: 1.18; text-wrap: balance; }
+.commitment-heading > p:last-child { max-width: 760px; margin: 30px 0 0; font-family: "Yu Mincho", serif; font-size: 14px; line-height: 2.1; }
+[data-lang="en"] .commitment-heading > p:last-child { font-family: Georgia, serif; }
+.commitment-grid { margin-top: 62px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.commitment-grid article { padding: 42px; background: var(--paper); border: 1px solid var(--line); }
+.commitment-grid article:first-child { background: #e1c49c; }
+.commitment-grid h3 { margin: 26px 0 24px; font-size: clamp(31px,3.5vw,46px); font-weight: 400; line-height: 1.22; }
+.commitment-grid article > p:last-child { margin: 0; font-family: "Yu Mincho", serif; font-size: 12px; line-height: 2; }
+[data-lang="en"] .commitment-grid article > p:last-child { font-family: Georgia, serif; }
+.commitment-note { margin-top: 24px; font-family: "Yu Mincho", serif; font-size: 11px; line-height: 1.9; }
+[data-lang="en"] .commitment-note { font-family: Georgia, serif; }
 
 .faq-section { padding: 140px 0; display: grid; grid-template-columns: .7fr 1.3fr; gap: 100px; }
 .faq-heading { position: sticky; top: 40px; align-self: start; }
@@ -338,8 +367,9 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .selection-deadline { padding: 24px 0 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.22); }
   .selection-action { align-items: stretch; flex-direction: column; }
   .selection-action .button { width: 100%; }
-  .festival-section, .notojima-section, .itinerary-section, .fam-value-section, .free-section, .requirements-section { padding-block: 100px; }
-  .festival-grid, .notojima-intro, .hanami-card, .value-layout, .free-grid, .faq-section { grid-template-columns: 1fr; gap: 55px; }
+  .festival-section, .notojima-section, .itinerary-section, .fam-value-section, .collaboration-section, .free-section, .commitment-section, .requirements-section { padding-block: 100px; }
+  .festival-grid, .notojima-intro, .hanami-card, .value-layout, .collaboration-heading, .free-grid, .commitment-grid, .faq-section { grid-template-columns: 1fr; gap: 55px; }
+  .collaboration-grid { grid-template-columns: 1fr 1fr; }
   .festival-media { min-height: 650px; }
   .notojima-intro { align-items: start; }
   .island-image { height: 65vw; }
@@ -402,6 +432,8 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .itinerary-card h3 { font-size: 25px; }
   .day-timeline li { grid-template-columns: 64px 1fr; gap: 10px; }
   .who-strip { padding: 34px 28px; }
+  .collaboration-grid { grid-template-columns: 1fr; }
+  .collaboration-grid article { min-height: 0; }
   .free-visual { min-height: 470px; }
   .free-visual img:first-child { width: 90%; height: 410px; }
   .free-visual img:nth-child(2) { width: 48%; height: 210px; border-width: 7px; }
@@ -409,6 +441,7 @@ footer { padding: 80px 0 24px; background: #10100f; color: white; }
   .free-categories { grid-template-columns: 1fr; }
   .free-categories > div { min-height: 145px; border-right: 0; border-bottom: 1px solid rgba(25,24,23,.22) !important; }
   .free-categories > div:last-child { border-bottom: 0 !important; }
+  .commitment-grid article { padding: 34px 26px; }
   .faq-section { padding-block: 90px; }
   .faq-list summary { grid-template-columns: 34px 1fr auto; gap: 10px; font-size: 12px; }
   .faq-list details p { padding-left: 44px; }

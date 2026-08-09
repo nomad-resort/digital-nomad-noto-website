@@ -84,6 +84,33 @@ const itinerary: Array<{
   },
 ];
 
+const collaborationOpportunities: Array<{ title: Copy; body: Copy }> = [
+  {
+    title: { ja: "祭りと文化の継承", en: "Festival & cultural continuity" },
+    body: { ja: "お熊甲祭を支える人々や文化的価値を、地域への敬意と同意を大切にしながら伝える。", en: "Share the people and cultural value behind the Okuma Kabuto Festival, with respect and local consent." },
+  },
+  {
+    title: { ja: "一次産業の未来", en: "The future of primary industries" },
+    body: { ja: "農業、漁業、食の現場を知り、次の担い手や新しい届け方につながる可能性を探る。", en: "Explore ideas that support the future of agriculture, fisheries, food, and the people who sustain them." },
+  },
+  {
+    title: { ja: "海外マーケティング", en: "International marketing" },
+    body: { ja: "地域事業者の商品や体験が海外の人に届くよう、発信、導線、市場理解の視点から助言する。", en: "Help local businesses reach international audiences through market insight, communication, and customer journeys." },
+  },
+  {
+    title: { ja: "ブランドと物語", en: "Branding & storytelling" },
+    body: { ja: "写真、映像、文章、デザインを通して、能登らしさが伝わるブランドや物語を一緒に考える。", en: "Develop stories, visuals, and brand ideas that communicate what makes Noto distinctive." },
+  },
+  {
+    title: { ja: "長期滞在の可能性", en: "Long-stay possibilities" },
+    body: { ja: "海外の長期滞在者やリモートワーカーが地域と関係を築くための体験や環境を検証する。", en: "Test how Noto can better welcome long-stay visitors and remote professionals into local life." },
+  },
+  {
+    title: { ja: "地域との新しい実証", en: "New local pilots" },
+    body: { ja: "地域の方と対話し、小さな企画、試作品、ワークショップなど、次につながる最初の一歩をつくる。", en: "Co-design a first step with local partners: a small project, prototype, workshop, or other meaningful pilot." },
+  },
+];
+
 const faqs: Array<{ q: Copy; a: Copy }> = [
   {
     q: { ja: "FAM Tourの宿泊はどうなりますか？", en: "How is FAM Tour accommodation arranged?" },
@@ -103,7 +130,11 @@ const faqs: Array<{ q: Copy; a: Copy }> = [
   },
   {
     q: { ja: "選考で重視することは何ですか？", en: "What matters in selection?" },
-    a: { ja: "地域への敬意、専門性、能登で実現したいこと、そして滞在後も関係を育てる意思を重視します。", en: "We value respect for local life, relevant skills, a clear purpose in Noto, and a willingness to stay connected afterward." },
+    a: { ja: "地域への敬意、専門性、能登で取り組みたい領域、具体的な最初の一歩、そして滞在後も関係を育てる意思を重視します。フォロワー数だけではなく、地域と参加者の双方に意味のある関係をつくれるかを選考します。", en: "We value respect for local life, relevant skills, a clear area of interest, a practical first step, and a willingness to stay connected. Selection is based on the potential for mutual value, not follower count alone." },
+  },
+  {
+    q: { ja: "具体的にどのようなコラボレーションができますか？", en: "What could a collaboration look like?" },
+    a: { ja: "決められた一つの案件ではありません。祭りや能登の魅力の発信、一次産業の存続、地域事業者への海外マーケティング・ブランディング助言、長期滞在の環境づくり、新しいプロジェクトの実証などが例です。すべてを担う必要はなく、自分の専門性で貢献できる領域と最初の一歩を応募時に教えてください。", en: "There is no single fixed project. Possibilities include festival and destination storytelling, support for primary industries, international marketing or branding advice for local businesses, long-stay research, and new pilot projects. You do not need to cover everything; tell us where your skills fit and what first step you would take." },
   },
   {
     q: { ja: "キャンセル時に費用はかかりますか？", en: "What is the cancellation policy?" },
@@ -149,7 +180,7 @@ export default function Home() {
         </nav>
         <div className="header-tools">
           <a className="header-cta" href={applicationForm} target="_blank" rel="noreferrer">
-            <Bi ja="応募する" en="Apply now" /> <Arrow />
+            <Bi ja="8月24日締切・応募" en="Apply by Aug. 24" /> <Arrow />
           </a>
           <LanguageToggle />
         </div>
@@ -183,7 +214,7 @@ export default function Home() {
             </a>
           </div>
           <p className="hero-cta-note">
-            <Bi ja="共通フォームでFAM Tour、フリーアコモ、または両方を選べます。" en="One form for the FAM Tour, Free Accommodation, or both." />
+            <Bi ja="選考制。選ばれた参加者の宿泊費は無料です。このページ内の応募ボタンから、共通フォームでFAM Tour、フリーアコモ、または両方に応募できます。" en="A curated program with free accommodation for selected participants. Apply through the buttons on this page for the FAM Tour, Free Accommodation, or both." />
           </p>
           <a className="hero-about-link" href={officialUrl}>
             <Bi ja="能登とは？ 能登の文化と地域について知る" en="New to Noto? Explore the culture and region" /> <Arrow />
@@ -197,7 +228,7 @@ export default function Home() {
           <div>
             <p className="eyebrow light">APPLICATION / SELECTION</p>
             <h2 id="selection-title"><Bi ja="応募から参加決定まで" en="From application to selection" /></h2>
-            <p className="selection-intro"><Bi ja="応募は8月24日12:00（日本時間）まで。応募受領後、対象の方へオンライン面談を順次ご案内します。" en="Applications close August 24 at 12:00 noon JST. Selected applicants will be invited to an online interview on a rolling basis." /></p>
+            <p className="selection-intro"><Bi ja="応募は8月24日12:00（日本時間）まで。このLPの応募ボタンから共通フォームへ進みます。応募受領後、対象の方へオンライン面談を順次ご案内します。" en="Applications close August 24 at 12:00 noon JST. Apply through the shared form linked from this campaign page. Selected applicants will be invited to an online interview on a rolling basis." /></p>
           </div>
           <div className="selection-deadline" aria-label="Application deadline">
             <span><Bi ja="応募締切（日本時間）" en="APPLICATION DEADLINE / JST" /></span>
@@ -228,6 +259,24 @@ export default function Home() {
             <Bi ja="応募フォームへ" en="Go to application form" /> <Arrow />
           </a>
         </div>
+      </section>
+
+      <section className="collaboration-section" id="collaboration" aria-labelledby="collaboration-title">
+        <div className="collaboration-heading shell">
+          <p className="eyebrow light">POSSIBILITIES IN NOTO</p>
+          <h2 id="collaboration-title"><Bi ja="能登で、何を一緒につくれるだろう。" en="What could we build together in Noto?" /></h2>
+          <p><Bi ja="今回の募集は、決められた一つの案件を遂行するためのものではありません。能登の方々との対話から、長期的なコラボレーションの芽を探す実証です。" en="This is not recruitment for one fixed project. It is a pilot for discovering long-term collaborations through conversations with people in Noto." /></p>
+        </div>
+        <div className="collaboration-grid shell">
+          {collaborationOpportunities.map((item, index) => (
+            <article key={item.title.en}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3><Bi {...item.title} /></h3>
+              <p><Bi {...item.body} /></p>
+            </article>
+          ))}
+        </div>
+        <p className="collaboration-note shell"><Bi ja="すべてを担う必要はありません。応募では、あなたの経験が生きる領域、地域に提供できること、現地で試したい具体的な最初の一歩を教えてください。" en="You are not expected to cover every area. In your application, tell us where your experience fits, what you can offer the community, and the concrete first step you would like to test in Noto." /></p>
       </section>
 
       <section className="festival-section" id="festival" aria-labelledby="festival-title">
@@ -419,6 +468,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="commitment-section" aria-labelledby="commitment-title">
+        <div className="commitment-heading shell">
+          <p className="eyebrow">PARTICIPATION COMMITMENT</p>
+          <h2 id="commitment-title"><Bi ja="無料の滞在を、次の価値へ。" en="Turn a free stay into lasting value." /></h2>
+          <p><Bi ja="選考された参加者の宿泊費は無料です。その代わりに、地域との時間を具体的なアウトプットや貢献につなげていただきます。内容と期限は参加確定前に双方で合意します。" en="Accommodation is free for selected participants. In return, we ask you to turn your time with the community into a concrete output or contribution. Scope and timing are agreed together before confirmation." /></p>
+        </div>
+        <div className="commitment-grid shell">
+          <article>
+            <p className="card-number">01 / FAM TOUR</p>
+            <h3><Bi ja="公開アウトプットを1点" en="One public output" /></h3>
+            <p><Bi ja="ツアー終了後30日以内を目安に、Instagram投稿・リール、YouTube・短編映像、記事・ブログ・ニュースレター、写真・クリエイティブ作品などから1点を公開し、URLをご共有ください。" en="Within 30 days of the tour, publish and share the URL of one output: an Instagram post or reel, YouTube or short video, article, blog or newsletter, photo story, or another creative work." /></p>
+          </article>
+          <article>
+            <p className="card-number">02 / FREE ACCOMMODATION</p>
+            <h3><Bi ja="具体的な貢献を1つ" en="One concrete contribution" /></h3>
+            <p><Bi ja="海外マーケティング・ブランディングの助言、ワークショップ、コンテンツ制作、長期滞在の調査・フィードバック、新規企画や実証などから1つを滞在前に合意し、終了時に簡単な振り返りを共有してください。" en="Agree on one contribution before your stay: marketing or branding advice, a workshop, content, long-stay research and feedback, a project proposal, or a pilot collaboration. Share a short closing reflection at the end." /></p>
+          </article>
+        </div>
+        <p className="commitment-note shell"><Bi ja="撮影・発信・制作では、地域の方のプライバシーと同意を尊重してください。" en="All photography, publishing, and creative work must respect local privacy and consent." /></p>
+      </section>
+
       <section className="requirements-section" id="requirements" aria-labelledby="requirements-title">
         <div className="section-heading shell">
           <p className="eyebrow light">APPLICATION DETAILS</p>
@@ -435,7 +505,7 @@ export default function Home() {
               <div><dt><Bi ja="拠点" en="Base" /></dt><dd><Bi ja="能登島・七尾・中島町" en="Notojima, Nanao, Nakajima" /></dd></div>
               <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="HANAMI 5泊／運営手配・宿泊費負担" en="5 nights at HANAMI / arranged and covered by the organizer" /></dd></div>
               <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊5泊、公式工程内の指定移動、指定アクティビティ、夕食・交流3回、コミュニティプログラム" en="Five nights, designated transportation within the official itinerary, listed activities, three hosted dinners/gatherings, and community program" /></dd></div>
-              <div><dt><Bi ja="発信" en="Outputs" /></dt><dd><Bi ja="発信内容・納品物・公開期限は参加確定前に個別合意" en="Content, deliverables, and publication timing agreed individually before confirmation" /></dd></div>
+              <div><dt><Bi ja="発信" en="Outputs" /></dt><dd><Bi ja="ツアー終了後30日以内を目安に公開アウトプット1点。内容・期限は参加確定前に個別合意" en="One public output, normally within 30 days after the tour; format and timing agreed before confirmation" /></dd></div>
               <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="指定する集合・解散場所までの往復交通、朝食・昼食、任意の飲食・体験、保険・個人費用" en="Travel to and from the designated meeting and departure points, breakfast, lunch, optional food/activities, insurance, and personal costs" /></dd></div>
             </dl>
           </article>
@@ -451,6 +521,7 @@ export default function Home() {
               <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="七尾市内の古民家・専用和室1室・日本式布団" en="A private tatami room with futon in a traditional house in Nanao" /></dd></div>
               <div><dt><Bi ja="共用設備" en="Shared" /></dt><dd><Bi ja="バスまたはシャワー、トイレ、キッチン" en="Bath or shower, toilet, and kitchen" /></dd></div>
               <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊、コワーキング、地域紹介、交流・参画機会" en="Accommodation, coworking, local introductions, and opportunities to connect" /></dd></div>
+              <div><dt><Bi ja="貢献" en="Contribution" /></dt><dd><Bi ja="滞在前に合意する具体的な貢献1つと、終了時の簡単な振り返り" en="One concrete contribution agreed before the stay, plus a short closing reflection" /></dd></div>
               <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="交通、食費、生活費、保険・ビザ、有料体験、同伴者宿泊" en="Travel, food, living costs, insurance/visa, paid activities, and companion stay" /></dd></div>
             </dl>
           </article>

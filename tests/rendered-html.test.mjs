@@ -32,8 +32,8 @@ test("server-renders the bilingual Noto application landing page", async () => {
   assert.match(html, /<title>Nomad Resort Noto 2026 \| Okuma Kabuto FAM Tour<\/title>/i);
   assert.match(html, /class="site-header"/);
   assert.match(html, /class="header-cta"/);
-  assert.match(html, /Apply now/);
-  assert.match(html, /応募する/);
+  assert.match(html, /Apply by Aug\. 24/);
+  assert.match(html, /8月24日締切・応募/);
   assert.match(html, /SEP\. 18–23, 2026/);
   assert.match(html, /Welcome Party/);
   assert.match(html, /travels by train to Nanao Station/);
@@ -55,6 +55,11 @@ test("server-renders the bilingual Noto application landing page", async () => {
   assert.match(html, /August 6–24 \/ until 12:00 noon JST/);
   assert.match(html, /all notices by August 28/);
   assert.match(html, /APPLY BY AUG\. 24 \/ 12:00 JST/);
+  assert.match(html, /What could we build together in Noto\?/);
+  assert.match(html, /Festival &amp; cultural continuity/);
+  assert.match(html, /One public output/);
+  assert.match(html, /normally within 30 days after the tour/);
+  assert.match(html, /One concrete contribution agreed before the stay/);
   assert.match(html, /href="https:\/\/noto\.nomadresort\.jp\/"/);
   assert.match(html, /docs\.google\.com\/forms\/d\/1I1u-Rj2LemqzpfA9U4yaZ7aWhX-qxBflv-BbSKhwcDc\/viewform/);
   assert.doesNotMatch(html, /codex-preview/);

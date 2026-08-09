@@ -10,9 +10,10 @@ export function LanguageToggle() {
   useEffect(() => {
     const stored = window.localStorage.getItem("noto-language");
     const initial: Language = stored === "ja" ? "ja" : "en";
-    setLanguage(initial);
     document.documentElement.dataset.lang = initial;
     document.documentElement.lang = initial;
+    const frame = window.requestAnimationFrame(() => setLanguage(initial));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   function choose(next: Language) {
