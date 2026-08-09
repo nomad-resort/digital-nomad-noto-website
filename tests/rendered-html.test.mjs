@@ -61,7 +61,7 @@ test("server-renders the bilingual Noto application landing page", async () => {
   assert.match(html, /normally within 30 days after the tour/);
   assert.match(html, /One concrete contribution agreed before the stay/);
   assert.match(html, /href="https:\/\/noto\.nomadresort\.jp\/"/);
-  assert.match(html, /docs\.google\.com\/forms\/d\/1I1u-Rj2LemqzpfA9U4yaZ7aWhX-qxBflv-BbSKhwcDc\/viewform/);
+  assert.match(html, /docs\.google\.com\/forms\/d\/e\/1FAIpQLSf1479JdvEl36i44FovnueiTBJW8zP7gfG6cBChBToW-1MuwA\/viewform/);
   assert.doesNotMatch(html, /codex-preview/);
 });
 

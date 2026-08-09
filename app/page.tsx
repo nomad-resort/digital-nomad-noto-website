@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { LanguageToggle } from "./LanguageToggle";
 
 const applicationForm =
-  "https://docs.google.com/forms/d/1I1u-Rj2LemqzpfA9U4yaZ7aWhX-qxBflv-BbSKhwcDc/viewform";
+  "https://docs.google.com/forms/d/e/1FAIpQLSf1479JdvEl36i44FovnueiTBJW8zP7gfG6cBChBToW-1MuwA/viewform";
 const termsUrl =
   "https://docs.google.com/document/d/15L_SeddyQqgLDfAUR0YoSNgm1MCK-0DCpEkQWWS0GFA/edit";
 const instagramUrl = "https://www.instagram.com/nomadresort_noto/";
