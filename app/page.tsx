@@ -22,13 +22,23 @@ const itinerary: Array<{
   featured?: boolean;
 }> = [
   {
+    date: "18",
+    day: "FRI",
+    title: { ja: "能登へ向かう旅", en: "The journey to Noto" },
+    timeline: [
+      { time: { ja: "昼頃", en: "Around noon" }, event: { ja: "金沢集合", en: "Meet in Kanazawa" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "車で能登へドライブ・HANAMIチェックイン", en: "Drive to Noto and check in at HANAMI" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "ウェルカムパーティー", en: "Welcome Party" } },
+    ],
+  },
+  {
     date: "19",
     day: "SAT",
-    title: { ja: "金沢集合、能登へ", en: "Meet in Kanazawa, travel to Noto" },
+    title: { ja: "七尾で集合、祭りの前日へ", en: "Meet in Nanao, enter the festival eve" },
     timeline: [
-      { time: { ja: "昼頃", en: "Around noon" }, event: { ja: "金沢駅周辺で車のピックアップ", en: "Pick up near Kanazawa Station" } },
-      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "能登へ移動・HANAMIチェックイン", en: "Transfer to Noto and check in at HANAMI" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "オリエンテーション・参加者交流", en: "Orientation and participant introductions" } },
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "金沢組は電車で七尾駅へ", en: "The Kanazawa group travels by train to Nanao Station" } },
+      { time: { ja: "昼頃", en: "Around noon" }, event: { ja: "七尾駅で集合", en: "Meet at Nanao Station" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "中島町で祭り前日の地域の時間に触れる", en: "Join festival-eve activities and meet the local community in Nakajima" } },
     ],
   },
   {
@@ -45,39 +55,31 @@ const itinerary: Array<{
   {
     date: "21",
     day: "MON",
-    title: { ja: "休息と能登島時間", en: "Rest & Notojima chill" },
+    title: { ja: "ゆっくりした朝と七尾ナイト", en: "A slow morning & Nanao night" },
     timeline: [
-      { time: { ja: "午前", en: "Morning" }, event: { ja: "休息日・ゆっくりと島の朝を過ごす", en: "Rest day and a slow island morning" } },
-      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "能登島でチルアウト・仕事や制作の時間", en: "Island chillout, work, or creative time" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "自由時間", en: "Free evening" } },
+      { time: { ja: "午前", en: "Morning" }, event: { ja: "ゆっくりと島の朝を過ごす", en: "A slow island morning" } },
+      { time: { ja: "日中", en: "Daytime" }, event: { ja: "仕事・制作の時間", en: "Work or creative time" } },
+      { time: { ja: "午後", en: "Afternoon" }, event: { ja: "七尾市内・一本杉通りを巡る", en: "Explore central Nanao and Ipponsugi Street" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "居酒屋と地元のスナックへ", en: "Izakaya dinner and a local Japanese snack bar" } },
     ],
   },
   {
     date: "22",
     day: "TUE",
-    title: { ja: "海のアクティビティとBBQ", en: "Ocean activity & BBQ" },
+    title: { ja: "自由な能登時間とBBQ", en: "Free time in Noto & BBQ" },
     timeline: [
-      { time: { ja: "日中", en: "Daytime" }, event: { ja: "能登の海を楽しむアクティブツアー", en: "Active tour on the waters of Noto" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "地域の方とのBBQ", en: "BBQ with local hosts" } },
+      { time: { ja: "日中", en: "Daytime" }, event: { ja: "自由時間", en: "Free time" } },
+      { time: { ja: "希望者", en: "Optional" }, event: { ja: "海のアクティビティツアー", en: "Ocean activity tour" } },
+      { time: { ja: "夜", en: "Evening" }, event: { ja: "みんなでBBQ", en: "BBQ together" } },
     ],
   },
   {
     date: "23",
     day: "WED",
-    title: { ja: "七尾のまちと夜", en: "Nanao by day & night" },
-    timeline: [
-      { time: { ja: "日中", en: "Daytime" }, event: { ja: "七尾市内・一本杉通りを巡る", en: "Explore central Nanao and Ipponsugi Street" } },
-      { time: { ja: "夜", en: "Evening" }, event: { ja: "七尾の居酒屋へ", en: "Dinner at a local izakaya" } },
-      { time: { ja: "二次会", en: "Later" }, event: { ja: "地元のスナックを体験", en: "Experience a local Japanese snack bar" } },
-    ],
-  },
-  {
-    date: "24",
-    day: "THU",
     title: { ja: "振り返りと出発", en: "Closing & departure" },
     timeline: [
       { time: { ja: "午前", en: "Morning" }, event: { ja: "振り返り・チェックアウト", en: "Closing reflection and check-out" } },
-      { time: { ja: "日中", en: "Daytime" }, event: { ja: "金沢へ移動・解散", en: "Transfer to Kanazawa and departure" } },
+      { time: { ja: "日中", en: "Daytime" }, event: { ja: "移動・解散", en: "Departure" } },
     ],
   },
 ];
@@ -85,11 +87,11 @@ const itinerary: Array<{
 const faqs: Array<{ q: Copy; a: Copy }> = [
   {
     q: { ja: "FAM Tourの宿泊はどうなりますか？", en: "How is FAM Tour accommodation arranged?" },
-    a: { ja: "9月19日から24日までの5泊を、運営側が能登島ゲストハウス葉波（HANAMI）にまとめて手配し、宿泊費も負担します。参加者による個別予約・宿泊費の支払いは不要です。", en: "The organizing team will arrange and cover all five nights, September 19–24, at Notojima Guesthouse HANAMI. Participants do not need to book or pay for the stay themselves." },
+    a: { ja: "9月18日から23日までの5泊を、運営側が能登島ゲストハウス葉波（HANAMI）にまとめて手配し、宿泊費も負担します。参加者による個別予約・宿泊費の支払いは不要です。", en: "The organizing team will arrange and cover all five nights, September 18–23, at Notojima Guesthouse HANAMI. Participants do not need to book or pay for the stay themselves." },
   },
   {
     q: { ja: "交通費の補助はありますか？", en: "Is travel subsidized?" },
-    a: { ja: "指定する金沢の集合・解散場所までの往復交通費と、滞在中の私的な移動費は参加者負担です。9月19日の金沢から能登への移動と、24日の能登から金沢への団体送迎は運営が手配・負担します。", en: "Travel to and from the designated meeting point in Kanazawa, plus personal transportation during the stay, is at the participant’s expense. The organizer will arrange and cover group transfers from Kanazawa to Noto on September 19 and from Noto to Kanazawa on September 24." },
+    a: { ja: "指定する集合場所までの往復交通費と、滞在中の私的な移動費は参加者負担です。公式工程内で運営が手配する移動は運営が負担します。", en: "Travel to and from the designated meeting point, plus personal transportation during the stay, is at the participant’s expense. Transportation arranged by the organizer within the official itinerary is covered." },
   },
   {
     q: { ja: "カップルや家族で参加できますか？", en: "Can couples or families participate?" },
@@ -170,7 +172,7 @@ export default function Home() {
             />
           </p>
           <div className="hero-facts" aria-label="Program facts">
-            <span>SEP. 19–24</span>
+            <span>SEP. 18–23</span>
             <span>NOTOJIMA / NANAO</span>
             <span><Bi ja="5名限定" en="5 PEOPLE" /></span>
             <span><Bi ja="応募締切 8月24日 12:00" en="APPLY BY AUG. 24 / 12:00 JST" /></span>
@@ -249,8 +251,8 @@ export default function Home() {
             </p>
             <p>
               <Bi
-                ja="このツアーでは祭り当日だけでなく、前日に金沢から能登へ入り、祭りを迎える地域の時間に触れます。"
-                en="The tour enters Noto from Kanazawa the day before, revealing not only the festival but the people and preparation behind it."
+                ja="このツアーでは9月18日から能登に入り、祭り当日だけでなく、祭りを迎える地域の時間に触れます。"
+                en="The tour arrives in Noto on September 18, revealing not only the festival but the people and preparation behind it."
               />
             </p>
             <a className="text-link" href={festivalUrl} target="_blank" rel="noreferrer">
@@ -316,7 +318,7 @@ export default function Home() {
             </p>
             <div className="stay-badge">
               <strong><Bi ja="5泊／運営手配・宿泊費負担" en="5 nights / arranged and covered by the organizer" /></strong>
-              <span>SEP. 19–24, 2026</span>
+              <span>SEP. 18–23, 2026</span>
             </div>
             <a className="text-link" href={hanamiUrl} target="_blank" rel="noreferrer">
               <Bi ja="HANAMI公式サイト" en="HANAMI official website" /> <Arrow />
@@ -327,7 +329,7 @@ export default function Home() {
 
       <section className="itinerary-section" id="itinerary" aria-labelledby="itinerary-title">
         <div className="section-heading shell">
-          <p className="eyebrow light">SEPTEMBER 19–24, 2026</p>
+          <p className="eyebrow light">SEPTEMBER 18–23, 2026</p>
           <h2 id="itinerary-title"><Bi ja="能登の魅力を詰め込んだ6日間。" en="Six days filled with the essence of Noto." /></h2>
           <p><Bi ja="祭りだけでも、ワーケーションだけでもない。島、まち、仕事、海、食、人との時間が一つの旅としてつながります。" en="More than a festival trip or a workation: island life, town, work, the sea, food, and people form one connected journey." /></p>
         </div>
@@ -427,14 +429,14 @@ export default function Home() {
             <p className="card-number">01 / FAM TOUR</p>
             <h3><Bi ja="お熊甲祭と能登を巡る6日間" en="Six days with Noto and its festival" /></h3>
             <dl>
-              <div><dt><Bi ja="日程" en="Dates" /></dt><dd>2026.09.19–24</dd></div>
+              <div><dt><Bi ja="日程" en="Dates" /></dt><dd>2026.09.18–23</dd></div>
               <div><dt><Bi ja="募集" en="Places" /></dt><dd><Bi ja="5名" en="5 participants" /></dd></div>
               <div><dt><Bi ja="対象" en="Eligibility" /></dt><dd><Bi ja="応募時点で25歳以上" en="Age 25 or older when applying" /></dd></div>
               <div><dt><Bi ja="拠点" en="Base" /></dt><dd><Bi ja="能登島・七尾・中島町" en="Notojima, Nanao, Nakajima" /></dd></div>
               <div><dt><Bi ja="宿泊" en="Stay" /></dt><dd><Bi ja="HANAMI 5泊／運営手配・宿泊費負担" en="5 nights at HANAMI / arranged and covered by the organizer" /></dd></div>
-              <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊5泊、金沢〜能登の団体送迎、指定アクティビティ、夕食・交流3回、コミュニティプログラム" en="Five nights, group transfers between Kanazawa and Noto, listed activities, three hosted dinners/gatherings, and community program" /></dd></div>
+              <div><dt><Bi ja="提供" en="Included" /></dt><dd><Bi ja="宿泊5泊、公式工程内の指定移動、指定アクティビティ、夕食・交流3回、コミュニティプログラム" en="Five nights, designated transportation within the official itinerary, listed activities, three hosted dinners/gatherings, and community program" /></dd></div>
               <div><dt><Bi ja="発信" en="Outputs" /></dt><dd><Bi ja="発信内容・納品物・公開期限は参加確定前に個別合意" en="Content, deliverables, and publication timing agreed individually before confirmation" /></dd></div>
-              <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="金沢の集合・解散場所までの往復交通、朝食・昼食、任意の飲食・体験、保険・個人費用" en="Travel to and from the Kanazawa meeting point, breakfast, lunch, optional food/activities, insurance, and personal costs" /></dd></div>
+              <div><dt><Bi ja="自己負担" en="Self-pay" /></dt><dd><Bi ja="指定する集合・解散場所までの往復交通、朝食・昼食、任意の飲食・体験、保険・個人費用" en="Travel to and from the designated meeting and departure points, breakfast, lunch, optional food/activities, insurance, and personal costs" /></dd></div>
             </dl>
           </article>
 
