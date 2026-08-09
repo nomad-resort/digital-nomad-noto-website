@@ -219,7 +219,7 @@ export default function Home() {
           <div>
             <span>03</span>
             <strong><Bi ja="結果通知" en="Decision" /></strong>
-            <p><Bi ja="面談後2日以内に順次通知／最終8月28日" en="Within two days of interview / all notices by August 28" /></p>
+            <p><Bi ja="面談後順次通知／最終8月28日" en="Rolling decisions after interviews / all notices by August 28" /></p>
           </div>
         </div>
         <div className="selection-action shell">
