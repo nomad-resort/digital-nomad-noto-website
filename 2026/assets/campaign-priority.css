@@ -1,0 +1,76 @@
+.hero-bg {
+  object-position: center 50%;
+}
+
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(11, 9, 8, 0.9) 0%, rgba(11, 9, 8, 0.66) 48%, rgba(11, 9, 8, 0.22) 82%),
+    linear-gradient(180deg, transparent 48%, rgba(10, 9, 8, 0.72));
+}
+
+.commitment-grid,
+.requirements-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.commitment-grid article,
+.requirements-grid .requirement-card {
+  max-width: 900px;
+}
+
+.fam-ended {
+  color: #fff;
+  background: var(--ink);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 86px 0;
+}
+
+.fam-ended-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+  align-items: end;
+  gap: 90px;
+}
+
+.fam-ended h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.fam-ended-copy {
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+  font-family: "Yu Mincho", serif;
+  font-size: 13px;
+  line-height: 2;
+}
+
+[data-lang="en"] .fam-ended-copy {
+  font-family: Georgia, serif;
+}
+
+.fam-ended-status {
+  color: var(--gold);
+  letter-spacing: 0.14em;
+  margin: 0 0 16px;
+  font: 700 9px/1.5 Arial, sans-serif;
+}
+
+@media (max-width: 760px) {
+  .fam-ended {
+    padding: 64px 0;
+  }
+
+  .fam-ended-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .fam-ended h2 {
+    font-size: clamp(38px, 12vw, 54px);
+  }
+}
