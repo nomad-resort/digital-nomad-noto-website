@@ -25,16 +25,32 @@ test("the page presents Free Accommodation as the active campaign", () => {
   assert.match(hero, /Apply for Free Accommodation/);
 });
 
-test("Free Accommodation details appear before the ended FAM Tour archive", () => {
+test("the campaign contains only Free Accommodation without a FAM archive or deadline", () => {
   const freeIndex = html.indexOf('<section class="free-section"');
   const famArchiveIndex = html.indexOf('id="fam-archive"');
   const festivalIndex = html.indexOf('<section class="festival-section"');
 
   assert.ok(freeIndex > -1, "Free Accommodation section is present");
-  assert.ok(famArchiveIndex > freeIndex, "FAM archive follows Free Accommodation");
-  assert.ok(festivalIndex > famArchiveIndex, "FAM Tour content follows its archive notice");
-  assert.match(html, /2026年のFAMツアーは終了しました/);
-  assert.match(html, /The 2026 FAM Tour has ended/);
+  assert.equal(famArchiveIndex, -1);
+  assert.equal(festivalIndex, -1);
+  assert.doesNotMatch(html, /FAM|fam-archive|August 24|Aug\. 24|8月24日|APPLICATION DEADLINE|September 18–23/);
+});
+
+test("all homepage campaign buttons promote only Free Accommodation", async () => {
+  for (const file of ['index.html', 'ja/index.html', 'zh/index.html']) {
+    const page = await readFile(new URL(`../${file}`, import.meta.url), 'utf8');
+    assert.doesNotMatch(page, /FAM TOUR|FAMツアー/);
+    assert.match(page, /href="\/2026\/"/);
+  }
+});
+
+test("campaign anchors and application links remain valid", () => {
+  const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
+  for (const match of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(match[1]), match[1]);
+  const formLinks = [...html.matchAll(/href="(https:\/\/docs.google.com\/forms\/[^\"]+)"/g)];
+  assert.ok(formLinks.length >= 2);
+  for (const match of formLinks) assert.equal(match[1], 'https://docs.google.com/forms/d/e/1FAIpQLSf1479JdvEl36i44FovnueiTBJW8zP7gfG6cBChBToW-1MuwA/viewform');
+  assert.match(html, /Interviews and selection results will be arranged individually/);
 });
 
 test("active application guidance only promotes Free Accommodation", () => {
