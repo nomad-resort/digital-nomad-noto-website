@@ -1,0 +1,1 @@
+.stay-photo img{height:auto;aspect-ratio:4/3;object-fit:contain}.stay-photo>span{background:#191817bb;padding:6px 9px}.gallery img{height:auto;aspect-ratio:3/4;object-fit:contain}@media(max-width:800px){.gallery{grid-template-columns:1fr}.gallery img{max-width:360px;margin:auto}.stay-photo>span{font-size:8px;left:12px;bottom:12px}}
